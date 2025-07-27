@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.playfair-font {
+    font-family: "Playfair Display", serif !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(46, 46, 46, 0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    perspective: 1000px;
+    
+    img {
+        height: auto;
+        width: 12rem;
+        transform-style: preserve-3d;
+        animation: loaderAnimation 2s ease-in-out infinite;
+    }
+}
+
+@keyframes loaderAnimation {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.spinner-outer-wrapper {
+    .spinner-wrapper {
+        background: white;
+        height: 100vh;
+        padding: 1rem;
+
+        .spinner-accountBalnce {
+            margin-top: 4rem;
+            margin-bottom: -4rem;
+
+            h3 {
+                color: $secondaryColor;
+                text-align: center;
+                font-size: 1.4rem;
+            }
+        }
+
+        #wheel {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            flex-direction: column;
+        }
+
+        .spinn-btns {
+            padding: 0rem 2rem;
+            margin-top: -4rem;
+
+            p {
+                text-align: center;
+                font-size: 2rem;
+                color: $secondaryColor;
+                margin-bottom: 1rem;
+                font-size: 1.4rem;
+                font-weight: 600;
+            }
+
+            button {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                outline: none;
+                border: none;
+                font-size: 1.2rem;
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+
+        .event_rules {
+            padding: 0rem 2rem;
+
+            h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+
+            ul {
+                li {
+                    font-size: 1.2rem;
+                    margin: 1rem 0;
+                    font-weight: 500;
+                }
+            }
+        }
+
+    }
+}
+
+.d-none {
+    display: none !important;
+}
+
+.fetch-animation-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+        height: auto;
+        width: 6rem;
+    }
+}
+
+.go2072408551 {
+    max-width: 720px !important;
+}
+
+// demoAnimation
+.back_fade {
+    animation-name: back_fade_animation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes back_fade_animation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.back_fade_up {
+    animation-name: back_fade_up_animation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes back_fade_up_animation {
+    from {
+        opacity: 0;
+        transform: translateY(4rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+.back_fade_down {
+    animation-name: back_fade_down_animation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes back_fade_down_animation {
+    from {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+.back_fade_right {
+    animation-name: back_fade_right_animation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes back_fade_right_animation {
+    from {
+        opacity: 0;
+        transform: translateX(-4rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+.back_fade_left {
+    animation-name: back_fade_left_animation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes back_fade_left_animation {
+    from {
+        opacity: 0;
+        transform: translateX(4rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+.back_fade_scale {
+    animation-name: back_fade_scale_animation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes back_fade_scale_animation {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.back_scale {
+    animation-name: back_scale_animation;
+    animation-fill-mode: forwards;
+}
+
+@keyframes back_scale_animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
