@@ -3533,6 +3533,57 @@ input[type="number"] {
     animation: winnerAnimation 0.2s ease-out infinite alternate-reverse;
 }
 
+.alert-container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 750px;
+    background: #000000d5;
+    z-index: 12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .alert-wrapper {
+        background: white;
+        width: 95%;
+
+        .alert-heading {
+            background: #edecec;
+            padding: 1rem;
+
+            h3 {
+                text-align: center;
+                font-size: 1.4rem;
+            }
+        }
+
+        .aleart-body {
+            padding: 2rem 1rem;
+
+            p {
+                font-size: 1.2rem;
+                text-align: center;
+                font-weight: 500;
+            }
+
+            button {
+                background: #001b38d4;
+                width: 100%;
+                color: white;
+                outline: none;
+                border: none;
+                padding: 0.5rem;
+                font-size: 1.1rem;
+                margin-top: 2rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 @keyframes winnerAnimation {
     0% {
         transform: scale(1);
@@ -3561,6 +3612,10 @@ input[type="number"] {
     }
 
     .qr-scanner-container {
+        width: 100%;
+    }
+
+    .alert-container {
         width: 100%;
     }
 }

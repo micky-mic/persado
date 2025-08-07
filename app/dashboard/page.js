@@ -19,6 +19,7 @@ import dynamic from "next/dynamic";
 import GlobalProgress from "@/components/global_progress/GlobalProgress";
 import LuckyDraw from "@/components/draw/LuckyDraw";
 import { fetchPop } from "../actions/notice/data";
+import Alert from "@/components/alert/Alert";
 
 const Properties = dynamic(() => import("@/components/sliders/Properties"), {
     loading: () => <GlobalProgress />,
@@ -47,6 +48,7 @@ const page = async () => {
 
     return (
         <>
+            <Alert user={JSON.parse(JSON.stringify(authenticatedUser))}/>
             <div className="dashboard-wrapper page_animation">
                 <div className="dashboard-top-navbar">
                     <div className="dashboard-top-navbar-parent">
@@ -135,7 +137,7 @@ const page = async () => {
                                         unoptimized
                                     />
                                 </div>
-                                <p>Lot History</p>  
+                                <p>Lot History</p>
                             </Link>
                             <Link href="/dashboard/profile">
                                 <div className="dashboard-quick-actions-inner-childs">
@@ -151,7 +153,7 @@ const page = async () => {
                             </Link>
                         </div>
                     </div>
-                   <LuckyDraw user={JSON.parse(JSON.stringify(authenticatedUser))}/>
+                    <LuckyDraw user={JSON.parse(JSON.stringify(authenticatedUser))} />
                     <div className="dashboard-img-wrapper">
                         <div className="dash-heading-title">
                             <h1 className="playfair-font">Celebrating the communities <br />
