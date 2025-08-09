@@ -1,5 +1,8 @@
 "use client";
-import React, { useEffect, useState } from 'react'
+
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import notice from "@/public/notice.jpg";
 
 const Alert = ({ user }) => {
 
@@ -31,19 +34,15 @@ const Alert = ({ user }) => {
                 isVisible
                     ?
                     <>
-                        <div className="alert-container">
-                            <div className="alert-wrapper page_animation">
-                                <div className="alert-heading">
-                                    <h3>Alert! Notification</h3>
-                                </div>
-                                <div className="aleart-body">
-                                    <p>
-                                        For any deposits or withdrawals, please contact our official customer service through our platform.
-                                        Do not trust any unsolicited or external contacts claiming to represent us.
-                                    </p>
-                                    <button onClick={()=> setIsVisible(false)}>CLOSE</button>
-                                </div>
-                            </div>
+                        <div className="alert-container" onClick={() => setIsVisible(false)}>
+                            <Image
+                                src={notice}
+                                alt="notice"
+                                height={100}
+                                width={100}
+                                unoptimized
+                                className="page_animation"
+                            />
                         </div>
                     </>
                     :

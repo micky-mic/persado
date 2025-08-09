@@ -3546,42 +3546,11 @@ input[type="number"] {
     justify-content: center;
     align-items: center;
 
-    .alert-wrapper {
-        background: white;
-        width: 95%;
-
-        .alert-heading {
-            background: #edecec;
-            padding: 1rem;
-
-            h3 {
-                text-align: center;
-                font-size: 1.4rem;
-            }
-        }
-
-        .aleart-body {
-            padding: 2rem 1rem;
-
-            p {
-                font-size: 1.2rem;
-                text-align: center;
-                font-weight: 500;
-            }
-
-            button {
-                background: #001b38d4;
-                width: 100%;
-                color: white;
-                outline: none;
-                border: none;
-                padding: 0.5rem;
-                font-size: 1.1rem;
-                margin-top: 2rem;
-                cursor: pointer;
-            }
-        }
+    img {
+        height: auto;
+        width: 96%;
     }
+    
 }
 
 @keyframes winnerAnimation {
