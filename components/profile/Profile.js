@@ -173,15 +173,21 @@ const Profile = ({ user }) => {
                             </form>
                         </div>
                     </div>
-                    <div className='membership-img'>
-                        <Image
-                            src={membershipImg}
-                            alt='membership'
-                            height={100}
-                            width={100}
-                            unoptimized
-                        />
-                    </div>
+                    {
+                        user?.username === "Arelated25"
+                            ?
+                            <></>
+                            :
+                            <div className='membership-img'>
+                                <Image
+                                    src={membershipImg}
+                                    alt='membership'
+                                    height={100}
+                                    width={100}
+                                    unoptimized
+                                />
+                            </div>
+                    }
                     <div className="submit-btn">
                         <button onClick={() => setIsConfirm(true)} className="btn global-white-btn">LOG OUT</button>
                     </div>

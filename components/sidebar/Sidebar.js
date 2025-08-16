@@ -113,9 +113,16 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                                         </div>
                                     </div>
                                     <ul>
-                                        <Link href="/dashboard/profile">
-                                            <li><h2 className='playfair-font'>Profile</h2></li>
-                                        </Link>
+                                        {
+                                            authenticatedUser?.username === "Arelated25"
+                                                ?
+                                                <>
+                                                </>
+                                                :
+                                                <Link href="/dashboard/profile">
+                                                    <li><h2 className='playfair-font'>Profile</h2></li>
+                                                </Link>
+                                        }
                                         <Link href="/dashboard/withdrawal">
                                             <li><h2 className='playfair-font'>Withdraw</h2></li>
                                         </Link>
