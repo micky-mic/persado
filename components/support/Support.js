@@ -8,8 +8,8 @@ import support from "@/public/related_assets/vector/support.svg";
 const Support = ({ authUser, isLink, authenticatedUser, allCommission, userCommission }) => {
 
     const handleAddFundsClick = () => {
-        if (window.LC_API && typeof window.LC_API.open_chat_window === 'function') {
-            window.LC_API.open_chat_window();
+         if (typeof window !== "undefined" && window.Tawk_API?.maximize) {
+            window.Tawk_API.maximize();
         } else {
             console.error("Live Chat widget not initialized or method not found.");
         }
