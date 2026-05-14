@@ -9,7 +9,7 @@ const Welcome = () => {
         <section className="welcome-page-section page_animation">
             <div
                 className="welcome-page-wrapper"
-                style={{
+                style={{ 
                     backgroundImage: `url(${welbg.src})`,
                 }}
             >

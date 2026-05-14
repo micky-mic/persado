@@ -6,12 +6,14 @@ import { authenticate } from '@/app/actions/user/action';
 import { useFormStatus } from "react-dom";
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import logo from '@/public/new/logo.png'
 
 function Submit() {
     const { pending } = useFormStatus();
     return (
         <>
-            <button type="submit" disabled={pending} className="btn global-primary-btn">{pending ? <>Please wait<i className="fa fa-circle-notch rotating-spinner"></i></> : "Sign In"}</button>
+            <button type="submit" disabled={pending} className="primary-btn">{pending ? <>Please wait<i className="fa fa-circle-notch rotating-spinner"></i></> : "Sign In"}</button>
         </>
     )
 }
@@ -78,18 +80,28 @@ const Signin = () => {
     return (
         <div className="app-global-form white-background">
             <div className='welcome-msg'>
-                <h1 className='playfair-font'>Welcome Back</h1>
+                <Image
+                    src={logo}
+                    alt='logo'
+                    height={100}
+                    width={100}
+                    unoptimized
+                />
+                <h1 className=''>Hey, Welcome Back!</h1>
+                <p className=''>Log in to get started</p>
             </div>
             <form action={handleForm}>
+                <label>Username</label>
                 <div className="app-form-group app-form-group-include-conf">
                     <input
                         type="text"
-                        placeholder="Username / Phone Number"
+                        placeholder="Username"
                         name="username"
                         defaultValue={defaultVal?.username}
                         required
                     />
                 </div>
+                <label>Password</label>
                 <div className="app-form-group app-form-group-include-conf">
                     <input
                         type={isShow ? "text" : "password"}
@@ -142,13 +154,10 @@ const Signin = () => {
                     }
                 </div>
                 <div className="forgetPassword">
-                    <Link href="/forgotPassowrd"><p>RESET MY PASSWORD?</p></Link>
+                    <Link href="/forgotPassowrd"><p>Forget Password</p></Link>
                 </div>
-                <div className="app-form-group mt2">
+                <div className="app-form-group">
                     <Submit />
-                    <div className="create-account">
-                        <Link href="/signup"><p className='btn global-white-btn'>Create Account</p></Link>
-                    </div>
                 </div>
                 <div className="form-copyright">
                     <div className="checkbox-container">
@@ -157,8 +166,12 @@ const Signin = () => {
                             defaultChecked
                             onChange={() => setIsAgree(!isAgree)}
                         />
-                        <p>By clicking Login or Sign Up button, I agree to the <span>Terms & Conditions</span> and <span>Privacy Policy</span>. </p>
+                        <p>By clicking Login or Sign Up button, I agree to the <span>Terms & Conditions.</span> </p>
                     </div>
+                </div>
+                <div className="create-account">
+                    <p>Don’t have an account yet?</p>
+                    <Link href="/signup"><p className='primary-btn'>Create an account</p></Link>
                 </div>
             </form>
         </div>

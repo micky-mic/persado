@@ -317,6 +317,32 @@
 //         }
 //     }
 // }
+.authbg {
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.breadcrumb-contain {
+    position: absolute;
+    top: 0;
+}
+
+// .auth-container {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background: #8f1010;
+//     height: 60rem;
+//     width: 100%;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 100%;
+//     margin: 0rem 2rem;
+// }
 
 .auth-section {
 
@@ -345,8 +371,9 @@
 
         .auth-wrapper {
             position: absolute;
-            bottom: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 100%;
         }
     }
@@ -373,22 +400,37 @@
 }
 
 .white-background {
-    background: white;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%);
+    box-shadow: 0 -2px 10px 0 rgba(233, 223, 255, 0.30), 0 -2px 40px 0 rgba(187, 155, 255, 0.15), 0 0.5px 0 0 rgba(255, 255, 255, 0.50) inset;
+    margin: 0rem 2rem;
+    border-radius: 1rem;
 
 }
 
 .app-global-form {
     padding: 2rem;
-    height: 80vh;
+    // height: 80vh;
 
     .welcome-msg {
-        text-align: center;
+        // text-align: center;
         margin-bottom: 5rem;
 
         h1 {
-            font-size: 2.5rem;
-            color: $secondaryColor;
-            font-weight: 500;
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        p {
+            color: #fff;
+            font-weight: 300;
+            font-size: 1.5rem;
+        }
+
+        img {
+            height: auto;
+            width: 15rem;
+            padding-bottom: 1rem;
         }
     }
 
@@ -428,17 +470,18 @@
 
             input,
             select {
-                text-align: center;
                 width: 100%;
                 padding: 1.2rem;
                 font-size: 1.2rem;
                 outline: none;
-                border: 2px solid #848484;
+                border: 2px solid #B8B8D2;
                 margin-top: 0.4rem;
-                background: transparent;
+                background: #fff;
+                color: #5F5F7A;
+                border-radius: 0.5rem;
 
                 &::placeholder {
-                    color: #848484;
+                    color: #5F5F7A;
                     font-size: 1.2rem;
                     font-weight: 400;
                 }
@@ -451,9 +494,9 @@
         }
 
         label {
-            color: $secondaryColor;
+            color: #FFF;
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .app-form-group-radio-childs {
@@ -511,15 +554,17 @@
 }
 
 .forgetPassword {
-    text-align: center;
+    text-align: end;
     margin-bottom: 5rem;
 
     a {
-        color: #1F2F5C;
-        ;
+        color: #F1BCFF;
         font-weight: 600;
         font-size: 1.1rem;
-        text-decoration: underline;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -531,38 +576,58 @@
     .checkbox-container {
         display: flex;
         align-items: center;
-        font-size: 16px;
+        gap: 10px;
 
-        input {
-            width: 2rem;
-            height: 2rem;
+        input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+
+            width: 22px;
+            height: 22px;
+
+            border: 2px solid #8556FF;
             border-radius: 50%;
-            margin-right: 10px;
+
+            background: transparent;
             cursor: pointer;
-        }
+            position: relative;
 
-        :checked::before {
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-            top: 4px;
-            left: 4px;
-        }
+            transition: 0.3s ease;
 
+            &:checked {
+                background: #8556FF;
+            }
+
+            &:checked::before {
+                content: "";
+                position: absolute;
+
+                width: 10px;
+                height: 10px;
+
+                background: #fff;
+                border-radius: 50%;
+
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+            }
+        }
 
         p {
-            color: #1F2F5C;
+            color: #FFF;
             font-weight: 400;
             font-size: 1.1rem;
+            line-height: 1.5;
 
             span {
                 font-weight: 600;
-                color: #1F2F5C;
+                color: #8556FF;
                 cursor: pointer;
             }
         }
     }
-
 }
 
 .white-color {
@@ -581,45 +646,47 @@
     border-radius: 2rem;
     background: white;
     border: 1px solid rgb(241, 241, 241);
+}
 
-    form {
-        .app-form-group-include-conf {
-            position: relative;
+form {
+    .app-form-group-include-conf {
+        position: relative;
 
-            i {
-                position: absolute;
-                left: 1.5rem;
-                top: 42%;
-                color: rgb(62, 62, 62);
+        i {
+            position: absolute;
+            left: 1.5rem;
+            top: 42%;
+            color: rgb(62, 62, 62);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+    }
+
+    .app-form-group {
+        margin-bottom: 2.5rem;
+
+        input,
+        select {
+            width: 100%;
+            padding: 1.8rem 1rem;
+            font-size: 1.2rem;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid black;
+
+            &:focus {
+                border-bottom: 1px solid $primaryColor;
+            }
+
+            &::placeholder {
+                color: rgb(132, 132, 132);
                 font-size: 1.2rem;
-                cursor: pointer;
+                font-weight: 400;
             }
         }
 
-        .app-form-group {
-            margin-bottom: 2.5rem;
 
-            input,
-            select {
-                width: 100%;
-                padding: 1.8rem 1rem;
-                font-size: 1.2rem;
-                outline: none;
-                border: none;
-                border-bottom: 1px solid black;
 
-                &:focus {
-                    border-bottom: 1px solid $primaryColor;
-                }
-
-                &::placeholder {
-                    color: rgb(132, 132, 132);
-                    font-size: 1.2rem;
-                    font-weight: 400;
-                }
-            }
-
-        }
     }
 }
 
@@ -3233,10 +3300,28 @@
     text-align: center;
     margin-top: -2rem;
 
-    a {
-        color: $secondaryColor;
-        font-weight: 600;
+    p {
+        color: #F0B2E3;
+        text-align: center;
         font-size: 1.2rem;
+        font-weight: 500;
+        padding-bottom: 1rem;
+    }
+
+    a {
+        background: #fff !important;
+
+        p {
+            font-weight: 600;
+            font-size: 1.2rem;
+            // background: radial-gradient(50% 50% at 50% 50%, #8556FF 0%, #6B3EFF 100%);
+            // background-clip: text;
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
+            border: 2px solid #8556FF;
+            color: #8556FF;
+            background: #fff;
+        }
     }
 }
 
@@ -3638,5 +3723,9 @@ input[type="number"] {
 
     .alert-container {
         width: 100%;
+    }
+
+    .auth-section .bg-video-wrapper .auth-wrapper{
+        top: 60%;
     }
 }
