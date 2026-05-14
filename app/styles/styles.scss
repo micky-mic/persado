@@ -203,72 +203,120 @@
 
 
 .welcome-page-section {
-    overflow: hidden;
+    width: 100%;
 
-    .bg-video-wrapper {
-        .backgroundVideo {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
+    .welcome-page-wrapper {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+        padding-bottom: 5rem;
+    }
+
+    .welcome-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1;
+    }
+
+    .welcome-inner {
+        position: relative;
+        z-index: 2;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .welcome-img {
+        margin-bottom: 30px;
+
+        img {
+            width: 15rem;
+            height: auto;
+            object-fit: contain;
         }
     }
 
     .welcome-logo {
-        position: absolute;
-        top: 5rem;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
+        margin-bottom: 30px;
 
         img {
+            width: 15rem;
             height: auto;
-            width: 50%;
-            margin-bottom: 3rem;
+            object-fit: contain;
         }
     }
 
     .welcome-content {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 0;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        padding: 0rem 2rem;
+        margin-bottom: 40px;
 
         h3 {
-            font-size: 2.7rem;
-            color: $primaryColor;
-            font-weight: 500;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.3;
+            text-align: start;
         }
-
     }
 
-    .start-btn {
-        position: absolute;
-        bottom: 0;
-        transform: translateY(-50%);
-        left: 0;
+    a {
         width: 100%;
-        padding: 0 2rem;
-
-        a {
-            button {
-                background: #fff;
-                width: 100%;
-                font-size: 1.6rem;
-                padding: 1rem;
-                border: 1px solid #FFF;
-                font-weight: 600;
-                color: #001B38;
-                cursor: pointer;
-            }
-        }
     }
+
+    // .start-btn {
+    //     button {
+    //         padding: 14px 32px;
+    //         border: none;
+    //         border-radius: 50px;
+
+    //         background: #fff;
+    //         color: #000;
+
+    //         font-size: 14px;
+    //         font-weight: 600;
+    //         letter-spacing: 1px;
+
+    //         cursor: pointer;
+    //         transition: 0.3s ease;
+
+    //         &:hover {
+    //             transform: translateY(-2px);
+    //         }
+    //     }
+    // }
 }
+
+// @media (max-width: 768px) {
+//     .welcome-page-section {
+//         .welcome-content {
+//             h3 {
+//                 font-size: 28px;
+//             }
+//         }
+
+//         .welcome-logo {
+//             img {
+//                 width: 90px;
+//             }
+//         }
+//     }
+// }
 
 .auth-section {
 
@@ -575,14 +623,18 @@
     }
 }
 
-.btn {
-    width: 100%;
+.primary-btn {
     color: white;
     font-size: 1.5rem;
     padding: 1rem 0;
     border: none;
     font-weight: 600;
     cursor: pointer;
+    background: radial-gradient(50% 50% at 50% 50%, #8556FF 0%, #6B3EFF 100%);
+    border-radius: 3rem;
+    width: 100%;
+
+
 
     &:hover {
         opacity: 0.9;
@@ -3550,7 +3602,7 @@ input[type="number"] {
         height: auto;
         width: 96%;
     }
-    
+
 }
 
 @keyframes winnerAnimation {
