@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import GlobalProgress from "@/components/global_progress/GlobalProgress";
 import Image from "next/image";
-import authbg1 from "@/public/new/authbg1.png";
+import authbg2 from "@/public/new/authbg2.png";
 import Breadcrumb from "@/components/breadcrumb/Breadcrumb";
 
 const SignUp = dynamic(() => import("@/components/auth/SignUp"), {
@@ -16,7 +16,7 @@ const page = () => {
                 <div className="bg-video-wrapper">
                     <div className="authbg">
                         <Image
-                            src={authbg1}
+                            src={authbg2}
                             height={100}
                             width={100}
                             alt="logo"
@@ -26,7 +26,7 @@ const page = () => {
                     <div className="breadcrumb-contain">
                         <Breadcrumb link="" isColor="#fff" />
                     </div>
-                    <div className="auth-wrapper">
+                    <div className="auth-wrapper" >
                         <SignUp />
                     </div>
                 </div>

@@ -48,7 +48,7 @@ const page = async () => {
 
     return (
         <>
-            <Alert user={JSON.parse(JSON.stringify(authenticatedUser))}/>
+            {/* <Alert user={JSON.parse(JSON.stringify(authenticatedUser))}/> */}
             <div className="dashboard-wrapper page_animation">
                 <div className="dashboard-top-navbar">
                     <div className="dashboard-top-navbar-parent">
