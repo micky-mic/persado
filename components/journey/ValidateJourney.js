@@ -12,12 +12,12 @@ function Submit() {
     const { pending } = useFormStatus();
 
     return (
-        <button type="submit" className={pending ? "btn global-white-btn managedDisabled" : "btn global-white-btn"}> {
+        <button type="submit" className={pending ? "primary-btn managedDisabled" : "primary-btn"}> {
             pending ?
                 <> Please wait<i className="fa fa-circle-notch rotating-spinner"></i></>
                 :
                 <>
-                    Boost <i className="fa fa-arrow-right"></i>
+                    Start Optimize
                 </>
         }
         </button>

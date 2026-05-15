@@ -312,6 +312,12 @@ const page = async () => {
               </div>
             </div>
 
+            <div className='genbtn'>
+              <ValidateJourney
+                user={JSON.parse(JSON.stringify(user))}
+              />
+            </div>
+
             <div className='why'>
               <h1>Why join a nexos.ai ?</h1>
               <div className='whycontain'>
@@ -372,9 +378,6 @@ const page = async () => {
             <div className='membership-journey'>
               <h1>Membership Program</h1>
               <div className='mem-container current-mem'>
-                <div className='membtn'>
-                  Upgrade Fee $500
-                </div>
                 <div className='imgandde'>
                   <Image
                     src={vip1}
@@ -394,22 +397,81 @@ const page = async () => {
                 </div>
               </div>
               <div className='mem-container'>
+                <div className='membtn'>
+                  <p>Upgrade Fee $500</p>
+                </div>
                 <div className='imgandde'>
                   <Image
-                    src={vip1}
+                    src={vip2}
                     alt='card'
                     height={100}
                     width={100}
                     unoptimized
                   />
                   <div className='textcontent'>
-                    <h2 className='mem-name'>Basic</h2>
-                    <p>25 optimization with commissions ranging from 0.8% to 4.0%</p>
+                    <h2 className='mem-name'>Core</h2>
+                    <p>35 optimization with commissions ranging from 1.2% to 6.0%</p>
                   </div>
+                </div>
+                <div className='additional'>
+                  <p>Additional Reward:</p>
+                  <p>10% of the upgrade fee (50 USD)</p>
                 </div>
                 <div className='commi'>
                   <p>Commission rebate</p>
-                  <h4>0.8%-4.0%</h4>
+                  <h4>1.2%-6.0%</h4>
+                </div>
+              </div>
+              <div className='mem-container'>
+                <div className='membtn'>
+                  <p>Upgrade Fee $1000</p>
+                </div>
+                <div className='imgandde'>
+                  <Image
+                    src={vip3}
+                    alt='card'
+                    height={100}
+                    width={100}
+                    unoptimized
+                  />
+                  <div className='textcontent'>
+                    <h2 className='mem-name'>Elite</h2>
+                    <p>45 optimization with commissions ranging from 1.8% to 9.0%</p>
+                  </div>
+                </div>
+                <div className='additional'>
+                  <p>Additional Reward:</p>
+                  <p>15% of the upgrade fee (150 USD)</p>
+                </div>
+                <div className='commi'>
+                  <p>Commission rebate</p>
+                  <h4>1.8%-9.0%</h4>
+                </div>
+              </div>
+              <div className='mem-container'>
+                <div className='membtn'>
+                  <p>Upgrade Fee $2000</p>
+                </div>
+                <div className='imgandde'>
+                  <Image
+                    src={vip4}
+                    alt='card'
+                    height={100}
+                    width={100}
+                    unoptimized
+                  />
+                  <div className='textcontent'>
+                    <h2 className='mem-name'>Executive</h2>
+                    <p>55 optimization with commissions ranging from 2.4% to 12.0%</p>
+                  </div>
+                </div>
+                <div className='additional'>
+                  <p>Additional Reward:</p>
+                  <p>20% of the upgrade fee (400 USD)</p>
+                </div>
+                <div className='commi'>
+                  <p>Commission rebate</p>
+                  <h4>2.4%-12.0%</h4>
                 </div>
               </div>
             </div>

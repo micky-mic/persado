@@ -1409,7 +1409,7 @@ form {
     }
 
     .journey-bg {
-        height: 350vh;
+        height: 450vh;
         background: linear-gradient(180deg,
                 #000000 0%,
                 #071013 44.16%,
@@ -1439,6 +1439,14 @@ form {
                     height: auto;
                     width: 5rem;
                 }
+            }
+        }
+
+        .genbtn{
+            padding: 0rem 3rem;
+            padding-top: 0.6rem;
+            button{
+                border-radius: 1rem;
             }
         }
 
@@ -1480,10 +1488,19 @@ form {
                 margin-bottom: 1rem;
 
                 .membtn {
-                    color: #FFF;
-                    text-align: center;
-                    font-size: 0.75rem;
-                    font-weight: 400;
+                    display: flex;
+                    justify-content: flex-end;
+
+                    p {
+                        color: #FFF;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        border-radius: 3rem;
+                        padding: 0.8rem 1rem;
+                        border: 2px solid #6B3EFF;
+                        background: radial-gradient(50% 50% at 50% 50%, #8556FF 0%, #6B3EFF 100%);
+
+                    }
                 }
 
                 .imgandde {
@@ -1512,6 +1529,13 @@ form {
                     }
                 }
 
+                .additional {
+                    color: #FFF;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    padding-top: 1rem;
+                }
+
                 .commi {
                     display: flex;
                     justify-content: space-between;
@@ -1525,10 +1549,7 @@ form {
 
                     h4 {
                         font-size: 2.5rem;
-                        background: radial-gradient(50% 50% at 50% 50%, #8556FF 0%, #6B3EFF 100%);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
+                        color: white;
                     }
                 }
             }
@@ -1536,6 +1557,15 @@ form {
             .current-mem {
                 border: 2px solid #8556FF;
                 background: #261F5B;
+
+                .commi {
+                    h4 {
+                        background: radial-gradient(50% 50% at 50% 50%, #8556FF 0%, #6B3EFF 100%);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
             }
         }
     }
