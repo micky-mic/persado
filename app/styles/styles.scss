@@ -462,8 +462,9 @@
             }
 
             .input-secondary-svg {
-                top: 37%;
-                right: 1rem;
+                top: 65%;
+                right: 0%;
+                transform: translate(-50%, -50%);
             }
 
             i {
@@ -2972,12 +2973,23 @@ form {
     }
 }
 
+.security-linkwallet {
+    background: #F8FAFC;
+    margin: 2rem 2rem;
+    border-radius: 1rem;
+}
+.lastext{
+    padding: 0rem 2rem;
+    padding-bottom: 10rem;
+}
+
 .security-tab {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 0 1rem 0;
     gap: 1rem;
+    padding: 2rem 2rem;
 
     a {
         width: 100%;
@@ -2990,27 +3002,25 @@ form {
             font-size: 1.2rem;
             font-weight: 600;
             width: 100%;
-            color: $txtColor;
+            color: #707070;
             background: transparent;
-            border: 2px solid $txtColor;
+            border-bottom: 2px solid #DBE4EB;
             cursor: pointer;
 
             &:hover {
                 opacity: 1;
-                background: $txtColor;
-                color: white;
+                color: #6B3EFF;
                 border: none;
-                border: 2px solid $txtColor;
+                border-bottom: 2px solid #6B3EFF;
             }
         }
     }
 
     .security-tab-active {
         opacity: 1;
-        color: white;
+        color: #6B3EFF;
         border: none;
-        background: $txtColor;
-        border: 2px solid $txtColor;
+        border-bottom: 2px solid #6B3EFF;
     }
 }
 
@@ -3918,11 +3928,19 @@ form {
 
         img {
             height: auto;
-            width: 80%;
+            width: 12rem;
+            padding-top: 2rem;
         }
     }
 
     .app-form-group {
+
+        label {
+            color: #262B30;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
         .wallet_input {
             text-align: start !important;
             padding: 1.2rem 1.2rem 1.2rem 3.5rem !important;
