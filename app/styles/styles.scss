@@ -2502,14 +2502,14 @@ form {
 
 }
 
-.membership-img {
-    margin-top: 3rem;
+// .membership-img {
+//     margin-top: 3rem;
 
-    img {
-        height: auto;
-        width: 100%;
-    }
-}
+//     img {
+//         height: auto;
+//         width: 100%;
+//     }
+// }
 
 .breadcrumb-wrapper {
     padding: 5rem 2rem 1rem 2rem;
@@ -3341,12 +3341,252 @@ form {
 }
 
 .profile-section {
-    padding: 0rem 2rem 6rem 2rem;
-    min-height: 100%;
-    padding-top: 4rem;
+    min-height: 100vh;
 
     .profile-inner-wrapper {
-        border: 2px solid $txtColor;
+        // border: 2px solid $txtColor;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .profile-wrapper {
+            width: 100%;
+            max-width: 70.3125rem; // 1125px
+            padding: 0 3rem;
+
+            display: flex;
+            flex-direction: column;
+            gap: 3.75rem;
+        }
+
+        /* =========================
+   TOP PROFILE
+========================= */
+
+        .profile-top-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.9375rem;
+        }
+
+        .profile-image-box {
+            width: 20.34375rem;
+            height: 20.34375rem;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .profile-ring {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+
+                position: absolute;
+                inset: 0;
+            }
+
+            .profile-logo {
+                width: 12.1875rem;
+                height: 12.1875rem;
+
+                border-radius: 50%;
+                object-fit: cover;
+                cursor: pointer;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .profile-user-info {
+            width: 100%;
+            max-width: 26.15625rem; // 418.5px
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .profile-user-name {
+            width: 100%;
+
+            color: #f9f7ff;
+            text-align: center;
+
+            font-size: 2.25rem;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+        }
+
+        .profile-badge {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(180deg,
+                    rgba(255, 255, 255, 0.05) 0%,
+                    rgba(255, 255, 255, 0) 100%);
+
+            .profile-badge-text {
+                color: #fff;
+
+                font-size: 1.125rem;
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+            }
+        }
+
+        /* =========================
+   CARDS
+========================= */
+
+        .profile-cards-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9375rem;
+        }
+
+        .profile-card-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.9375rem;
+        }
+
+        .profile-card {
+            padding: 1.5rem 0.9375rem;
+            border-radius: 0.75rem;
+
+            background: linear-gradient(92deg,
+                    #9747ff 0%,
+                    #6e41ff 100%);
+        }
+
+        .profile-card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .profile-card-icon {
+            width: 4.265625rem; // 68.25px
+            height: 4.265625rem;
+        }
+
+        .profile-card-label {
+            color: #f8fafc;
+            text-align: center;
+
+            font-size: 0.9375rem;
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+        }
+
+        .profile-card-value {
+            color: #fff;
+            text-align: center;
+
+            font-size: 1.3125rem;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+        }
+
+        /* =========================
+   CREDIT SCORE
+========================= */
+
+        .credit-score-card {
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.9375rem;
+
+            background: linear-gradient(92deg,
+                    #9747ff 0%,
+                    #6e41ff 100%);
+        }
+
+        .credit-score-title {
+            color: #fff;
+
+            font-size: 1.3125rem;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+        }
+
+        .credit-bars {
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            gap: 0.375rem;
+        }
+
+        .credit-bar {
+            height: 1.460625rem; // 23.37px
+            border-radius: 0.1875rem;
+
+            background: rgba(255, 255, 255, 0.2);
+
+            &.active {
+                background: #fff;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         .user-profile-pic-wrapper {
 
