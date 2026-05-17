@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { uploadProfile } from '@/app/actions/profile/action';
 import Loader from '../loader/Loader';
-import user_profile from "@/public/related_assets/user_profile.jpg"
+import prologo from "@/public/new/prologo.png"
 import membershipImg from "@/public/related_assets/Images/membershipImg.jpg"
 
 const Profile = ({ user }) => {
@@ -80,12 +80,7 @@ const Profile = ({ user }) => {
 
     return (
         <>
-            <div className='background-color pageAnimatioin'>
-                <Breadcrumb
-                    title="Profile"
-                    link="/dashboard"
-                    isColor="#fff"
-                />
+            <div className='pageAnimatioin'>
                 {
                     isConfirm
                         ?
@@ -99,11 +94,191 @@ const Profile = ({ user }) => {
                     pending ? <Loader /> : <></>
                 }
 
-                <section className="profile-section">
+                <section
+                    className="profile-section"
+                    style={{
+                        backgroundImage: "url('/new/profilebg.png')",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                    }}
+                >
+                    <Breadcrumb
+                        title="Profile"
+                        link="/dashboard"
+                        isColor="#fff"
+                    />
                     <div className='profile-inner-wrapper'>
-                        <div className='user-profile-pic-wrapper'>
+
+
+
+
+                        <div className="profile-wrapper">
+
+                            {/* Top Profile */}
+                            <div className="profile-top-content">
+
+                                <div className="profile-image-box">
+                                    <img
+                                        className="profile-ring"
+                                        src="/new/profilebgimg.png"
+                                        alt="ring"
+                                    />
+
+                                    {/* replace here */}
+                                    <form>
+                                        <form>
+                                            {file === null ? (
+                                                <Image
+                                                    className="profile-logo"
+                                                    src={user?.url === null ? prologo : user?.url}
+                                                    width={100}
+                                                    height={100}
+                                                    alt="chosen file"
+                                                    unoptimized
+                                                    onClick={() =>
+                                                        document.getElementById("file-upload").click()
+                                                    }
+                                                />
+                                            ) : (
+                                                <Image
+                                                    className="profile-logo"
+                                                    src={URL.createObjectURL(file)}
+                                                    width={100}
+                                                    height={100}
+                                                    alt="file"
+                                                    unoptimized
+                                                    onClick={() =>
+                                                        document.getElementById("file-upload").click()
+                                                    }
+                                                />
+                                            )}
+
+                                            <input
+                                                id="file-upload"
+                                                type="file"
+                                                accept=".png, .jpg, .jpeg, .gif"
+                                                onChange={(e) => {
+                                                    setFile(e.target.files[0]);
+                                                    handleForm(e.target.files[0]);
+                                                }}
+                                                hidden
+                                            />
+                                        </form>
+                                    </form>
+                                </div>
+
+                                <div className="profile-user-info">
+
+                                    <div className="profile-user-name">
+                                        {user.username}
+                                    </div>
+
+                                    <div className="profile-badge">
+                                        <div className="profile-badge-text">
+                                            BASIC
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Cards Section */}
+                            <div className="profile-cards-wrapper">
+
+                                <div className="profile-card-row">
+
+                                    {/* Balance */}
+                                    <div className="profile-card">
+
+                                        <div className="profile-card-content">
+
+                                            <img
+                                                className="profile-card-icon"
+                                                src="/new/money.png"
+                                                alt="balance"
+                                            />
+
+                                            <div className="profile-card-text">
+
+                                                <div className="profile-card-label">
+                                                    My Balance
+                                                </div>
+
+                                                <div className="profile-card-value">
+                                                    $ 1,202.33
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    {/* Referral */}
+                                    <div className="profile-card">
+
+                                        <div className="profile-card-content">
+
+                                            <img
+                                                className="profile-card-icon"
+                                                src="/new/inviteicon.png"
+                                                alt="referral"
+                                            />
+
+                                            <div className="profile-card-text">
+
+                                                <div className="profile-card-label">
+                                                    Referral Code
+                                                </div>
+
+                                                <div className="profile-card-value">
+                                                    JD333301
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                {/* Credit Score */}
+                                <div className="credit-score-card">
+
+                                    <div className="credit-score-title">
+                                        Credit Score
+                                    </div>
+
+                                    <div className="credit-bars">
+
+                                        {Array.from({ length: 20 }).map((_, index) => (
+                                            <div
+                                                key={index}
+                                                className={`credit-bar ${index < 16 ? "active" : ""
+                                                    }`}
+                                            />
+                                        ))}
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Logout */}
+                            <button onClick={() => setIsConfirm(true)} className="primary-btn">
+                                Logout
+                            </button>
+
+                        </div>
+
+
+
+                        {/* <div className='user-profile-pic-wrapper'>
                             <form>
-                                <div className="profile-image-wrapper">
                                     {
                                         file === null
                                             ?
@@ -171,9 +346,9 @@ const Profile = ({ user }) => {
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div> */}
                     </div>
-                    {
+                    {/* {
                         user?.username === "Arelated25"
                             ?
                             <></>
@@ -187,10 +362,7 @@ const Profile = ({ user }) => {
                                     unoptimized
                                 />
                             </div>
-                    }
-                    <div className="submit-btn">
-                        <button onClick={() => setIsConfirm(true)} className="btn global-white-btn">LOG OUT</button>
-                    </div>
+                    } */}
                 </section>
             </div>
         </>
