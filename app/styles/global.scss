@@ -28,11 +28,11 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(46, 46, 46, 0.5);
+    background: linear-gradient(180deg, #071013 0.08%, #6E41FF 99.92%);
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     perspective: 1000px;
-    
+
     img {
         height: auto;
         width: 12rem;

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react';
-import logo from "@/public/related_assets/logo/white_logo.svg";
+import logo from "@/public/new/logo.png";
 
 const Loader = () => {
   return (

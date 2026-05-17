@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import Breadcrumb from "../breadcrumb/Breadcrumb";
 import JourneySuccessModal from '../successModal/JourneySuccessModal';
 import Image from 'next/image';
+import OptimizeCard from '../OptimizeCard';
 
 function Submit() {
 
@@ -18,12 +19,12 @@ function Submit() {
     return (
         <>
 
-            <button type="submit" className={pending ? "btn global-white-btn managedDisabled" : "btn global-white-btn"}> {
+            <button type="submit" className={pending ? "primary-btn managedDisabled" : "primary-btn"}> {
                 pending ?
                     <> Please wait<i className="fa fa-circle-notch rotating-spinner"></i></>
                     :
                     <>
-                        Boost <i className='fa fa-arrow-right'></i>
+                        Submit
                     </>
             }
             </button>
@@ -196,9 +197,11 @@ const SubmitJourney = () => {
         handleProduct();
     }, []);
 
+    const [optimizedComplete, setOptimizedComplete] = useState(false);
+
     return (
-        <>        
-            <div className='background-color page_animation'>
+        <>
+            <div className=' page_animation'>
                 {
                     isSuccess
                         ?
@@ -225,8 +228,9 @@ const SubmitJourney = () => {
                 <section className="journey-section">
                     <Breadcrumb
                         link="/dashboard/journey"
-                        title="Submit"
+                        title="Optimize Now"
                         isColor="#fff"
+                        bg="#000"
                     />
                     <div className='submit-journey-page-wrapper'>
 
@@ -242,201 +246,225 @@ const SubmitJourney = () => {
                                     unoptimized
                                 />
                             </div>
-                            <div className='plam-rating-parent'>
-                                <div className='plam-rating-child'>
-                                    <ul>
-                                        {Array.from({ length: 5 }, (v, i) => (
-                                            <li key={i} onClick={() => handleClick(i)}>
-                                                <i className={`fa fa-star ${i < ratings ? 'rated' : ''}`}></i>
-                                            </li>
-                                        ))}
-                                    </ul>
+
+                            <div className='product-information'>
+                                <div className='protext'>
+                                    <h1>Applicant Tracking System</h1>
+                                    <p>Accurate placements at the speed of light</p>
                                 </div>
-                                <div className="plam-rating-child">
-                                    <p>({ratings ?? 0}/5)</p>
-                                </div>
-                            </div>
-                            <div className='product-name'>
-                                <h2 className='playfair-font'>{myState?.product?.productName}</h2>
-                            </div>
-                            <div className='products-details-parent'>
-                                <div className='products-details-child'>
-                                    <div className='products-details-sub-child'>
-                                        <div className='products-details-grand-child'>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 12 13"
+                                <div className='bal-info'>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 327 111"
+                                    >
+                                        <rect width="102.333" height="111" fill="#F8FAFC" rx="8"></rect>
+                                        <g clipPath="url(#clip0_29_10251)">
+                                            <path
+                                                fill="url(#paint0_radial_29_10251)"
+                                                fillRule="evenodd"
+                                                d="M45.471 17.945q3.258-.012 6.516.024 2.729.478 3.211 3.21.035.54.023 1.079 1.993.058 2.368 2.015.022 1.83.047 3.657.387.293.562.75.035.984.023 1.968 1.698.465 1.266 2.204 2.115-.203 2.836 1.78.398 2.007-1.383 2.977a2.68 2.68 0 0 1-2.297-.117q-1.946.745-3.773-.234a3.55 3.55 0 0 1-1.899.726 4.23 4.23 0 0 1-2.765-.562 1.12 1.12 0 0 1-.516-.914q-3.843.012-7.687-.024-1.652-.198-2.086-1.804a605 605 0 0 1 0-10.64q.502-1.747 2.32-1.782-.222-2.828 2.297-4.055.467-.17.937-.258m.047.797q3.212-.012 6.422.024 1.883.381 2.414 2.226.093.63.07 1.266h-1.078a3.9 3.9 0 0 0-.164-1.36q-.443-.933-1.476-1.054a189 189 0 0 0-5.953 0q-1.11.148-1.524 1.195-.096.605-.07 1.219h-1.125q-.186-2.797 2.484-3.516m.282 1.875q2.93-.012 5.859.024.745.159.867.914.035.35.024.703h-7.594q-.012-.446.023-.89.202-.613.82-.75m-5.157 6.188h.938q-.032 1.435.07 2.86a.36.36 0 0 0 .258.163q.843.046 1.687 0a.52.52 0 0 0 .258-.258q.036-1.382.024-2.765h12.937v.75a6.14 6.14 0 0 0-2.719.023q-1.835.564-1.359 2.461a3.9 3.9 0 0 0-2.672.68 1.4 1.4 0 0 0-.398.773 190 190 0 0 0-.024 4.219q-3.82.012-7.64-.023-1.234-.226-1.336-1.477-.036-3.703-.024-7.406m1.735 0h.703v2.25h-.703zm11.203 3.328q-.108-.001-.07-.094a.2.2 0 0 1 .07.094m2.719.328q.556-.111 1.078-.375l.047.094a.5.5 0 0 1-.188.258 9 9 0 0 1-.937.023m-2.063-.094a6.6 6.6 0 0 0 2.063.094 3.7 3.7 0 0 0-1.313.469 2.7 2.7 0 0 0-.75-.563m-3.797 2.344q1.96.84 3.914 0a.46.46 0 0 1-.258.445q-1.571.742-3.187.094a.74.74 0 0 1-.469-.54m4.735.328q.004-.038.046-.047 1.725.749 3.446 0 .05.132-.07.211a2.6 2.6 0 0 1-1.641.445 2.56 2.56 0 0 1-1.594-.398 1.2 1.2 0 0 1-.187-.21m4.359.61q.255-.004.023.14a1.3 1.3 0 0 1-.07.328.6.6 0 0 0-.352.375 3.4 3.4 0 0 0 0 .797q.255.489.82.469a5 5 0 0 1-.655.07q-.213.108-.188.352-.013.384.375.422.049.184.14.351-1.306-.265-1.406-1.617.108-1.278 1.313-1.688m.656.046q.975.117 1.336 1.078.36 1.587-1.148 2.18a.2.2 0 0 1-.188 0q.141-.2.188-.445.44-.24.375-.75.02-.86-.844-.867l.516-.047q.468-.175.257-.633a.4.4 0 0 0-.351-.14.47.47 0 0 0-.14-.376m-9.75.235q1.96.84 3.914 0a.31.31 0 0 1-.07.304 3.05 3.05 0 0 1-1.852.54 4 4 0 0 1-1.43-.258.82.82 0 0 1-.562-.586m7.125.515a.45.45 0 0 1-.14.305 3.2 3.2 0 0 1-2.063-.375.34.34 0 0 1-.164-.305q.513.29 1.102.352.632.035 1.265.023m-7.125.703q1.96.842 3.914 0a.32.32 0 0 1-.117.352q-1.203.704-2.578.422a1.97 1.97 0 0 1-1.148-.54.4.4 0 0 1-.07-.234m4.735.047a4.8 4.8 0 0 0 2.25.399q.064.12.046.258a3.1 3.1 0 0 1-2.156-.399.42.42 0 0 1-.14-.258m0 1.125q1.256.554 2.601.282.069.126.164.234a3.19 3.19 0 0 1-2.484-.164.62.62 0 0 1-.281-.352m-4.735.047q1.96.84 3.914 0a.32.32 0 0 1-.117.352 3.03 3.03 0 0 1-1.805.492 3.65 3.65 0 0 1-1.43-.258.82.82 0 0 1-.562-.586"
+                                                clipRule="evenodd"
+                                            ></path>
+                                        </g>
+                                        <text
+                                            xmlSpace="preserve"
+                                            fill="#65717B"
+                                            fontFamily="Poppins"
+                                            fontSize="10"
+                                            fontWeight="300"
+                                            letterSpacing="0em"
+                                            style={{ whiteSpace: "pre" }}
+                                        >
+                                            <tspan x="37.08" y="59">
+                                                Value
+                                            </tspan>
+                                        </text>
+                                        <text
+                                            xmlSpace="preserve"
+                                            fill="#262B30"
+                                            fontFamily="Poppins"
+                                            fontSize="14"
+                                            fontWeight="bold"
+                                            letterSpacing="0em"
+                                            style={{ whiteSpace: "pre" }}
+                                        >
+                                            <tspan x="17.418" y="89.4">
+                                                $ {myState?.product?.productPrice?.toFixed(2) ?? ""}
+                                            </tspan>
+                                        </text>
+                                        <rect width="102.333" height="111" x="112.333" fill="#F8FAFC" rx="8"></rect>
+                                        <path
+                                            fill="url(#paint1_radial_29_10251)"
+                                            fillRule="evenodd"
+                                            d="M154.195 17.476q5.371-.035 10.735.07a.55.55 0 0 1 .164.212l.047 2.625q1.482 1.441 1.64 3.515l.047 1.828a5.3 5.3 0 0 1 1.945.914q.446.387.586.961l.047 2.485q3.43-.664 5.016 2.437 1.116 3.308-1.711 5.32-2.295 1.274-4.547-.07a7.8 7.8 0 0 1-4.734.54q-3.914-.756-2.813-4.665-3.258.012-6.515-.023-1.444-.295-1.852-1.711a379 379 0 0 1 0-8.39 5.25 5.25 0 0 1 1.594-3.141l.047-2.625a.54.54 0 0 1 .304-.282m.188 3.47q5.109-.012 10.219.022a4.55 4.55 0 0 1 1.382 2.977q.036.82.024 1.64a8.15 8.15 0 0 0-3.75.446 3.64 3.64 0 0 0-1.383 1.008 2.2 2.2 0 0 0-.234.562q-.036 1.407-.024 2.813h-7.64q-.031-3.4.07-6.797a4.96 4.96 0 0 1 1.336-2.672m7.031 8.343a6.4 6.4 0 0 0 3.586.937 6.14 6.14 0 0 0 3.539-.937q.082.396.024.797-.241.498-.727.773-2.53 1.124-5.156.234a2.12 2.12 0 0 1-1.242-1.007q-.036-.398-.024-.797m0 2.062a6.6 6.6 0 0 0 3.563.938q.9-.026 1.781-.164-.327.63-.516 1.312a7.1 7.1 0 0 1-3.562-.281 2.8 2.8 0 0 1-1.102-.727l-.14-.28q-.036-.399-.024-.798m9 0a.41.41 0 0 1 .399.282q.035.303.023.609.282-.012.562.023.47.33 0 .657-.632.022-1.265.047l-.07.07a2.6 2.6 0 0 0 0 .703q1.989-.072 1.5 1.875a.96.96 0 0 1-.727.516q.012.329-.023.656-.328.468-.657 0-.035-.327-.023-.656a1.8 1.8 0 0 1-.656-.07q-.324-.401.14-.61l1.266-.047q.08-.381.023-.773l-.07-.07q-1.79.155-1.477-1.618a.98.98 0 0 1 .727-.703q.058-.326.07-.656a.6.6 0 0 1 .258-.235m-9 2.063a6.6 6.6 0 0 0 3.563.937q.635-.02 1.265-.093a3 3 0 0 0 .188 1.195 7.16 7.16 0 0 1-3.61-.188 3 3 0 0 1-1.242-.773l-.14-.281q-.036-.398-.024-.797m0 2.062a6.9 6.9 0 0 0 3.563.938q.851-.026 1.687-.188.354.509.797.961a6.83 6.83 0 0 1-4.313.235 3.45 3.45 0 0 1-1.523-.82 1.7 1.7 0 0 1-.187-.329q-.036-.397-.024-.797"
+                                            clipRule="evenodd"
+                                        ></path>
+                                        <path
+                                            fill="url(#paint2_radial_29_10251)"
+                                            fillRule="evenodd"
+                                            d="M158.789 22.352a.58.58 0 0 1 .492.14q.1.438.071.89.375-.01.75.024.375.353 0 .704l-.188.046-1.406.047a.4.4 0 0 0-.07.117q-.048.375 0 .75a.21.21 0 0 0 .117.118q2.12-.205 1.711 1.898-.175.679-.868.797a6 6 0 0 0-.07.75q-.257.462-.68.14l-.07-.14q-.035-.375-.023-.75-.33.012-.657-.023-.532-.343-.046-.75l1.5-.047.117-.118a3.4 3.4 0 0 0 0-.797l-.117-.117q-2.093.228-1.711-1.851.185-.712.914-.797-.012-.4.023-.797a.52.52 0 0 1 .211-.234"
+                                            clipRule="evenodd"
+                                        ></path>
+                                        <text
+                                            xmlSpace="preserve"
+                                            fill="#65717B"
+                                            fontFamily="Poppins"
+                                            fontSize="10"
+                                            fontWeight="300"
+                                            letterSpacing="0em"
+                                            style={{ whiteSpace: "pre" }}
+                                        >
+                                            <tspan x="132.455" y="59">
+                                                Commission
+                                            </tspan>
+                                        </text>
+                                        <text
+                                            xmlSpace="preserve"
+                                            fill="#262B30"
+                                            fontFamily="Poppins"
+                                            fontSize="14"
+                                            fontWeight="bold"
+                                            letterSpacing="0em"
+                                            style={{ whiteSpace: "pre" }}
+                                        >
+                                            <tspan x="129.751" y="89.4">
+                                                $ {myState?.commission?.toFixed(2) ?? ""}
+                                            </tspan>
+                                        </text>
+                                        <rect width="102.333" height="111" x="224.667" fill="#F8FAFC" rx="8"></rect>
+                                        <path
+                                            fill="url(#paint3_radial_29_10251)"
+                                            fillRule="evenodd"
+                                            d="M273.466 16.726q1.323-.186 1.711 1.078.242.322.633.211.894-.609 1.781 0 .622.627.352 1.477l-1.43 3.82q1.429.396 1.078 1.828a8.08 8.08 0 0 1 3.563 3.446q1.994.039 3.984.117.775.258.961 1.055.046 3.585 0 7.171-.194.827-1.008 1.055l-5.765.047a6.6 6.6 0 0 1-3.094 1.172q-2.391.047-4.781 0-3.324-.465-5.086-3.305-1.374-2.57-.61-5.39 1.026-3.615 4.336-5.368-.33-1.425 1.078-1.828a305 305 0 0 1-1.476-4.008q-.106-1.675 1.57-1.57.332.084.609.281.392.111.633-.21.203-.8.961-1.079m-2.203 7.36q2.602-.012 5.203.023.625.3.305.914a.8.8 0 0 1-.258.211q-2.649.046-5.297 0-.67-.333-.258-.96a1 1 0 0 1 .305-.188m-.75 1.734.516.211q2.813.046 5.625 0 .243-.086.468-.211a7.73 7.73 0 0 1 3.141 2.79 64 64 0 0 1-3.469 0q-1.845-1.407-4.125-.892-3.338 1.062-3.562 4.57.114 2.902 2.648 4.266.045 1.077 1.055 1.43l4.828.047a6.3 6.3 0 0 1-2.156.422 57 57 0 0 1-3.281 0q-3.46-.165-5.227-3.117-1.232-2.594-.234-5.297 1.086-2.832 3.773-4.219m3.281 2.531q.699.025 1.36.258-1.174.007-2.344.094a1.3 1.3 0 0 0-.961.914 203 203 0 0 0-.094 6q-2.223-1.541-1.734-4.219.854-2.812 3.773-3.047m.891 1.078h8.531q.34 1.757 2.086 2.157a44 44 0 0 1-.023 3.515q-1.699.41-2.063 2.11h-8.531q-.365-1.702-2.063-2.11a44 44 0 0 1-.023-3.515q1.75-.402 2.086-2.157m8.203 3.61q.587.013.328.539-.384.171-.515-.235a.65.65 0 0 1 .187-.304"
+                                            clipRule="evenodd"
+                                        ></path>
+                                        <path
+                                            fill="url(#paint4_radial_29_10251)"
+                                            fillRule="evenodd"
+                                            d="M278.763 30.32q2.646.087 3.211 2.672.274-.699 1.031-.75 1.252.15 1.078 1.406-.343.882-1.289.774a1.09 1.09 0 0 1-.82-.727q-.5 2.47-3 2.625-2.004-.04-2.812-1.875a3 3 0 0 1-.188-.797q-.345.882-1.289.774-1.095-.35-.82-1.477.516-.984 1.57-.586.4.237.539.68.407-2.376 2.789-2.719m.141.985a.38.38 0 0 0-.258.234q-.035.21-.023.422a.4.4 0 0 0-.235.07.84.84 0 0 0-.328.774q.045 1.028 1.078.89.006.19.047.375a9 9 0 0 0-.891.024.33.33 0 0 0-.164.117q-.13.585.493.562-.127.654.515.54a.95.95 0 0 0 .235-.586.93.93 0 0 0 .445-.47q.047-.375 0-.75-.318-.656-1.055-.515v-.375q.423.012.844-.023a.33.33 0 0 0 .164-.117q.191-.595-.445-.563.082-.517-.422-.61m3.984 1.734a.65.65 0 0 0-.187.305q.132.406.515.234.259-.525-.328-.539"
+                                            clipRule="evenodd"
+                                        ></path>
+                                        <text
+                                            xmlSpace="preserve"
+                                            fill="#65717B"
+                                            fontFamily="Poppins"
+                                            fontSize="10"
+                                            fontWeight="300"
+                                            letterSpacing="0em"
+                                            style={{ whiteSpace: "pre" }}
+                                        >
+                                            <tspan x="248.27" y="59">
+                                                Total Value
+                                            </tspan>
+                                        </text>
+                                        <text
+                                            xmlSpace="preserve"
+                                            fill="#262B30"
+                                            fontFamily="Poppins"
+                                            fontSize="14"
+                                            fontWeight="bold"
+                                            letterSpacing="0em"
+                                            style={{ whiteSpace: "pre" }}
+                                        >
+                                            <tspan x="242.084" y="89.4">
+                                                $ {(
+                                                    (myState?.product?.productPrice ?? 0) +
+                                                    (myState?.commission ?? 0)
+                                                ).toFixed(2)}
+                                            </tspan>
+                                        </text>
+                                        <defs>
+                                            <radialGradient
+                                                id="paint0_radial_29_10251"
+                                                cx="0"
+                                                cy="0"
+                                                r="1"
+                                                gradientTransform="matrix(11.2511 0 0 10.0406 51.144 27.983)"
+                                                gradientUnits="userSpaceOnUse"
                                             >
-                                                <path
-                                                    stroke="#AE9570"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeMiterlimit="10"
-                                                    strokeWidth="0.75"
-                                                    d="M8.292 3.292c1.772 0 3.208-.513 3.208-1.146S10.064 1 8.292 1s-3.209.513-3.209 1.146S6.52 3.292 8.292 3.292"
-                                                ></path>
-                                                <path
-                                                    stroke="#AE9570"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeMiterlimit="10"
-                                                    strokeWidth="0.75"
-                                                    d="M5.083 2.375V3.75c0 .633 1.436 1.146 3.209 1.146 1.772 0 3.208-.513 3.208-1.146V2.375"
-                                                ></path>
-                                                <path
-                                                    stroke="#AE9570"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeMiterlimit="10"
-                                                    strokeWidth="0.75"
-                                                    d="M6.814 6.371c.442.082.945.129 1.478.129 1.772 0 3.208-.513 3.208-1.146V3.98M5.083 3.98v.978"
-                                                ></path>
-                                                <path
-                                                    stroke="#AE9570"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeMiterlimit="10"
-                                                    strokeWidth="0.75"
-                                                    d="M6.922 7.995c.416.07.88.11 1.37.11 1.772 0 3.208-.514 3.208-1.147V5.583"
-                                                ></path>
-                                                <path
-                                                    stroke="#AE9570"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeMiterlimit="10"
-                                                    strokeWidth="0.75"
-                                                    d="M6.905 9.596c.42.072.89.112 1.387.112 1.772 0 3.208-.513 3.208-1.146V7.188M3.708 7.188c1.772 0 3.209-.513 3.209-1.146S5.48 4.896 3.708 4.896.5 5.409.5 6.042s1.436 1.146 3.208 1.146"
-                                                ></path>
-                                                <path
-                                                    stroke="#AE9570"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeMiterlimit="10"
-                                                    strokeWidth="0.75"
-                                                    d="M.5 6.27v1.376c0 .633 1.436 1.146 3.208 1.146s3.209-.513 3.209-1.146V6.27"
-                                                ></path>
-                                                <path
-                                                    stroke="#AE9570"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeMiterlimit="10"
-                                                    strokeWidth="0.75"
-                                                    d="M.5 7.875V9.25c0 .633 1.436 1.146 3.208 1.146s3.209-.513 3.209-1.146V7.875"
-                                                ></path>
-                                                <path
-                                                    stroke="#AE9570"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeMiterlimit="10"
-                                                    strokeWidth="0.75"
-                                                    d="M.5 9.48v1.374C.5 11.487 1.936 12 3.708 12s3.209-.513 3.209-1.146V9.48"
-                                                ></path>
-                                            </svg>
-                                        </div>
-                                        <div className='products-details-grand-child'>
-                                            <h3>{info?.sales}</h3>
-                                            <p>Sales</p>
-                                        </div>
-                                    </div>
-                                    <div className='products-details-sub-child'>
-                                        <div className='products-details-grand-child'>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 12 12"
+                                                <stop stopColor="#8556FF"></stop>
+                                                <stop offset="1" stopColor="#6B3EFF"></stop>
+                                            </radialGradient>
+                                            <radialGradient
+                                                id="paint1_radial_29_10251"
+                                                cx="0"
+                                                cy="0"
+                                                r="1"
+                                                gradientTransform="matrix(11.2556 0 0 10.4977 163.482 27.965)"
+                                                gradientUnits="userSpaceOnUse"
                                             >
-                                                <path
-                                                    stroke="#AE9570"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeMiterlimit="10"
-                                                    strokeWidth="0.75"
-                                                    d="m6.324 1.21 1.265 2.687a.36.36 0 0 0 .272.207l2.83.43c.296.046.414.427.2.646L8.843 7.27a.39.39 0 0 0-.104.335l.483 2.952c.05.309-.258.545-.523.399L6.168 9.562a.35.35 0 0 0-.336 0l-2.53 1.394c-.265.145-.575-.09-.524-.399l.483-2.952a.39.39 0 0 0-.104-.335L1.11 5.18c-.214-.22-.096-.6.2-.645l2.83-.431a.36.36 0 0 0 .272-.207L5.676 1.21a.354.354 0 0 1 .648 0"
-                                                ></path>
-                                            </svg>
-                                        </div>
-                                        <div className='products-details-grand-child'>
-                                            <h3>{info?.popularity} %</h3>
-                                            <p>Popularity</p>
-                                        </div>
-                                    </div>
-                                    <div className='products-details-sub-child'>
-                                        <div className='products-details-grand-child'>
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 10 10"
+                                                <stop stopColor="#8556FF"></stop>
+                                                <stop offset="1" stopColor="#6B3EFF"></stop>
+                                            </radialGradient>
+                                            <radialGradient
+                                                id="paint2_radial_29_10251"
+                                                cx="0"
+                                                cy="0"
+                                                r="1"
+                                                gradientTransform="matrix(1.37506 0 0 3.28072 158.957 25.625)"
+                                                gradientUnits="userSpaceOnUse"
                                             >
-                                                <path
-                                                    fill="#AE9570"
-                                                    d="M5 0a5 5 0 1 0 0 10A5 5 0 0 0 5 0m0 9.167A4.167 4.167 0 1 1 5 .833a4.167 4.167 0 0 1 0 8.334"
-                                                ></path>
-                                                <path
-                                                    fill="#AE9570"
-                                                    d="M5.417 4.827V2.5a.417.417 0 0 0-.834 0V5c0 .11.044.216.122.295l1.25 1.25a.417.417 0 0 0 .59-.59z"
-                                                ></path>
-                                            </svg>
-                                        </div>
-                                        <div className='products-details-grand-child'>
-                                            <h3>{info?.date?.toLocaleString()}</h3>
-                                            <p>Date</p>
-                                        </div>
-                                    </div>
+                                                <stop stopColor="#8556FF"></stop>
+                                                <stop offset="1" stopColor="#6B3EFF"></stop>
+                                            </radialGradient>
+                                            <radialGradient
+                                                id="paint3_radial_29_10251"
+                                                cx="0"
+                                                cy="0"
+                                                r="1"
+                                                gradientTransform="matrix(10.32 0 0 11.2621 275.802 27.964)"
+                                                gradientUnits="userSpaceOnUse"
+                                            >
+                                                <stop stopColor="#8556FF"></stop>
+                                                <stop offset="1" stopColor="#6B3EFF"></stop>
+                                            </radialGradient>
+                                            <radialGradient
+                                                id="paint4_radial_29_10251"
+                                                cx="0"
+                                                cy="0"
+                                                r="1"
+                                                gradientTransform="matrix(5.14742 0 0 3 278.957 33.32)"
+                                                gradientUnits="userSpaceOnUse"
+                                            >
+                                                <stop stopColor="#8556FF"></stop>
+                                                <stop offset="1" stopColor="#6B3EFF"></stop>
+                                            </radialGradient>
+                                            <clipPath id="clip0_29_10251">
+                                                <path fill="#fff" d="M39.167 16h24v24h-24z"></path>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+
+                                <OptimizeCard onComplete={setOptimizedComplete} />
+
+                                <div
+                                    className={`subjourbtn ${!optimizedComplete ? "disabled" : ""
+                                        }`}
+                                >
+
+                                    <form action={handleForm} translate="no">
+
+                                        {
+                                            isPressed
+                                                ? (
+                                                    <div className="isPressedValidation">
+                                                        <p>
+                                                            Processing Please Wait
+                                                            <i className="fa fa-circle-notch rotating-spinner"></i>
+                                                        </p>
+                                                    </div>
+                                                )
+                                                : myState?.product?.url
+                                                    ? <Submit />
+                                                    : null
+                                        }
+
+                                    </form>
+
                                 </div>
                             </div>
-                        </div>
-                        <div className='product-name-and-value'>
-                            <div className="product-info-wrapper">
-                                <div className="product-info-parent">
-                                    <div className="product-info-childs">
-                                        <p>Lot Price</p>
-                                    </div>
-                                    <div className="product-info-childs">
-                                        <h3>$ {myState?.product?.productPrice?.toFixed(2) ?? ""}</h3>
-                                    </div>
-                                </div>
-                                <div className="product-info-parent">
-                                    <div className="product-info-childs">
-                                        <p>Dividends</p>
-                                    </div>
-                                    <div className="product-info-childs">
-                                        <h3>$ {myState?.commission?.toFixed(2) ?? ""}</h3>
-                                    </div>
-                                </div>
-                                <div className="product-info-parent">
-                                    <div className="product-info-childs">
-                                        <p>Packages Details</p>
-                                    </div>
-                                    <div className="product-info-childs">
-                                        <h3 style={{ textTransform: "uppercase" }}>RLD{myState?.product?._id?.slice(-4)}</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='boder-line-div'></div>
-                        </div>
-                        <div className="product-review">
-                            <label>Review</label>
-                            <input
-                                placeholder="Write your comment"
-                            />
-                        </div>
-                        <div className="submit-btn">
-                            <form action={handleForm} translate="no">
-                                {
-                                    isPressed
-                                        ?
-                                        <div className="isPressedValidation">
-                                            <p>Processing Please Wait <i className="fa fa-circle-notch rotating-spinner"></i></p>
-                                        </div>
-                                        :
-                                        myState?.product?.url
-                                            ?
-                                            <Submit />
-                                            :
-                                            ""
-                                }
-                            </form>
                         </div>
                     </div>
                 </section>
