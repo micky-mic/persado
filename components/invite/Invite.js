@@ -5,6 +5,8 @@ import Image from 'next/image';
 import bg_texture from "@/public/related_assets/vector/bg_texture.svg";
 import support from "@/public/related_assets/vector/invite.svg";
 import toast from 'react-hot-toast';
+import bgdesign from "@/public/new/bgdesign.svg"
+import invite from "@/public/new/invite.svg"
 
 const Invite = ({ authenticatedUser }) => {
 
@@ -15,38 +17,50 @@ const Invite = ({ authenticatedUser }) => {
 
     return (
         <>
-            <div className="top-deco-image">
+            <section className='invite-page-section' style={{
+                backgroundImage: `url(${bgdesign.src})`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                height: "100vh",
+            }}>
+
+
+
+                {/* <div className="top-deco-image">
                 <Image
                     src={bg_texture}
                     height={100}
                     width={100}
                     alt="deco"
                 />
-            </div>
-            <Breadcrumb
-                title="Invite"
-                link="/dashboard"
-                isColor="#001B38"
-            />
-            <div className="support-wrapper page_animation">
-                <div className="support-wrapper-image">
-                    <Image
-                        src={support}
-                        height={100}
-                        width={100}
-                        alt="deco"
-                    />
+            </div> */}
+                <Breadcrumb
+                    title="Invite"
+                    link="/dashboard"
+                    isColor="#ffffff"
+                />
+                <div className="support-wrapper page_animation">
+                    <div className="support-wrapper-image">
+                        <Image
+                            src={invite}
+                            height={100}
+                            width={100}
+                            alt="deco"
+                        />
+                    </div>
+                    <div className="support-txt">
+                        <h1>REFER A FRIEND</h1>
+                        <h3 className="playfair-font">Invite friend and
+                            get rewards together</h3>
+                    </div>
+                    <div className="working-hrs">
+                        <p>Referral Code</p>
+                        <h3>JD333301</h3>
+                    </div>
+                    <button className="btn global-primary-btn mt2" onClick={() => handleAddFundsClick()}>Refer now</button>
                 </div>
-                <div className="support-txt">
-                    <h3 className="playfair-font">Refer a friend</h3>
-                    <div className="ref-code-wrapper" onClick={() => copyToClipboard(authenticatedUser?.invitation_code ?? "")}>{authenticatedUser?.invitation_code ?? ""}</div>
-                    <p>
-                        Invite your friends <br />
-                        and earn together now
-                    </p>
-                </div>
-                <button className="btn global-primary-btn mt2" onClick={() => copyToClipboard(authenticatedUser?.invitation_code ?? "")}>Copy & Share</button>
-            </div>
+            </section>
         </>
     )
 }

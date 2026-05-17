@@ -3113,17 +3113,33 @@ form {
 
         img {
             height: auto;
-            width: 90%;
+            width: 22rem;
         }
     }
 
     .support-txt {
         text-align: center;
         margin: 4rem 0;
+        align-items: center;
+
+        h1 {
+            font-size: 1.5rem;
+            border-radius: 4px;
+            background: var(--linear, linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%));
+            padding: 0.5rem 2rem;
+            // margin: 0rem 6rem 0rem 6rem;
+            width: max-content;
+            text-align: center;
+            color: white;
+            font-weight: 500;
+            margin: 0 auto;
+            box-shadow: 0 -2px 10px 0 rgba(233, 223, 255, 0.30), 0 -2px 40px 0 rgba(187, 155, 255, 0.15), 0 0.5px 0 0 rgba(255, 255, 255, 0.50) inset;
+        }
 
         h3 {
+            padding: 2rem 2rem;
             font-size: 3rem;
-            color: $txtColor;
+            color: white;
             font-weight: 600;
         }
 
@@ -3146,21 +3162,41 @@ form {
     }
 
     .working-hrs {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         margin-top: 6rem;
 
         p {
-            font-size: 1.4rem;
+            font-size: 2rem;
             font-weight: 300;
+            color: white;
+            text-align: center;
+            padding-bottom: 2rem;
         }
 
         h3 {
-            font-size: 1.8rem;
-            color: $secondaryColor;
+            border-radius: 0.5rem;
+            background: var(--NEwluienar, linear-gradient(90deg, #9747FF 0.12%, #6E41FF 99.92%));
+            font-size: 2.5rem;
+            width: max-content;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            color: white;
             font-weight: 600;
+            margin-bottom: 1rem;
         }
+    }
+
+    button {
+        padding: 1.5rem 2rem;
+        border-radius: 3rem;
+        border: none;
+        width: 100%;
+        cursor: pointer;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #fff;
+        background: radial-gradient(50% 50% at 50% 50%, #8556FF 0%, #6B3EFF 100%);
+
+
     }
 }
 
