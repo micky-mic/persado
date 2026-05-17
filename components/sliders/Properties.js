@@ -5,20 +5,11 @@ import React from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import properyImg1 from "@/public/related_assets/Images/properyImg1.jpeg"
-import properyImg2 from "@/public/related_assets/Images/properyImg2.png"
-import properyImg3 from "@/public/related_assets/Images/properyImg3.jpeg"
-import properyImg4 from "@/public/related_assets/Images/properyImg4.jpeg"
-import properyImg5 from "@/public/related_assets/Images/properyImg5.jpeg"
-import properyImg6 from "@/public/related_assets/Images/properyImg6.jpeg"
-import properyImg7 from "@/public/related_assets/Images/properyImg7.jpeg"
-import properyImg8 from "@/public/related_assets/Images/properyImg8.jpeg"
-import properyImg9 from "@/public/related_assets/Images/properyImg9.jpeg"
-import properyImg10 from "@/public/related_assets/Images/properyImg10.jpeg"
-import properyImg11 from "@/public/related_assets/Images/properyImg11.jpeg"
-import properyImg12 from "@/public/related_assets/Images/properyImg12.jpeg"
-
-
+import sponser1 from "@/public/new/dashboard/sponser1.png"
+import sponser2 from "@/public/new/dashboard/sponser2.png"
+import sponser3 from "@/public/new/dashboard/sponser3.png"
+import sponser4 from "@/public/new/dashboard/sponser4.png"
+import sponser5 from "@/public/new/dashboard/sponser5.png"
 
 const Properties = () => {
 
@@ -53,73 +44,55 @@ const Properties = () => {
         <>
             <div className="destination-wrapper">
                 <div className="destination-title">
-                    <h1 className='playfair-font'>Explore What We Create</h1>
+                    <h1 className='playfair-font'>Featured in</h1>
                 </div>
                 <Slider {...settings}>
                     <div className="destination-details-wrapper">
                         <Image
-                            src={properyImg1}
+                            src={sponser1}
                             height={100}
                             width={100}
                             alt="white"
                             unoptimized
                         />
-                        <div className="destination-details">
-                            <h3>Luxury
-                                Condiminiums</h3>
-                        </div>
                     </div>
                     <div className="destination-details-wrapper">
                         <Image
-                            src={properyImg2}
+                            src={sponser2}
                             height={100}
                             width={100}
                             alt="white"
                             unoptimized
                         />
-                        <div className="destination-details">
-                            <h3>Luxury
-                                Rentals </h3>
-                        </div>
                     </div>
                     <div className="destination-details-wrapper">
                         <Image
-                            src={properyImg3}
+                            src={sponser3}
                             height={100}
                             width={100}
                             alt="white"
                             unoptimized
                         />
-                        <div className="destination-details">
-                            <h3>City
-                                Centers </h3>
-                        </div>
                     </div>
                     <div className="destination-details-wrapper">
                         <Image
-                            src={properyImg4}
+                            src={sponser4}
                             height={100}
                             width={100}
                             alt="white"
                             unoptimized
                         />
-                        <div className="destination-details">
-                            <h3>Mixed-Use </h3>
-                        </div>
                     </div>
                     <div className="destination-details-wrapper">
                         <Image
-                            src={properyImg5}
+                            src={sponser5}
                             height={100}
                             width={100}
                             alt="white"
                             unoptimized
                         />
-                        <div className="destination-details">
-                            <h3>Office </h3>
-                        </div>
                     </div>
-                    <div className="destination-details-wrapper">
+                    {/* <div className="destination-details-wrapper">
                         <Image
                             src={properyImg6}
                             height={100}
@@ -206,7 +179,7 @@ const Properties = () => {
                             <h3>Affordable
                                 Housing </h3>
                         </div>
-                    </div>
+                    </div> */}
                 </Slider>
             </div>
         </>

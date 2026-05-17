@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import Link from 'next/link';
 import ConfirmModal from '../successModal/ConfirmModal';
 import user_profile from "@/public/related_assets/user_profile.jpg"
+import menubar from "@/public/new/dashboard/menubar.png"
 // import membership_bg from "@/public/related_assets/vector/sidebar-card-vector.svg"
 
 // import vip1 from "@/public/related_assets/icons/beginnerIcon.png";
@@ -51,7 +52,7 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                 <Pop
                     pop={JSON.parse(JSON.stringify(pop))}
                 />
-                <svg onClick={() => setIsNav(true)}
+                {/* <svg onClick={() => setIsNav(true)}
                     xmlns="http://www.w3.org/2000/svg"
                     width="26"
                     height="6"
@@ -62,7 +63,14 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                         fill="#fff"
                         d="M2.6 5.2a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2M13 5.2A2.6 2.6 0 1 0 13 0a2.6 2.6 0 0 0 0 5.2M23.4 5.2a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2"
                     ></path>
-                </svg>
+                </svg> */}
+                <Image className="menubar" onClick={() => setIsNav(true)}
+                    src={menubar}
+                    alt='menu'
+                    width={100}
+                    height={100}
+                    unoptimized
+                />
                 {
                     isNav ? <div className="sidebar-overlay" onClick={() => setIsNav(false)}></div> : <></>
                 }

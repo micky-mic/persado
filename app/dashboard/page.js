@@ -2,7 +2,7 @@ import { auth } from "../auth";
 import { fetchAuthenticatedUser, fetchCommission } from "../actions/user/data";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/related_assets/logo/white_logo.svg"
+import logo from "@/public/new/logo.png"
 import dash_img1 from "@/public/related_assets/Images/dashImg1.jpeg"
 import dash_img2 from "@/public/related_assets/Images/dashImg2.jpeg"
 import dash_img3 from "@/public/related_assets/Images/dashImg3.jpeg"
@@ -14,6 +14,13 @@ import dealingRecord from "@/public/related_assets/icons/dealingRecord.svg"
 import profileIcon from "@/public/related_assets/icons/profileIcon.svg"
 import user_profile from "@/public/related_assets/user_profile.jpg"
 import Footer from "@/components/footer/Footer";
+import welbg from "@/public/new/dashboard/dash_back.svg"
+import dashimg1 from "@/public/new/dashboard/dashcenterimg1.png"
+import dashimg2 from "@/public/new/dashboard/dashcenterimg2.png"
+import dashimagecenter from "@/public/new/dashboard/dash_image_center.png"
+import centerimagedash from "@/public/new/dashboard/centerimagedash.png"
+
+
 
 import dynamic from "next/dynamic";
 import GlobalProgress from "@/components/global_progress/GlobalProgress";
@@ -37,6 +44,27 @@ const Sidebar = dynamic(() => import("@/components/sidebar/Sidebar"), {
     loading: () => <GlobalProgress />,
 });
 
+
+
+const sections = [
+    {
+        title: "Meet Nexos.ai",
+        description1:
+            "Nexos.ai gives businesses unified access to today’s leading Large Language Models and allows to centralize AI operations with a single secure AI platform — manage AI workloads, enforce policies, and maintain control over organization’s AI ecosystem.",
+        description2:
+            "With one simple workspace, your team can collaborate with AI, save time on repetitive work, and turn ideas into results faster. Easy, efficient, and built for modern marketing teams.",
+        image: dashimg1,
+    },
+    {
+        title: "Marketing in the age of AI",
+        description1:
+            "Marketing in the AI era should be simpler, faster, and more accessible for every business. At nexos.ai, we help companies increase exposure, improve performance, and grow revenue through one unified AI marketing platform.",
+        description2:
+            "By reducing manual work and simplifying execution, nexos.ai gives businesses the tools to market smarter, reach more people, and unlock stronger results with greater efficiency.",
+        image: dashimg2,
+    },
+];
+
 const page = async () => {
 
     const { user } = await auth();
@@ -50,7 +78,13 @@ const page = async () => {
         <>
             {/* <Alert user={JSON.parse(JSON.stringify(authenticatedUser))}/> */}
             <div className="dashboard-wrapper page_animation">
-                <div className="dashboard-top-navbar">
+                <div className="dashboard-page-wrapper" >
+
+                </div>
+                <div className="dashboard-top-navbar"
+                    style={{
+                        backgroundImage: `url(${welbg.src})`,
+                    }}>
                     <div className="dashboard-top-navbar-parent">
                         <div className="dashboard-top-navbar-childs">
                             <Image
@@ -70,9 +104,20 @@ const page = async () => {
                                 pop={JSON.parse(JSON.stringify(pop))}
                             />
                         </div>
+
+                    </div>
+                    <div className="dash-heading-parent">
+                        <div className="dash-heading-child">
+                            <div className="dash-heading-subchild">
+                                <h1>All-in-one AI platform for limitless you</h1>
+                            </div>
+                            <div className="dash-heading-subchild">
+                                <p>Keep work moving with AI Agents and no-code automation. Manage everything from one AI platform.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="profile-welcome">
+                {/* <div className="profile-welcome">
                     <div className="profile-child">
                         <h2 className="playfair-font">Welcome back,</h2>
                         <p>{authenticatedUser?.username ?? ""}</p>
@@ -99,9 +144,9 @@ const page = async () => {
                             }
                         </Link>
                     </div>
-                </div>
+                </div> */}
                 <div className="dashboard-wrapper-inner-wrapper">
-                    <div className="dashboard-quick-actions">
+                    {/* <div className="dashboard-quick-actions">
                         <div className="dashboard-quick-actions-parent">
                             <Link href="/dashboard">
                                 <div className="dashboard-quick-actions-inner-childs">
@@ -152,9 +197,9 @@ const page = async () => {
                                 <p>Profile</p>
                             </Link>
                         </div>
-                    </div>
-                    <LuckyDraw user={JSON.parse(JSON.stringify(authenticatedUser))} />
-                    <div className="dashboard-img-wrapper">
+                    </div> */}
+                    {/* <LuckyDraw user={JSON.parse(JSON.stringify(authenticatedUser))} /> */}
+                    {/* <div className="dashboard-img-wrapper">
                         <div className="dash-heading-title">
                             <h1 className="playfair-font">Celebrating the communities <br />
                                 who inspire and uplift us every day
@@ -168,19 +213,45 @@ const page = async () => {
                                 unoptimized
                             />
                         </div>
-                    </div>
+                    </div> */}
                     {/* <Membership
                         allCommission={JSON.parse(JSON.stringify(allCommission))}
                         userCommission={JSON.parse(JSON.stringify(userCommission))}
                     /> */}
-                    <div className="info-video-wrapper mt2">
+                    {/* <div className="info-video-wrapper mt2">
                         <video width="100%" height="100%" muted autoPlay loop controls playsInline>
                             <source src="/related_assets/dash_video.mp4" type="video/mp4" />
                         </video>
-                    </div>
+                    </div> */}
                     <Properties />
-                    <UniqueProperties />
-                    <div className="dashboard-img-info">
+                    <div className="dash-center-wrapper">
+                        {sections.map((item, index) => (
+                            <div className="dash-center-parent" key={index}>
+                                <div className="dash-center-child">
+                                    <div className="dash-center-title">
+                                        <h2>{item.title}</h2>
+                                    </div>
+
+                                    <p>{item.description1}</p>
+                                    <br />
+
+                                    <p>{item.description2}</p>
+                                </div>
+
+                                <div className="dash-center-child">
+                                    <Image
+                                        src={item.image}
+                                        alt={item.title}
+                                        width={100}
+                                        height={100}
+                                        unoptimized
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    {/* <UniqueProperties /> */}
+                    {/* <div className="dashboard-img-info">
                         <div className="dash-info-title">
                             <h1 className="playfair-font">What’s Happening Around</h1>
                             <Image
@@ -256,6 +327,29 @@ const page = async () => {
                                 <br /> <br />
                                 Working in a 50/50 partnership with Dream Development, the project will bring a total of 402 income-restricted condos and apartments over 5 buildings, 20,000 square feet of retail and community space and more than one acre of public green space to the neighborhood. This milestone is a major step towards securing funding from the Massachusetts Office of Housing, which will help realize the project
                                 in full.</p>
+                        </div>
+                    </div> */}
+
+                    <div className="dash-img-center-parent">
+                        <div className="dash-img-center-child">
+                            <Image
+                                src={dashimagecenter}
+                                alt="img"
+                                width={100}
+                                height={100}
+                                unoptimized
+                            />
+                        </div>
+                    </div>
+                    <div className="img-center-dash">
+                        <div className="img-center-child-dash">
+                            <Image
+                                src={centerimagedash}
+                                alt="img"
+                                width={100}
+                                height={100}
+                                unoptimized
+                            />
                         </div>
                     </div>
                 </div>

@@ -729,8 +729,23 @@ form {
 .dashboard-wrapper {
 
     .dashboard-top-navbar {
-        background: linear-gradient(180deg, #174666 0%, #0E2237 100%);
+        width: 100%;
+        min-height: 100vh;
+        object-fit: cover;
+        // background: linear-gradient(180deg, #174666 0%, #0E2237 100%);
         padding: 1rem 2rem 1.5rem 2rem;
+        height: auto;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+
+        overflow: hidden;
+        padding-bottom: 5rem;
+
 
         .mysvg {
             height: auto;
@@ -752,7 +767,23 @@ form {
             .dashboard-top-navbar-childs {
                 img {
                     height: auto;
-                    width: 100%;
+                    width: 55%;
+                }
+            }
+        }
+    }
+
+    .dash-heading-parent {
+        padding: 5rem 1.2rem 0rem 2rem;
+
+        .dash-heading-child {
+            .dash-heading-subchild {
+                font-size: 1.7rem;
+                text-align: center;
+                color: white;
+
+                &:last-child {
+                    font-size: 2rem;
                 }
             }
         }
@@ -856,6 +887,56 @@ form {
                 width: 100%;
             }
         }
+
+        .dash-center-wrapper{
+            padding: 1rem 1rem;
+            .dash-center-parent{
+                padding-bottom: 2rem;
+                .dash-center-child{
+                    .dash-center-title{
+                        h2{
+                            font-size: 2.5rem;
+                            padding-bottom: 1rem;
+                        }
+                    }
+                    p{
+                        font-size: 1.8rem;
+                        color: #707070;
+                    }
+                    &:last-child{
+                        padding: 0rem 2rem;
+                        display: flex;
+                        justify-content: flex-end;
+                        img{
+                            width: 70%;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+        .dash-img-center-parent{
+            padding: 1rem 1rem;
+            .dash-img-center-child{
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .img-center-dash{
+            padding: 0%;
+            .img-center-child-dash{
+                img{
+                    width: 100% !important;
+                    height: auto;
+                }
+            }
+        }
+
+
+
+
     }
 }
 
@@ -1071,10 +1152,16 @@ form {
             }
         }
     }
+    .menubar{
+        img{
+            height: 3rem;
+            width: 100%;
+        }
+    }
 
-    svg {
-        height: 2.2rem;
-        width: 2.2rem;
+    img {
+        height: 2rem;
+        width: 2rem;
         cursor: pointer;
     }
 }
@@ -1442,10 +1529,11 @@ form {
             }
         }
 
-        .genbtn{
+        .genbtn {
             padding: 0rem 3rem;
             padding-top: 0.6rem;
-            button{
+
+            button {
                 border-radius: 1rem;
             }
         }
@@ -2669,12 +2757,13 @@ form {
 }
 
 .destination-title {
+    text-align: center;
     margin-top: 2rem;
     margin-bottom: 1rem;
 
     h1 {
-        color: $secondaryColor;
-        font-size: 2.2rem;
+        color: #262B30;
+        font-size: 3rem;
         font-weight: 500;
     }
 
@@ -2686,16 +2775,12 @@ form {
 
 
 .destination-details-wrapper {
-    border: 2px solid #AE9570;
-    display: flex !important;
     align-items: center;
-    padding: 1rem;
     gap: 0.5rem;
 
     img {
-        height: 8rem;
-        width: 8rem;
-        object-fit: cover;
+        height: 10rem;
+        width: 100%;
         object-position: center;
     }
 
