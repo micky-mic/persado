@@ -6,13 +6,13 @@ import toast from 'react-hot-toast';
 import Link from 'next/link';
 import ConfirmModal from '../successModal/ConfirmModal';
 import user_profile from "@/public/related_assets/user_profile.jpg"
-// import membership_bg from "@/public/related_assets/vector/sidebar-card-vector.svg"
-
-// import vip1 from "@/public/related_assets/icons/beginnerIcon.png";
-// import vip2 from "@/public/related_assets/icons/silverIcon.png";
-// import vip3 from "@/public/related_assets/icons/goldIcon.png";
-// import vip4 from "@/public/related_assets/icons/platinumIcon.png";
 import Pop from '../notification/Pop';
+import logo from '@/public/new/logo.png'
+import sidelogo from '@/public/new/sidelogo.png'
+import vip1 from '@/public/new/vip1.png'
+import vip2 from '@/public/new/vip2.png'
+import vip3 from '@/public/new/vip3.png'
+import vip4 from '@/public/new/vip4.png'
 
 const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, pop }) => {
     const [isNav, setIsNav] = useState(false);
@@ -37,6 +37,18 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
         setUserMembership(data[0] || {});
 
     }, [userCommission, allCommission]);
+
+
+    const membershipName = allCommission?.map((item) => ({
+        membership_name: item.membership_name
+    }));
+    const membershipRate = allCommission?.map((item) => ({
+        ticket_commission: item.ticket_commission
+    }));
+
+    console.log(membershipName);
+    console.log(membershipRate);
+
 
     return (
         <>
@@ -71,132 +83,169 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                         ?
                         <>
                             <div className="sidebar-weapper">
-                                <div className={isNav ? "sidebar-inner-wrapper rightVal" : "sidebar-inner-wrapper"}>
-                                    <div className="sidebar-close-btn">
-                                        <i onClick={() => setIsNav(false)} className="fa fa-arrow-left"></i>
-                                        <h3 className="playfair-font">Back to Homepage</h3>
-                                    </div>
-                                    <div className="sidebar-user-detail-parent">
-                                        <div className="sidebar-user-detail-childs">
-                                            {
-                                                authenticatedUser?.url === null
-                                                    ?
-                                                    <Link href="/dashboard/profile">
-                                                        <Image
-                                                            src={user_profile}
-                                                            alt="logo"
-                                                            height={100}
-                                                            width={100}
-                                                        />
-                                                    </Link>
-                                                    :
-                                                    <Link href="/dashboard/profile">
-                                                        <Image
-                                                            src={authenticatedUser?.url ?? ""}
-                                                            alt="logo"
-                                                            height={100}
-                                                            width={100}
-                                                        />
-                                                    </Link>
-                                            }
-                                        </div>
-                                        <div className="sidebar-user-detail-childs">
-                                            <h3 className="playfair-font">{session?.username}</h3>
-                                            <p onClick={() => copyToClipboard(session?.invitation_code ?? "")}>{session?.invitation_code ?? ""}</p>
-                                        </div>
-                                    </div>
-                                    <div className="credibility-wrapper">
-                                        <div className="credibility-wrapper-wrapper">
-                                            <div className="credibility-wrapper-childs" style={{ width: `${session?.credibility}%` }}>
-                                                <p>{session?.credibility}%</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        {
-                                            authenticatedUser?.username === "Arelated25"
-                                                ?
-                                                <>
-                                                </>
-                                                :
-                                                <Link href="/dashboard/profile">
-                                                    <li><h2 className='playfair-font'>Profile</h2></li>
-                                                </Link>
-                                        }
-                                        <Link href="/dashboard/withdrawal">
-                                            <li><h2 className='playfair-font'>Withdraw</h2></li>
-                                        </Link>
-                                        <Link href="/dashboard/recharge">
-                                            <li><h2 className='playfair-font'>Recharge</h2></li>
-                                        </Link>
-                                        <Link href="/dashboard/withdrawal/linkwallet">
-                                            <li><h2 className='playfair-font'>Link Wallet</h2></li>
-                                        </Link>
-                                        <Link href="/dashboard/content/about">
-                                            <li><h2 className='playfair-font'>About Us</h2></li>
-                                        </Link>
-                                        <Link href="/dashboard/content/tc">
-                                            <li><h2 className='playfair-font'>Terms & Conditions</h2></li>
-                                        </Link>
-                                        <Link href="/dashboard/content/faq">
-                                            <li><h2 className='playfair-font'>FAQ</h2></li>
-                                        </Link>
-                                        <Link href="/dashboard/invite">
-                                            <li><h2 className='playfair-font'>Invitation</h2></li>
-                                        </Link>
-                                        <Link href="/dashboard/recovery/changePassword">
-                                            <li><h2 className='playfair-font'>Security</h2></li>
-                                        </Link>
-                                        <Link href="/dashboard/support">
-                                            <li><h2 className='playfair-font'>Support</h2></li>
-                                        </Link>
-                                        <Link href="/dashboard/certificate">
-                                            <li><h2 className='playfair-font'>Certificate</h2></li>
-                                        </Link>
-                                    </ul>
-                                    {/* <div className='membership-status-wrapper'>
-                                        <p className="my-membership">My Membership</p>
-                                        <div className='staus-background'>
+                                <div className={isNav ? "mobile-menu rightVal" : "mobile-menu"}>
+                                    <div className="mobile-menu__wrapper">
+
+                                        {/* Header */}
+                                        <div className="mobile-menu__header">
                                             <Image
-                                                src={membership_bg}
-                                                alt='bg'
+                                                src={logo}
+                                                alt="logo"
                                                 height={100}
                                                 width={100}
                                                 unoptimized
-                                                className="staus-background-image"
+                                                className="mobile-menu__logo"
                                             />
-                                            <div className='status-details'>
-                                                <h3>{userMembership?.membership_name ?? "Loading..."}</h3>
-                                                <p>{(userMembership?.commission_rate) * 100 ?? "Loading..."}%</p>
-                                            </div>
-                                            <div className='level-image'>
-                                                <Image
-                                                    src={
-                                                        userMembership?.membership_name === "Basic Tour"
-                                                            ?
-                                                            vip1
-                                                            :
-                                                            userMembership?.membership_name === "Silver Tour"
-                                                                ?
-                                                                vip2
-                                                                :
-                                                                userMembership?.membership_name === "Gold Tour"
-                                                                    ?
-                                                                    vip3
-                                                                    :
-                                                                    vip4
 
-                                                    }
-                                                    alt='icon'
-                                                    height={100}
-                                                    width={100}
-                                                    unoptimized
-                                                />
-                                            </div>
+                                            <button onClick={() => setIsNav(false)} className="mobile-menu__close">
+                                                ✕
+                                            </button>
                                         </div>
-                                    </div> */}
-                                    <div className='logout-button'>
-                                        <button onClick={() => openConfirm()}>Logout</button>
+
+                                        {/* Content */}
+                                        <div className="mobile-menu__content">
+
+                                            {/* Profile Card */}
+                                            <div className="profile-card">
+                                                <div className="profile-card__top">
+                                                    <div>
+                                                        <p className="profile-card__code">
+                                                            Referral Code : {session?.invitation_code ?? ""}
+                                                        </p>
+
+                                                        <h3 className="profile-card__name">
+                                                            {session?.username ?? ""}
+                                                        </h3>
+                                                    </div>
+
+                                                    <div className="profile-card__avatar">
+                                                        <Image
+                                                            src={sidelogo}
+                                                            alt="logo"
+                                                            height={100}
+                                                            width={100}
+                                                            unoptimized
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <div className="profile-card__divider"></div>
+
+                                                <div className="membership">
+                                                    <div className="membership__icon">
+                                                        <Image
+                                                            src={
+                                                                membershipName[0] === userCommission
+                                                                    ? vip1
+                                                                    : membershipName[1] === userCommission
+                                                                        ? vip2
+                                                                        : membershipName[2] === userCommission
+                                                                            ? vip3
+                                                                            : membershipName[3] === userCommission
+                                                                                ? vip4
+                                                                                : vip1
+                                                            }
+                                                            alt="logo"
+                                                            height={100}
+                                                            width={100}
+                                                            unoptimized
+                                                        />
+                                                    </div>
+
+                                                    <div className="membership__details">
+                                                        <p className="membership__title">
+                                                            Membership :{" "}
+                                                            {(
+                                                                allCommission?.find(
+                                                                    (item) => item.membership_name === userCommission
+                                                                )?.commission_rate * 100
+                                                            ).toFixed(2)}
+                                                            %
+                                                        </p>
+
+                                                        <div className="membership__progress">
+                                                            <div className="membership__progress-fill" style={{ width: `${session?.credibility}%` }}></div>
+                                                        </div>
+
+                                                        <div className="membership__footer">
+                                                            <span>Credit score</span>
+                                                            <span>{session?.credibility}%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Menu */}
+                                            <div className="mobile-menu__nav">
+
+                                                <Link href="/" className="menu-item active">
+                                                    Home
+                                                </Link>
+
+                                                <Link href="/dashboard/journey" className="menu-item">
+                                                    Start Your Career
+                                                </Link>
+
+                                                <Link href="/dashboard/history" className="menu-item">
+                                                    Optimize History
+                                                </Link>
+
+                                                <Link href="/dashboard/invite" className="menu-item">
+                                                    Referral
+                                                </Link>
+
+                                                <Link href="/dashboard/support" className="menu-item">
+                                                    Live Support
+                                                </Link>
+
+                                                <div className="mobile-menu__line"></div>
+
+                                                <Link href="/dashboard/withdrawal/linkwallet" className="menu-item">
+                                                    Funding Credentials
+                                                </Link>
+
+                                                <Link href="/dashboard/withdrawal" className="menu-item">
+                                                    Withdraw
+                                                </Link>
+
+                                                <Link href="/dashboard/recharge" className="menu-item">
+                                                    Deposit
+                                                </Link>
+
+                                                <Link href="/dashboard/content/about" className="menu-item">
+                                                    About Us
+                                                </Link>
+
+                                                <Link href="/dashboard/content/faq" className="menu-item">
+                                                    FAQ
+                                                </Link>
+
+                                                <Link href="/dashboard/content/tc" className="menu-item">
+                                                    T&C
+                                                </Link>
+
+                                                <Link
+                                                    href="/dashboard/recovery/changePassword"
+                                                    className="menu-item"
+                                                >
+                                                    Security
+                                                </Link>
+
+                                                <Link href="/dashboard/certificate" className="menu-item">
+                                                    Certificate
+                                                </Link>
+
+                                            </div>
+
+                                            {/* Logout */}
+                                            <button
+                                                className="logout-btn"
+                                                onClick={() => openConfirm()}
+                                            >
+                                                Logout
+                                            </button>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
