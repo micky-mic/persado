@@ -78,6 +78,7 @@ const page = async () => {
                                 width={100}
                                 alt="white"
                                 unoptimized
+                                className="lefticon"
                             />
                         </div>
                         <div className="dashboard-top-navbar-childs">
