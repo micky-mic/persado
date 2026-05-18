@@ -203,7 +203,7 @@
     }
 
     &__logo {
-        width: 15rem;
+        width: 15rem !important;
         height: auto;
         object-fit: contain;
     }
@@ -1019,9 +1019,9 @@ form {
             margin-top: 3rem;
 
             .dashboard-top-navbar-childs {
-                img {
+                .lefticon {
                     height: auto;
-                    // width: 100%;
+                    width: 15rem;
                 }
             }
         }
@@ -1551,6 +1551,11 @@ form {
 
 .dashboard-navigation-childs {
 
+    svg {
+        height: auto;
+        width: 3rem;
+    }
+
     &:last-child {
         display: flex;
         align-items: center;
@@ -1759,6 +1764,33 @@ form {
     }
 }
 
+
+
+
+
+
+
+
+
+
+.model-btn {
+    border: 2px solid #fff !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .success-modal-wrapper {
     position: fixed;
     top: 0;
@@ -1775,10 +1807,115 @@ form {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
     .success-modal-wrapper-inner {
-        background: #FFF;
+        // background: #FFF;
         animation: fadeUpAnimation 0.2s linear forwards;
         width: 90%;
         position: absolute;
+
+
+
+
+        .newmodel {
+            display: flex;
+            justify-content: center;
+
+            .typeofimg {
+                position: absolute;
+                left: 0;
+                padding: 0rem 2rem;
+
+                img {
+                    height: auto;
+                    width: 10rem;
+                }
+            }
+
+            .modelclosebtn {
+                position: absolute;
+                right: 0;
+                top: 10%;
+                padding: 0rem 2rem;
+
+                svg {
+                    height: auto;
+                    width: 2.5rem;
+                }
+            }
+
+            .new-success-modal-wrapper-content {
+                // background: #832f2f;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+                padding: 0rem 2rem;
+
+                h3 {
+                    font-size: 2rem;
+                    padding: 1rem 0rem;
+                    color: #FFF;
+                }
+
+                p {
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                    color: #ffffff;
+                    padding-bottom: 2rem;
+                }
+            }
+
+            .close-modal {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                padding: 2rem;
+                display: flex;
+                gap: 1rem;
+
+                button {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    width: 100%;
+                    padding: 1.5rem 1.5rem;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                }
+
+                a {
+                    width: 100%;
+                }
+
+                .btn1 {
+                    background: #EEEDED;
+                    color: #9C9C9C;
+
+                    &:hover {
+                        background: #e6e6e6;
+                    }
+                }
+
+                .btn2 {
+                    background: #001B38;
+                    color: white;
+
+                    &:hover {
+                        background: #2f3d63;
+                    }
+                }
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
 
         .success-modal-wrapper-image {
             background: #D8EAFF;
@@ -1811,6 +1948,8 @@ form {
             }
 
             .close-modal {
+                position: relative;
+                bottom: 0;
                 display: flex;
                 gap: 1rem;
 
@@ -3486,7 +3625,7 @@ form {
             background: linear-gradient(180deg,
                     rgba(255, 255, 255, 0.05) 0%,
                     rgba(255, 255, 255, 0) 100%);
-                    box-shadow: 0 -2px 10px 0 rgba(233, 223, 255, 0.30), 0 -2px 40px 0 rgba(187, 155, 255, 0.15), 0 0.5px 0 0 rgba(255, 255, 255, 0.50) inset;
+            box-shadow: 0 -2px 10px 0 rgba(233, 223, 255, 0.30), 0 -2px 40px 0 rgba(187, 155, 255, 0.15), 0 0.5px 0 0 rgba(255, 255, 255, 0.50) inset;
 
             .profile-badge-text {
                 color: #fff;

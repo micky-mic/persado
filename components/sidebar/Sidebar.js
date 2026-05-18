@@ -47,10 +47,6 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
         ticket_commission: item.ticket_commission
     }));
 
-    console.log(membershipName);
-    console.log(membershipRate);
-
-
     return (
         <>
             {
@@ -64,25 +60,16 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                 <Pop
                     pop={JSON.parse(JSON.stringify(pop))}
                 />
-                {/* <svg onClick={() => setIsNav(true)}
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="26"
-                    height="6"
-                    fill="none"
-                    viewBox="0 0 26 6"
-                >
-                    <path
-                        fill="#fff"
-                        d="M2.6 5.2a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2M13 5.2A2.6 2.6 0 1 0 13 0a2.6 2.6 0 0 0 0 5.2M23.4 5.2a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2"
-                    ></path>
-                </svg> */}
-                <Image className="menubar" onClick={() => setIsNav(true)}
+                <svg onClick={() => setIsNav(true)} xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none">
+                    <path d="M0 0.8C0 0.587826 0.0842853 0.384344 0.234314 0.234314C0.384344 0.0842853 0.587826 0 0.8 0H21.6C21.8053 0.010266 21.9987 0.0990314 22.1404 0.247935C22.282 0.396839 22.361 0.594488 22.361 0.8C22.361 1.00551 22.282 1.20316 22.1404 1.35206C21.9987 1.50097 21.8053 1.58973 21.6 1.6H0.8C0.587826 1.6 0.384344 1.51571 0.234314 1.36569C0.0842853 1.21566 0 1.01217 0 0.8ZM0 8.8C0 8.36 0.358 8 0.8 8H21.6C22.04 8 22.4 8.36 22.4 8.8C22.4 9.24 22.04 9.6 21.6 9.6H0.8C0.358 9.6 0 9.24 0 8.8ZM21.6 17.6H0.8C0.594745 17.5897 0.401288 17.501 0.259645 17.3521C0.118003 17.2032 0.0390124 17.0055 0.0390124 16.8C0.0390124 16.5945 0.118003 16.3968 0.259645 16.2479C0.401288 16.099 0.594745 16.0103 0.8 16H21.6C22.04 16 22.4 16.36 22.4 16.8C22.4 17.24 22.04 17.6 21.6 17.6Z" fill="white" />
+                </svg>
+                {/* <Image className="menubar" onClick={() => setIsNav(true)}
                     src={menubar}
                     alt='menu'
                     width={100}
                     height={100}
                     unoptimized
-                />
+                /> */}
                 {
                     isNav ? <div className="sidebar-overlay" onClick={() => setIsNav(false)}></div> : <></>
                 }
