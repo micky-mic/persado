@@ -176,7 +176,7 @@ const Profile = ({ user }) => {
 
                                     <div className="profile-badge">
                                         <div className="profile-badge-text">
-                                            BASIC
+                                            {user.membership_level}
                                         </div>
                                     </div>
 
@@ -207,7 +207,7 @@ const Profile = ({ user }) => {
                                                 </div>
 
                                                 <div className="profile-card-value">
-                                                    $ 1,202.33
+                                                    $ {user?.balance?.toFixed(2) ?? ""}
                                                 </div>
 
                                             </div>
@@ -234,7 +234,7 @@ const Profile = ({ user }) => {
                                                 </div>
 
                                                 <div className="profile-card-value">
-                                                    JD333301
+                                                    {user.invitation_code}
                                                 </div>
 
                                             </div>
@@ -254,13 +254,21 @@ const Profile = ({ user }) => {
 
                                     <div className="credit-bars">
 
-                                        {Array.from({ length: 20 }).map((_, index) => (
-                                            <div
-                                                key={index}
-                                                className={`credit-bar ${index < 16 ? "active" : ""
-                                                    }`}
-                                            />
-                                        ))}
+                                        {Array.from({ length: 20 }).map((_, index) => {
+
+                                            // convert 100 score into 20 bars
+                                            const activeBars = Math.round(
+                                                ((user?.credibility || 0) / 100) * 20
+                                            );
+
+                                            return (
+                                                <div
+                                                    key={index}
+                                                    className={`credit-bar ${index < activeBars ? "active" : ""
+                                                        }`}
+                                                />
+                                            );
+                                        })}
 
                                     </div>
 
