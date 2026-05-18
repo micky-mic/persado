@@ -14,32 +14,16 @@ import sponser5 from "@/public/new/dashboard/sponser5.png"
 const Properties = () => {
 
     const settings = {
-        dots: false,  // Enables navigation dots at the bottom
-        infinite: false, // Enables infinite scrolling
-        speed: 500,  // Transition speed in milliseconds
-        slidesToShow: 2,  // Number of cards to show at a time
-        slidesToScroll: 1,  // Number of cards to scroll at a time
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    dots: false
-                }
-            }
-        ]
+        dots: false,
+        infinite: true,
+        speed: 4000,
+        autoplay: true,
+        autoplaySpeed: 0,
+        cssEase: "linear",
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        arrows: false,
     };
-
     return (
         <>
             <div className="destination-wrapper">

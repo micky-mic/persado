@@ -56,9 +56,9 @@ const Invite = ({ authenticatedUser }) => {
                     </div>
                     <div className="working-hrs">
                         <p>Referral Code</p>
-                        <h3>JD333301</h3>
+                        <h3 onClick={() => copyToClipboard(user?.invitation_code ?? "")}>JD333301</h3>
                     </div>
-                    <button className="btn global-primary-btn mt2" onClick={() => handleAddFundsClick()}>Refer now</button>
+                    <button className="btn global-primary-btn mt2" onClick={() => handleAddFundsClick()} >Refer now</button>
                 </div>
             </section>
         </>

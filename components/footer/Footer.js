@@ -26,26 +26,18 @@ const Footer = () => {
                 <div className='footer-parent'>
                     <div className='footer-child'>
                         <h1>The Company</h1>
-                        <p>About Us</p>
-                        <p>Frequently Asked Question(s)</p>
-                        <p>Terms & Conditions</p>
+                        <Link href="/dashboard/content/about">
+                            <p>About Us</p>
+                        </Link>
+                        <Link href="/dashboard/content/faq">
+                            <p>Frequently Asked Question(s)</p>
+                        </Link>
+                        <Link href="/dashboard/content/tc">
+                            <p>Terms & Conditions</p>
+                        </Link>
+
                     </div>
                     <div className='footer-child'>
-                        {/* <div className='footer-subchild'>
-                            <Link href="/dashboard/content/about">
-                                <h3>About Us</h3>
-                            </Link>
-                        </div>
-                        <div className='footer-subchild'>
-                            <Link href="/dashboard/content/tc">
-                                <h3>Terms & Conditions</h3>
-                            </Link>
-                        </div>
-                        <div className='footer-subchild'>
-                            <Link href="/dashboard/content/faq">
-                                <h3>FAQ</h3>
-                            </Link>
-                        </div> */}
                         <p>© 2026. All Rights Reserved</p>
                     </div>
                 </div>

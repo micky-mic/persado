@@ -262,14 +262,14 @@
 
     &__code {
         color: #d1def8;
-        font-size: 1rem;
+        font-size: 1.8rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
     }
 
     &__name {
         color: #fff;
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         font-weight: 700;
     }
 
@@ -312,7 +312,7 @@
 
     &__title {
         color: #d1def8;
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 1rem;
     }
@@ -341,7 +341,7 @@
 
         span {
             color: #e8e5e0;
-            font-size: 0.95rem;
+            font-size: 1.5rem;
         }
     }
 }
@@ -352,19 +352,20 @@
     border-radius: 0.8rem;
 
     border: none;
-    background: transparent;
+    // background: transparent;
 
     text-align: left;
 
     color: #f6f6f6;
-    font-size: 1.15rem;
+    font-size: 2rem;
     font-weight: 500;
 
     cursor: pointer;
     transition: 0.3s;
 
     &:hover {
-        background: rgba(255, 255, 255, 0.08);
+        // background: rgba(255, 255, 255, 0.08);
+        color: #8C67FF;
     }
 
     &.active {
@@ -384,7 +385,7 @@
             #6b3eff 100%);
 
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 2rem;
     font-weight: 700;
 
     cursor: pointer;

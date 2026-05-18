@@ -205,6 +205,9 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                                                 <Link href="/dashboard/support" className="menu-item">
                                                     Live Support
                                                 </Link>
+                                                <Link href="/dashboard/profile" className="menu-item">
+                                                    Profile
+                                                </Link>
 
                                                 <div className="mobile-menu__line"></div>
 
