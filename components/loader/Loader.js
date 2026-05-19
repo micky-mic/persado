@@ -5,13 +5,9 @@ import logo from "@/public/new/logo.png";
 const Loader = () => {
   return (
     <div className="loader-wrapper">
-      <Image
-        src={logo}
-        alt="logo"
-        height={100}
-        width={100}
-        unoptimized
-      />
+      <video autoPlay muted loop playsInline>
+        <source src="/new/optimizevid.mp4" type="video/mp4" />
+      </video>
     </div>
   )
 }

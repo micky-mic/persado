@@ -8,7 +8,6 @@ import Breadcrumb from "../breadcrumb/Breadcrumb";
 import Link from 'next/link';
 import Image from "next/image";
 import securityImage from "@/public/new/security.png";
-import bg_texture from "@/public/related_assets/vector/bg_texture.svg";
 
 function Submit() {
     const { pending } = useFormStatus();

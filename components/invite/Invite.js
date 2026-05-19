@@ -2,13 +2,11 @@
 
 import Breadcrumb from '../breadcrumb/Breadcrumb';
 import Image from 'next/image';
-import bg_texture from "@/public/related_assets/vector/bg_texture.svg";
-import support from "@/public/related_assets/vector/invite.svg";
 import toast from 'react-hot-toast';
 import bgdesign from "@/public/new/bgdesign.svg"
 import invite from "@/public/new/invite.svg"
 
-const Invite = ({ authenticatedUser }) => {
+const Invite = ({ user }) => {
 
     const copyToClipboard = (val) => {
         navigator.clipboard.writeText(val);
@@ -56,9 +54,9 @@ const Invite = ({ authenticatedUser }) => {
                     </div>
                     <div className="working-hrs">
                         <p>Referral Code</p>
-                        <h3 onClick={() => copyToClipboard(user?.invitation_code ?? "")}>JD333301</h3>
+                        <h3 onClick={() => copyToClipboard(user?.invitation_code ?? "")}>{user?.invitation_code}</h3>
                     </div>
-                    <button className="btn global-primary-btn mt2" onClick={() => handleAddFundsClick()} >Refer now</button>
+                    <button className="btn global-primary-btn mt2" onClick={() => copyToClipboard(user?.invitation_code)}>Refer now</button>
                 </div>
             </section>
         </>

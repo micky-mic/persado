@@ -9,7 +9,7 @@ import favicon from "@/public/favicon.png";
 import NextTopLoader from 'nextjs-toploader';
 
 export const metadata = {
-  title: "Welcome - Related",
+  title: "Welcome - Nexos AI",
   description: "",
   icons: {
     icon: {

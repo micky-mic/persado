@@ -7,8 +7,6 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import Breadcrumb from "../breadcrumb/Breadcrumb";
 import Image from "next/image";
-import linkWalletImage from "@/public/related_assets/vector/link_wallet.svg"
-import bg_texture from "@/public/related_assets/vector/bg_texture.svg";
 import wallatimg from "@/public/new/wallatimg.png";
 import QRScanner from "../scanner/QRScanner";
 import authbg1 from "@/public/new/authbg1.png";

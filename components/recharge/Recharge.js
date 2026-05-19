@@ -3,7 +3,6 @@
 import Breadcrumb from '../breadcrumb/Breadcrumb';
 import Link from 'next/link';
 import { useState } from 'react';
-import balance_card from "@/public/related_assets/Images/balance_circle.svg"
 import Image from 'next/image';
 import dollar from "@/public/new/dollar.png"
 
@@ -90,7 +89,7 @@ const Recharge = ({ user }) => {
                                         </tspan>
                                     </text>
 
-                                    <Link href="/dashboard/withdrawalHistory">
+                                    <Link href="/dashboard/rechargeHistory">
 
                                         <text
                                             x="20"

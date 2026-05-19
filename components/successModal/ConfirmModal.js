@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import logoutPic from "@/public/related_assets/modal/logout.svg";
 import { logout } from '@/app/actions/user/action';
 import { useRouter } from 'next/navigation';
 

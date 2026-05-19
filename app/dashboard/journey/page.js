@@ -2,7 +2,6 @@ import React from 'react'
 import { fetchAuthenticatedUser } from '@/app/actions/user/data';
 import Image from 'next/image';
 import { auth } from '@/app/auth';
-import balance_card from "@/public/related_assets/Images/balance_circle.svg"
 import money from "@/public/new/money.png"
 import check from "@/public/new/check.png"
 import vip1 from "@/public/new/vip1.png"

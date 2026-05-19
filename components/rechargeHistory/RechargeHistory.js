@@ -9,13 +9,14 @@ const RechargeHistory = ({ history, authUser, userCommission }) => {
 
     return (
         <>
-            <div className='background-color' style={{minHeight: "100vh", paddingBottom: "100px"}}>
+            <div className='background-color' style={{ minHeight: "100vh", paddingBottom: "100px" }}>
                 <section className="withdrawal-hostory-section recharge-history-section">
                     <Breadcrumb
                         authUser={authUser}
                         title="Deposit History"
                         link="/dashboard/recharge"
                         isColor="#FFF"
+                        bg="#000"
                         userCommission={userCommission}
                     />
                     <div className="all-recharges">

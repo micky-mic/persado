@@ -5,24 +5,6 @@ import React from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import Image1 from "@/public/related_assets/Images/interstedImg1.jpeg"
-import Image2 from "@/public/related_assets/Images/interstedImg2.jpeg"
-import Image3 from "@/public/related_assets/Images/interstedImg3.jpeg"
-import Image4 from "@/public/related_assets/Images/interstedImg4.jpeg"
-import Image5 from "@/public/related_assets/Images/interstedImg5.jpeg"
-import Image6 from "@/public/related_assets/Images/interstedImg6.jpeg"
-import Image7 from "@/public/related_assets/Images/interstedImg7.jpeg"
-import Image8 from "@/public/related_assets/Images/interstedImg8.jpeg"
-import Image9 from "@/public/related_assets/Images/interstedImg9.jpeg"
-import Image10 from "@/public/related_assets/Images/interstedImg10.jpeg"
-import Image11 from "@/public/related_assets/Images/interstedImg11.jpeg"
-import Image12 from "@/public/related_assets/Images/interstedImg12.jpeg"
-import Image13 from "@/public/related_assets/Images/interstedImg13.jpeg"
-import Image14 from "@/public/related_assets/Images/interstedImg14.jpeg"
-import Image15 from "@/public/related_assets/Images/interstedImg15.jpeg"
-import Image16 from "@/public/related_assets/Images/interstedImg16.jpeg"
-import Image17 from "@/public/related_assets/Images/interstedImg17.jpeg"
-import Image18 from "@/public/related_assets/Images/interstedImg18.jpeg"
 
 
 

@@ -1,191 +1,140 @@
 "use client";
 
-import React, { useEffect, useState } from 'react'
-import Breadcrumb from '../breadcrumb/Breadcrumb';
+import React, { useState } from "react";
+import Breadcrumb from "../breadcrumb/Breadcrumb";
+import bgdesign from "@/public/new/bgdesign.svg"
+import logo from "@/public/new/logo.png"
+import Link from "next/link";
+import Image from "next/image";
 
-const Faq = ({ data, authenticatedUser, allCommission, userCommission }) => {
-    const [info, setInfo] = useState({});
+const faqData = [
+    {
+        title: "NOTICE",
+        content: `Kindly do not use the same personal bank card information to register repeatedly, 
+repeated registration will take action to specific account if found.
 
-    useEffect(() => {
-        const infoData = data?.filter(item => item.title === "faqs")[0];
-        setInfo(infoData);
-    }, []);
+Personal multi-account driving sales will lead to the suspension of the seller's store, 
+affect the seller's credibility and the invalidation of sales.
+
+The platform prohibits one card bound to multiple accounts, please do not use individual 
+multiple account, card bound to multiple accounts, will all be lead to funds freeze, 
+90 days account permanently blocked processing.
+
+The platform is designed to prevent people from maliciously laundering money or cashing out 
+a series of improper behavior.`,
+    },
+
+    {
+        title: "DEPOSIT",
+        content: `Each deposit are required to redirect to the agency service to assist in remittance deposit.
+         Once remitting the funds according to the account provided by the platform's agency service, kindly provide a screenshot of the successful transfer to the account.
+          In sales to ensure that the deposit is made instant, please make sure that the name of the person you are transferring to and the amount you are transferring are the
+          same as the one being provided. If you encounter any unsolvable problems during the deposit process, please contact the deposit agency service in Ame. Due to a large amount of information,
+          please make sure to check the account card number of this platform carefully before deposit. The platform occasionally changes the account number. Any inquiries kindly refer to platform online agency service for consultation!`,
+    },
+
+    {
+        title: "CREATE DATA",
+        content: `Once deposited your account, you may Create Data, click
+"Create Data" to redirect to the relevant page and "START Create Data".
+ Wait for the system to drive a sales, submit the
+sales once sales submission pops up to complete the sales.
+Complete 40 sales per day to perform a withdrawal`,
+    },
+
+    {
+        title: "WITHDRAW",
+        content: `Before proceed to withdrawal, kindly bind your withdrawal information on the platform. Withdraw
+your funds on the home page "Withdrawal"
+interface. Click the "Withdraw" button after
+entering the amount you want to withdraw and
+your withdrawal password to withdraw. The
+specific arrival time is subject to the bank's arrival
+time. Withdrawal time is from 09:30 to 23:00 every
+day.`,
+    },
+
+    {
+        title: "PLATFORM AGENT MODE",
+        content: `Users can become platform agents by
+recommending new users, and they can get
+extra dynamic rewards. The reward is 20% of the
+daily commission for referrals`,
+    },
+
+    {
+        title: "SALES DRIVING TIME",
+        content: `Users can become platform agents by recommending new users, and they can get extra
+dynamic rewards. The reward is 20% of the daily
+commission for referrals`,
+    },
+];
+
+const Faq = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const toggleFaq = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
 
     return (
-        <>
-            <div className='faq-page-wrapper'>
-                <Breadcrumb
-                    title={"FAQ"}
-                    link="/dashboard"
-                    isColor="#fff"
-                />
-                {/* <div className="certificates">
-                    <Image
-                        src={certificate}
-                        alt="certificate"
-                        unoptimized
-                    />
-                </div> */}
-                <div className='faq-details-wrapper'>
-                    <div className='faq-details-parent'>
-                        <div className='faq-details-child'>
-                            <h3>REGISTRATION</h3>
-                        </div>
-                        <div className='faq-details-child'>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="none"
-                                viewBox="0 0 20 20"
-                            >
-                                <path fill="#fff" d="M9.512 19.915V9.53H20V0H0v19.915z"></path>
-                                <path fill="#fff" d="M20 11.151h-8.877v8.764H20z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div className='faq-paragraph'>
-                        <p>
-                            Booster must register an account to browse and start boosting.
-                            Boosters must provide accurate, complete and current information.
-                        </p>
-                    </div>
-                    <div className='faq-details-parent'>
-                        <div className='faq-details-child'>
-                            <h3>ACCOUNT SECURITY</h3>
-                        </div>
-                        <div className='faq-details-child'>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="none"
-                                viewBox="0 0 20 20"
-                            >
-                                <path fill="#fff" d="M9.512 19.915V9.53H20V0H0v19.915z"></path>
-                                <path fill="#fff" d="M20 11.151h-8.877v8.764H20z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div className='faq-paragraph'>
-                        <p>
-                            Booster are responsible for maintaining account confidentiality. Any unauthorized use of an
-                            account must be reported immediately.
-                        </p>
-                    </div>
-                    <div className='faq-details-parent'>
-                        <div className='faq-details-child'>
-                            <h3>RECHARGE</h3>
-                        </div>
-                        <div className='faq-details-child'>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="none"
-                                viewBox="0 0 20 20"
-                            >
-                                <path fill="#fff" d="M9.512 19.915V9.53H20V0H0v19.915z"></path>
-                                <path fill="#fff" d="M20 11.151h-8.877v8.764H20z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div className='faq-paragraph'>
-                        <p>
-                            For each recharge, please redirect to the Live Support for assistance.
-                            <br /><br />
-                            We accept recharges via cryptocurrencies and other methods listed at the time of recharge
-                            <br /><br />
-                            We are not responsible for recharge processing delays cause by financial institutions
-                            <br /><br />
-                            Once you remit the funds to the account provided by the platform's Live Support, kindly provide
-                            a screenshot of the successful transfer. To ensure immediate recharge recognition, please verify
-                            the wallet address be matched with the provided details.
-                            <br /><br />
-                            If you encounter any issues during the recharge process , contact the Live Support recharge service. Due to frequent  updates , always check the platform's recharge details before proceed to recharge.
-                            <br /><br />
-                            For more inquiries, please refer to the platform's Live Support.
-                        </p>
-                    </div>
-                    <div className='faq-details-parent'>
-                        <div className='faq-details-child'>
-                            <h3>LOT BOOSTING</h3>
-                        </div>
-                        <div className='faq-details-child'>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="none"
-                                viewBox="0 0 20 20"
-                            >
-                                <path fill="#fff" d="M9.512 19.915V9.53H20V0H0v19.915z"></path>
-                                <path fill="#fff" d="M20 11.151h-8.877v8.764H20z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div className='faq-paragraph'>
-                        <p>
-                            Once recharged your account, you may start boosting, click 'Lot Boosting' to redirect to the
-                            relevant page to start
-                            <br /><br />
-                            Wait for the system to drive a boost, submit the boost once review submission pops up to
-                            complete the boosting
-                            Once the booster received the lot, the system automatically confirms and cannot cancel any
-                            pending lot
-                        </p>
-                    </div>
-                    <div className='faq-details-parent'>
-                        <div className='faq-details-child'>
-                            <h3>WITHDRAWAL</h3>
-                        </div>
-                        <div className='faq-details-child'>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="none"
-                                viewBox="0 0 20 20"
-                            >
-                                <path fill="#fff" d="M9.512 19.915V9.53H20V0H0v19.915z"></path>
-                                <path fill="#fff" d="M20 11.151h-8.877v8.764H20z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div className='faq-paragraph'>
-                        <p>
-                            Before proceed to withdrawal, kindly bind your withdrawal information on the platform.
-                            Withdraw your funds by clicking"Withdraw' button, enter the amount you wish to withdraw and
-                            key in your withdrawal password to proceed. Withdrawal time is from 11:00 to 22:45 daily.
-                        </p>
-                    </div>
-                    <div className='faq-details-parent'>
-                        <div className='faq-details-child'>
-                            <h3>AGENT</h3>
-                        </div>
-                        <div className='faq-details-child'>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                fill="none"
-                                viewBox="0 0 20 20"
-                            >
-                                <path fill="#fff" d="M9.512 19.915V9.53H20V0H0v19.915z"></path>
-                                <path fill="#fff" d="M20 11.151h-8.877v8.764H20z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div className='faq-paragraph'>
-                        <p>Users can become platform agents by recommending new users,and will be entitled to dynamic
-                            reward of daily 30% commission for referrals.</p>
-                    </div>
-                </div>
+        <div className="faq-page-wrapper" style={{
+            backgroundImage: `url(${bgdesign.src})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            height: "100vh",
+        }}>
+            <Breadcrumb title={"FAQ"} link="/dashboard" isColor="#fff" />
 
-                {/* <div dangerouslySetInnerHTML={{ __html: info?.description }}></div> */}
+            <div className="faq-container">
+                {faqData.map((item, index) => (
+                    <div className="faq-card" key={index}>
+                        <div
+                            className="faq-header"
+                            onClick={() => toggleFaq(index)}
+                        >
+                            <h3>{item.title}</h3>
+
+                            <span className="faq-icon">
+                                {activeIndex === index ? "−" : "+"}
+                            </span>
+                        </div>
+                        {activeIndex === index && (
+                            <div className="faq-content">
+                                <p>{item.content}</p>
+                            </div>
+                        )}
+                    </div>
+                ))}
             </div>
-        </>
-    )
-}
+            <div className="faq-footer">
+                <Image
+                src={logo}
+                alt="logo"
+                width={100}
+                height={100}
+                unoptimized
+                />
 
-export default Faq
+                <h4>The Company</h4>
+
+                <ul>
+                    <Link href={"/dashboard/content/about"}>
+                        <li>About Us</li>
+                    </Link>
+                    <Link href={"/dashboard/content/faq"}>
+                        <li>Frequently Asked Questions</li>
+                    </Link>
+                    <Link href={"/dashboard/content/tc"}>
+                        <li>Terms & Conditions</li>
+                    </Link>
+                </ul>
+
+                <p>© 2026. All Rights Reserved</p>
+            </div>
+        </div>
+    );
+};
+
+export default Faq;

@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import ConfirmModal from '../successModal/ConfirmModal';
-import user_profile from "@/public/related_assets/user_profile.jpg"
 import Pop from '../notification/Pop';
 import logo from '@/public/new/logo.png'
 import sidelogo from '@/public/new/sidelogo.png'
@@ -13,7 +12,6 @@ import vip1 from '@/public/new/vip1.png'
 import vip2 from '@/public/new/vip2.png'
 import vip3 from '@/public/new/vip3.png'
 import vip4 from '@/public/new/vip4.png'
-import menubar from "@/public/new/dashboard/menubar.png"
 
 const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, pop }) => {
     const [isNav, setIsNav] = useState(false);

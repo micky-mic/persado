@@ -6,11 +6,9 @@ import { useState } from 'react';
 import { withdrawal } from '@/app/actions/user/action';
 import toast from 'react-hot-toast';
 import { useFormStatus } from "react-dom";
-import balance_card from "@/public/related_assets/Images/balance_circle.svg"
 import dollar from "@/public/new/dollar.png"
 import Image from 'next/image';
 import WithdrawalSuccessModal from '../successModal/WithdrawalSuccessModal';
-import link_wallet from "@/public/related_assets/Images/link_wallet.svg"
 import WithdrawalFailModal from '../successModal/WithdrawalFailModal';
 import PointError from '../successModal/PointError';
 

@@ -32,24 +32,36 @@ const SignUp = () => {
     const handleForm = async (formData) => {
 
         if (!isAgree) {
-            return toast.error("Please read and accept terms & conditions");
+            toast.error("Please accept Terms & Conditions");
+            return;
         }
 
         try {
+
             const response = await createUser(formData);
 
-            if (response.status === 201) {
-                setIsModal(true)
+            if (response?.status === 201) {
+
+                toast.success("Account created successfully");
+
+                setIsModal(true);
+
             } else {
-                toast.error(response.message);
+
+                toast.error(response?.message || "Something went wrong");
+
                 setIsFailModal(true);
             }
 
         } catch (error) {
-            console.log(error)
+
+            console.log(error);
+
+            toast.error("Server Error");
+
             setIsFailModal(true);
         }
-    }
+    };
 
     return (
         <>
@@ -324,12 +336,18 @@ const SignUp = () => {
                     </div>
                     <div className="form-copyright">
                         <div className="checkbox-container">
+
                             <input
                                 type="checkbox"
-                                defaultChecked
-                                onChange={() => setIsAgree(!isAgree)}
+                                checked={isAgree}
+                                onChange={(e) => setIsAgree(e.target.checked)}
                             />
-                            <p>By clicking Login or Sign Up button, I agree to the <span>Terms & Conditions.</span> </p>
+
+                            <p>
+                                By clicking Login or Sign Up button,
+                                I agree to the <span>Terms & Conditions.</span>
+                            </p>
+
                         </div>
                     </div>
                     <div className="create-account">

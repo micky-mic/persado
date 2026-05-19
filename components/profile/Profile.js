@@ -9,7 +9,6 @@ import toast from 'react-hot-toast';
 import { uploadProfile } from '@/app/actions/profile/action';
 import Loader from '../loader/Loader';
 import prologo from "@/public/new/prologo.png"
-import membershipImg from "@/public/related_assets/Images/membershipImg.jpg"
 
 const Profile = ({ user }) => {
 
