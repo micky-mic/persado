@@ -1180,7 +1180,7 @@
             font-size: 1.1rem;
             line-height: 1.5;
 
-            span {
+            a {
                 font-weight: 600;
                 color: #8556FF;
                 cursor: pointer;
@@ -2321,8 +2321,6 @@ form {
 }
 
 .journey-section {
-    // min-height: 100vh;
-    // padding-bottom: 1rem;
 
     .journey-info-wrapper {
         padding: 0rem 2rem;
@@ -2345,10 +2343,16 @@ form {
 
 }
 
+.journey-bg {
+    background: linear-gradient(180deg,
+            #000000 0%,
+            #071013 44.16%,
+            #6E41FF 182.04%);
+    padding: 5rem;
+}
 
 .video-wrapper {
     position: relative;
-
 
     video {
         width: 100%;
@@ -2357,164 +2361,169 @@ form {
         scale: 1.01;
     }
 
-    .journey-bg {
-        height: 270vh;
-        background: linear-gradient(180deg,
-                #000000 0%,
-                #071013 44.16%,
-                #6E41FF 182.04%);
-    }
-
-    .journey-contents {
+    .journey-card {
         position: absolute;
         top: 0;
+        left: 0;
+        z-index: 2;
         width: 100%;
+    }
+}
 
-        .bal-card {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0rem 3rem;
+.journey-contents {
+    // position: absolute;
+    // top: 0;
+    width: 100%;
+    padding-bottom: 5rem;
+    background: linear-gradient(180deg,
+            #000000 0%,
+            #071013 44.16%,
+            #6E41FF 182.04%);
 
-            .card {
-                flex: 1;
-                position: relative;
+    .bal-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0rem 3rem;
+
+        .card {
+            flex: 1;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: 0rem 1.5rem;
+                height: auto;
+                width: 5rem;
+            }
+        }
+    }
+
+    .genbtn {
+        padding: 0rem 3rem;
+        padding-top: 0.6rem;
+
+        button {
+            border-radius: 1rem;
+        }
+    }
+
+    .why {
+        padding: 3rem;
+
+        h1 {
+            color: #FFF;
+            font-size: 2.3rem;
+            font-weight: 700;
+            padding-bottom: 3rem;
+        }
+
+        .whycontain {
+            padding: 2rem;
+            border-radius: 1rem;
+            background: #000;
+            background: var(--linear, linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%));
+            box-shadow: 0 -2px 10px 0 rgba(233, 223, 255, 0.30), 0 -2px 40px 0 rgba(187, 155, 255, 0.15), 0 0.5px 0 0 rgba(255, 255, 255, 0.50) inset;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .membership-journey {
+        padding: 0rem 3rem;
+
+        h1 {
+            color: #FFF;
+            font-size: 2.3rem;
+            font-weight: 700;
+            padding-bottom: 3rem;
+        }
+
+        .mem-container {
+            border: 2px solid #5224A9;
+            background: #261F5B;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+
+            .membtn {
+                display: flex;
+                justify-content: flex-end;
+
+                p {
+                    color: #FFF;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    border-radius: 3rem;
+                    padding: 0.8rem 1rem;
+                    border: 2px solid #6B3EFF;
+                    background: radial-gradient(50% 50% at 50% 50%, #8556FF 0%, #6B3EFF 100%);
+
+                }
+            }
+
+            .imgandde {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
 
                 img {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    margin: 0rem 1.5rem;
-                    height: auto;
-                    width: 5rem;
+                    height: 6rem;
+                    width: 6rem;
                 }
-            }
-        }
 
-        .genbtn {
-            padding: 0rem 3rem;
-            padding-top: 0.6rem;
-
-            button {
-                border-radius: 1rem;
-            }
-        }
-
-        .why {
-            padding: 3rem;
-
-            h1 {
-                color: #FFF;
-                font-size: 2.3rem;
-                font-weight: 700;
-                padding-bottom: 3rem;
-            }
-
-            .whycontain {
-                padding: 2rem;
-                border-radius: 1rem;
-                background: #000;
-                background: var(--linear, linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%));
-                box-shadow: 0 -2px 10px 0 rgba(233, 223, 255, 0.30), 0 -2px 40px 0 rgba(187, 155, 255, 0.15), 0 0.5px 0 0 rgba(255, 255, 255, 0.50) inset;
-                margin-bottom: 2rem;
-            }
-        }
-
-        .membership-journey {
-            padding: 0rem 3rem;
-
-            h1 {
-                color: #FFF;
-                font-size: 2.3rem;
-                font-weight: 700;
-                padding-bottom: 3rem;
-            }
-
-            .mem-container {
-                border: 2px solid #5224A9;
-                background: #261F5B;
-                border-radius: 1rem;
-                padding: 1.5rem;
-                margin-bottom: 1rem;
-
-                .membtn {
-                    display: flex;
-                    justify-content: flex-end;
+                .textcontent {
+                    .mem-name {
+                        color: #FFF;
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        padding-bottom: 0.5rem;
+                    }
 
                     p {
-                        color: #FFF;
-                        font-size: 1rem;
+                        color: #DADFE3;
+                        font-size: 1.2rem;
                         font-weight: 400;
-                        border-radius: 3rem;
-                        padding: 0.8rem 1rem;
-                        border: 2px solid #6B3EFF;
-                        background: radial-gradient(50% 50% at 50% 50%, #8556FF 0%, #6B3EFF 100%);
-
                     }
                 }
+            }
 
-                .imgandde {
-                    display: flex;
-                    align-items: center;
-                    gap: 1rem;
+            .additional {
+                color: #FFF;
+                font-size: 1.2rem;
+                font-weight: 400;
+                padding-top: 1rem;
+            }
 
-                    img {
-                        height: 6rem;
-                        width: 6rem;
-                    }
+            .commi {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
 
-                    .textcontent {
-                        .mem-name {
-                            color: #FFF;
-                            font-size: 1.6rem;
-                            font-weight: 600;
-                            padding-bottom: 0.5rem;
-                        }
-
-                        p {
-                            color: #DADFE3;
-                            font-size: 1.2rem;
-                            font-weight: 400;
-                        }
-                    }
-                }
-
-                .additional {
+                p {
                     color: #FFF;
                     font-size: 1.2rem;
-                    font-weight: 400;
-                    padding-top: 1rem;
+                    font-weight: 500;
                 }
 
-                .commi {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: baseline;
-
-                    p {
-                        color: #FFF;
-                        font-size: 1.2rem;
-                        font-weight: 500;
-                    }
-
-                    h4 {
-                        font-size: 2.5rem;
-                        color: white;
-                    }
+                h4 {
+                    font-size: 2.5rem;
+                    color: white;
                 }
             }
+        }
 
-            .current-mem {
-                border: 2px solid #8556FF;
-                background: #261F5B;
+        .current-mem {
+            border: 2px solid #8556FF;
+            background: #261F5B;
 
-                .commi {
-                    h4 {
-                        background: radial-gradient(50% 50% at 50% 50%, #8556FF 0%, #6B3EFF 100%);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                    }
+            .commi {
+                h4 {
+                    background: radial-gradient(50% 50% at 50% 50%, #8556FF 0%, #6B3EFF 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
                 }
             }
         }
@@ -4950,6 +4959,10 @@ form {
     color: white !important;
 }
 
+.term-condition-page-wrapper {
+    background: #3c298c;
+}
+
 // .term-condition-page-wrapper {
 //     background: linear-gradient(180deg, #174666 0%, #0E2237 100%);
 //     min-height: 100%;
@@ -5025,6 +5038,7 @@ form {
     .tc-wrapper {
         position: relative;
         z-index: 2;
+        padding-top: 3rem;
 
         .tc-card {
             background: rgba(20, 20, 60, 0.88);
@@ -5898,7 +5912,7 @@ input[type="number"] {
     @media (max-width: 768px) {
         height: auto;
         min-height: 185vh;
-        padding: 2rem 1rem;
+        // padding: 2rem 1rem;
     }
 }
 

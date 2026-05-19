@@ -345,7 +345,7 @@ const SignUp = () => {
 
                             <p>
                                 By clicking Login or Sign Up button,
-                                I agree to the <span>Terms & Conditions.</span>
+                                I agree to the <Link href="/tc">Terms & Conditions.</Link>
                             </p>
 
                         </div>

@@ -166,7 +166,7 @@ const Signin = () => {
                             defaultChecked
                             onChange={() => setIsAgree(!isAgree)}
                         />
-                        <p>By clicking Login or Sign Up button, I agree to the <span>Terms & Conditions.</span> </p>
+                        <p>By clicking Login or Sign Up button, I agree to the <Link href="/tc">Terms & Conditions.</Link> </p>
                     </div>
                 </div>
                 <div className="create-account">
