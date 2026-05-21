@@ -92,8 +92,8 @@ const SignUp = () => {
                         width={100}
                         unoptimized
                     />
-                    <h1 className=''>Hey, Welcome Back!</h1>
-                    <p className=''>Log in to get started</p>
+                    <h1 className=''>Join Us!</h1>
+                    <p className=''>Create your own account</p>
                 </div>
                 <form action={handleForm}>
                     <label>Username</label>
@@ -169,11 +169,11 @@ const SignUp = () => {
                             <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"></path>
                         </svg>
                     </div> */}
-                    <label>Login Password</label>
+                    <label>Password</label>
                     <div className="app-form-group app-form-group-include-conf">
                         <input
                             type={isShow ? "text" : "password"}
-                            placeholder="Create login password"
+                            placeholder="Password"
                             name="password"
                             required
                         />
@@ -236,11 +236,11 @@ const SignUp = () => {
                             ></path>
                         </svg>
                     </div>
-                    <label>Confirm Password</label>
+                    <label>Password</label>
                     <div className="app-form-group app-form-group-include-conf">
                         <input
                             type={isShow2 ? "text" : "password"}
-                            placeholder="Create withdrawal password"
+                            placeholder="Password"
                             name="withdrawal_pin"
                             required
                             pattern="[0-9]{4,6}"
@@ -344,15 +344,15 @@ const SignUp = () => {
                             />
 
                             <p>
-                                By clicking Login or Sign Up button,
-                                I agree to the <Link href="/tc">Terms & Conditions.</Link>
+                                By creating an account or by logging into an account,,
+                                ypu accept our <Link href="/tc">Terms & Conditions.</Link>
                             </p>
 
                         </div>
                     </div>
                     <div className="create-account">
                         <p>Already have an account?</p>
-                        <Link href="/signin"><p className='primary-btn'>Back to Sign In</p></Link>
+                        <Link href="/signin"><p className='primary-btn'>BACK TO SIGN IN</p></Link>
                     </div>
                 </form>
             </div>

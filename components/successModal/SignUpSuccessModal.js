@@ -137,7 +137,7 @@ const SignUpSuccessModal = ({ setIsModal }) => {
                         </h3>
 
                         <p>
-                            Your account has been successfully created.
+                            Your account has been successfully registered.Start your journey now!
                         </p>
 
                     </div>
@@ -145,12 +145,12 @@ const SignUpSuccessModal = ({ setIsModal }) => {
                     {/* Buttons */}
                     <div className="close-modal">
 
-                        <button
+                        {/* <button
                             className="primary-btn model-btn"
                             onClick={() => setIsModal(false)}
                         >
                             CLOSE
-                        </button>
+                        </button> */}
 
                         <button
                             className="primary-btn model-btn"

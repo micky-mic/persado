@@ -643,7 +643,7 @@ const Withdrawal = ({ user }) => {
                                     </div>
                                     <div className="transaction-amount">
                                         <h3>Withdraw Actions</h3>
-                                        <p>Phone Number</p>
+                                        <p>Withdraw Amount</p>
                                         <input
                                             type="number"
                                             placeholder="Enter the withdrawal amount"
@@ -694,10 +694,10 @@ const Withdrawal = ({ user }) => {
                                                 d="M12.273 9a.82.82 0 0 1-.818-.818V4.909a3.272 3.272 0 1 0-6.546 0v3.273A.82.82 0 0 1 4.091 9a.82.82 0 0 1-.818-.818V4.909C3.273 2.201 5.473 0 8.182 0s4.91 2.2 4.91 4.91v3.272a.82.82 0 0 1-.82.818M8.182 14.727a.82.82 0 0 1-.818-.818v-2.455a.82.82 0 0 1 .818-.818.82.82 0 0 1 .818.819v2.454a.82.82 0 0 1-.818.818"
                                             ></path>
                                         </svg> */}
-                                        <p>Withdraw Password</p>
+                                        <p>Password</p>
                                         <input
                                             type={isShow ? "text" : "password"}
-                                            placeholder="Enter the withdrawal password"
+                                            placeholder="Password"
                                             name="withdrawal_pin"
                                             required
                                             pattern="[0-9]{4,6}"
