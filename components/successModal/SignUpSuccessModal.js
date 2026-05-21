@@ -137,7 +137,8 @@ const SignUpSuccessModal = ({ setIsModal }) => {
                         </h3>
 
                         <p>
-                            Your account has been successfully registered.Start your journey now!
+                            Your account has been successfully registered.<br/>
+                            Start your journey now!
                         </p>
 
                     </div>
