@@ -56,8 +56,7 @@ const Support = ({ authUser, isLink, authenticatedUser, allCommission, userCommi
                     </div>
                     <div className="support-txt">
                         <h1>FACING TROUBLE</h1>
-                        <h3 className="playfair-font">Not to worries! Let
-                            us help you out now</h3>
+                        <h3 className="playfair-font">No need to worry! we’re here to help you through this</h3>
                     </div>
                     <div className="working-hrs">
                         <p>Service Hour</p>
