@@ -245,6 +245,10 @@ const SubmitJourney = () => {
                                     quality={90}
                                     unoptimized
                                 />
+                             
+                            </div>
+                              <div className='product-name'>
+                                <h2 className='playfair-font'>{myState?.product?.productName}</h2>
                             </div>
 
                             <div className='product-information'>
