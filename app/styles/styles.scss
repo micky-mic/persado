@@ -598,55 +598,95 @@
 
 .membership {
     display: flex;
+    align-items: center;
     gap: 1rem;
 
     &__icon {
         width: 4rem;
         height: 4rem;
+        flex-shrink: 0;
 
         img {
-            height: 100%;
             width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
     }
 
     &__details {
         flex: 1;
+        min-width: 0;
     }
 
     &__title {
         color: #d1def8;
         font-size: 1.5rem;
         font-weight: 600;
+        line-height: 1.4;
         margin-bottom: 1rem;
     }
 
     &__progress {
         width: 100%;
         height: 0.8rem;
-        border-radius: 1rem;
+        border-radius: 10rem;
         overflow: hidden;
         background: rgba(255, 255, 255, 0.12);
         margin-bottom: 0.8rem;
+        position: relative;
     }
 
     &__progress-fill {
         height: 100%;
-        border-radius: 1rem;
-
+        width: 70%;
+        border-radius: 10rem;
         background: radial-gradient(circle,
                 #8556ff 0%,
                 #6b3eff 100%);
+
+        animation: progressFill 1s ease forwards;
     }
 
     &__footer {
         display: flex;
+        align-items: center;
         justify-content: space-between;
+        gap: 1rem;
 
         span {
             color: #e8e5e0;
             font-size: 1.5rem;
+            line-height: 1.4;
         }
+    }
+
+    @media (max-width: 768px) {
+        align-items: flex-start;
+
+        &__title {
+            font-size: 1.4rem;
+        }
+
+        &__footer {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.4rem;
+
+            span {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+@keyframes progressFill {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 70%;
     }
 }
 
@@ -2555,92 +2595,91 @@ form {
                 object-position: center;
             }
         }
-      .product-name {
-    position: relative;
 
-    width: fit-content;
-    margin: -28px auto 0 auto;
+        .product-name {
+            position: relative;
 
-    padding: 14px 42px;
+            width: fit-content;
+            margin: -28px auto 0 auto;
 
-    border-radius: 999px;
+            padding: 14px 42px;
 
-    background: linear-gradient(
-        135deg,
-        #6B3EFF 0%,
-        #A855F7 50%,
-        #7C4DFF 100%
-    );
+            border-radius: 999px;
 
-    box-shadow:
-        0 8px 25px rgba(107, 62, 255, 0.35),
-        0 2px 10px rgba(168, 85, 247, 0.25);
+            background: linear-gradient(135deg,
+                    #6B3EFF 0%,
+                    #A855F7 50%,
+                    #7C4DFF 100%);
 
-    border: 2px solid rgba(255,255,255,0.15);
+            box-shadow:
+                0 8px 25px rgba(107, 62, 255, 0.35),
+                0 2px 10px rgba(168, 85, 247, 0.25);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.15);
 
-    animation: badgeFloat 3s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    h2 {
-        color: #fff;
+            animation: badgeFloat 3s ease-in-out infinite;
 
-        font-size: 1.3rem;
-        font-weight: 700;
+            h2 {
+                color: #fff;
 
-        margin: 0;
+                font-size: 1.3rem;
+                font-weight: 700;
 
-        letter-spacing: 0.5px;
+                margin: 0;
 
-        text-shadow:
-            0 2px 8px rgba(0,0,0,0.25);
-    }
+                letter-spacing: 0.5px;
 
-    &::before {
-        content: "";
+                text-shadow:
+                    0 2px 8px rgba(0, 0, 0, 0.25);
+            }
 
-        position: absolute;
-        top: 0;
-        left: -120%;
+            &::before {
+                content: "";
 
-        width: 60%;
-        height: 100%;
+                position: absolute;
+                top: 0;
+                left: -120%;
 
-        background: rgba(255,255,255,0.2);
+                width: 60%;
+                height: 100%;
 
-        transform: skewX(-25deg);
+                background: rgba(255, 255, 255, 0.2);
 
-        animation: shine 3s linear infinite;
+                transform: skewX(-25deg);
 
-        border-radius: 999px;
-    }
-}
+                animation: shine 3s linear infinite;
 
-@keyframes shine {
-    0% {
-        left: -120%;
-    }
+                border-radius: 999px;
+            }
+        }
 
-    100% {
-        left: 150%;
-    }
-}
+        @keyframes shine {
+            0% {
+                left: -120%;
+            }
 
-@keyframes badgeFloat {
-    0% {
-        transform: translateY(0px);
-    }
+            100% {
+                left: 150%;
+            }
+        }
 
-    50% {
-        transform: translateY(-4px);
-    }
+        @keyframes badgeFloat {
+            0% {
+                transform: translateY(0px);
+            }
 
-    100% {
-        transform: translateY(0px);
-    }
-}
+            50% {
+                transform: translateY(-4px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
 
         .product-information {
             padding: 2rem 2rem;

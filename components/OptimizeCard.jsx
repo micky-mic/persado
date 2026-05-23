@@ -3,7 +3,6 @@
 import { useState } from "react";
 
 export default function OptimizeCard({ onComplete }) {
-
     const [startOptimize, setStartOptimize] = useState(false);
     const [completed, setCompleted] = useState(false);
 
@@ -26,34 +25,28 @@ export default function OptimizeCard({ onComplete }) {
         },
     ];
 
-    const totalDuration = steps.length * 5;
+    // Total animation time = 2 seconds
+    const totalDuration = 2;
+    const stepDuration = totalDuration / steps.length;
 
     const handleOptimize = () => {
-
         if (!startOptimize) {
-
             setStartOptimize(true);
 
             setTimeout(() => {
-
                 setCompleted(true);
 
-                onComplete(true);
-
+                if (onComplete) {
+                    onComplete(true);
+                }
             }, totalDuration * 1000);
-
         }
-
     };
 
     return (
-
         <div className="optimize-card">
-
             <div className="top-section">
-
                 <div className="title-row">
-
                     <div className="icon">
                         <video
                             src="/new/optimizevid.mp4"
@@ -65,160 +58,120 @@ export default function OptimizeCard({ onComplete }) {
                     </div>
 
                     <p>Optimize Assistant Panel</p>
-
                 </div>
 
                 <div
-                    className={`optimize-btn ${completed ? "optimized-btn" : ""
-                        } ${startOptimize ? "disabled" : ""
-                        }`}
+                    className={`optimize-btn ${
+                        completed ? "optimized-btn" : ""
+                    } ${startOptimize ? "disabled" : ""}`}
                     onClick={handleOptimize}
                 >
-
                     <p>
-                        {
-                            completed
-                                ? "Verified, Ready to Submit"
-                                : startOptimize
-                                    ? "Optimizing..."
-                                    : "Start Optimize"
-                        }
+                        {completed
+                            ? "Verified, Ready to Submit"
+                            : startOptimize
+                            ? "Optimizing..."
+                            : "Start Optimize"}
                     </p>
-
                 </div>
-
             </div>
 
             <div className="bottom-section">
-
                 <div className="ai-core">
-
                     <div className="core-wrapper">
-
                         <p className="title">
-                            {
-                                completed
-                                    ? "AI CORE // SYNCHRONIZED"
-                                    : startOptimize
-                                        ? "AI CORE // SYNCHRONIZING"
-                                        : "AI CORE // INITIALIZING"
-                            }
+                            {completed
+                                ? "AI CORE // SYNCHRONIZED"
+                                : startOptimize
+                                ? "AI CORE // SYNCHRONIZING"
+                                : "AI CORE // INITIALIZING"}
                         </p>
 
                         <p className="desc">
-
-                            {
-                                completed
-                                    ? (
-                                        <>
-                                            All protocols executed successfully.
-                                        </>
-                                    )
-                                    : (
-                                        <>
-                                            Establishing secure link…
-                                            <br />
-                                            Engaging optimization protocols…
-                                        </>
-                                    )
-                            }
-
+                            {completed ? (
+                                <>
+                                    All protocols executed successfully.
+                                </>
+                            ) : (
+                                <>
+                                    Establishing secure link…
+                                    <br />
+                                    Engaging optimization protocols…
+                                </>
+                            )}
                         </p>
-
                     </div>
-
                 </div>
 
                 <div className="steps">
-
                     {steps.map((item, index) => (
-
                         <div
                             className="step-row"
                             key={index}
                         >
-
                             <p className="step-title">
-
-                                <span>
-                                    [{`0${index + 1}`}]
-                                </span>
+                                <span>[{`0${index + 1}`}]</span>
 
                                 <br />
 
                                 {item.title}
-
                             </p>
 
                             <div className="progress-container">
-
                                 <div className="progress">
-
                                     <div
-                                        className={`progress-fill ${startOptimize
-                                            ? "active"
-                                            : ""
-                                            }`}
+                                        className={`progress-fill ${
+                                            startOptimize ? "active" : ""
+                                        }`}
                                         style={{
-                                            animationDelay: `${index * 5}s`,
+                                            animationDelay: `${
+                                                index * stepDuration
+                                            }s`,
                                         }}
                                     ></div>
-
                                 </div>
 
                                 <p
-                                    className={`status ${startOptimize
-                                        ? "show"
-                                        : ""
-                                        }`}
+                                    className={`status ${
+                                        startOptimize ? "show" : ""
+                                    }`}
                                     style={{
-                                        animationDelay: `${index * 5 + 5}s`,
+                                        animationDelay: `${
+                                            (index + 1) * stepDuration
+                                        }s`,
                                     }}
                                 >
                                     {item.status}
                                 </p>
-
                             </div>
-
                         </div>
-
                     ))}
-
                 </div>
 
                 <div className="status-section">
-
                     <p>
                         Status:
                         <span>
-                            {
-                                completed
-                                    ? " Fully Operational"
-                                    : startOptimize
-                                        ? " Processing..."
-                                        : " Waiting"
-                            }
+                            {completed
+                                ? " Fully Operational"
+                                : startOptimize
+                                ? " Processing..."
+                                : " Waiting"}
                         </span>
                     </p>
 
                     <p>
                         AI State:
                         <span>
-                            {
-                                completed
-                                    ? " Ready for Execution"
-                                    : startOptimize
-                                        ? " Active"
-                                        : " Idle"
-                            }
+                            {completed
+                                ? " Ready for Execution"
+                                : startOptimize
+                                ? " Active"
+                                : " Idle"}
                         </span>
                     </p>
-
                 </div>
-
             </div>
-
-        </div >
-
+        </div>
     );
 }
