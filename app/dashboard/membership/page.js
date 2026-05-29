@@ -1,5 +1,5 @@
 import Breadcrumb from '@/components/breadcrumb/Breadcrumb'
-import certificate from "@/public/new/certificate.png"
+import membership from "@/public/new/membership.png"
 import React from 'react'
 import Image from 'next/image'
 
@@ -10,15 +10,15 @@ const page = () => {
             <div className='background-color pageAnimatioin'>
                 <div className='certificate-wrapper'>
                     <Breadcrumb
-                        title="Certificate"
+                        title="Membership"
                         link="/dashboard"
                         isColor="#fff"
                         bg="#000"
                     />
                     <div className='certtificate-img'>
                         <Image
-                            src={certificate}
-                            alt='certificate'
+                            src={membership}
+                            alt='membership'
                             height={100}
                             width={100}
                             unoptimized

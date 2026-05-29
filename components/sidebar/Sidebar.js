@@ -230,6 +230,9 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                                                 <Link href="/dashboard/certificate" className="menu-item">
                                                     Certificate
                                                 </Link>
+                                                 <Link href="/dashboard/membership" className="menu-item">
+                                                    Membership
+                                                </Link>
 
                                             </div>
 
