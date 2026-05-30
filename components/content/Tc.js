@@ -22,38 +22,78 @@ const Tc = ({ data, authenticatedUser, allCommission, userCommission }) => {
 
     const tcData = [
         {
-            title: "How We Work",
+            title: "",
             points: [
-                "Each account requires 40 sales completed driving and a minimum amount of USD 50 before performing withdrawal or reset.",
-                "One cell phone number can only be registered once.",
+                "Please read the following updated Terms and Conditions carefully. By using our platform, you agree to abide by these terms. Thank you for your cooperation.",
             ],
         },
         {
-            title: "Privacy",
+            title: "Account Usage and Withdrawals",
             points: [
-                "Do not disclose account password to anyone if any damage is caused, the platform will not be responsible.",
+                "All applications must be fully completed prior to initiating a withdrawal or resetting your account.",
             ],
         },
         {
-            title: "Finance Management",
+            title: "Account Registration",
             points: [
-                "If you keep withdrawing money for a short period of game or the amount is large, the account will be frozen and you will have to pay to unfreeze the account.",
+                "Each phone number is permitted to register only one account. Any multiple accounts associated with the same phone number will be deactivated.",
             ],
         },
         {
-            title: "Optimization",
+            title: "Wallet Address Binding",
             points: [
-                "All sales are randomly issued by the system, so it is not possible to change, cancel, control and skip, etc.",
-                "Each sales comes from different seller’s, longer than 5 minutes without deposit and each deposit need to confirm with agency service and seller bank account if it is the same if the deposit to the wrong account, the platform has the right to hold responsible.",
-                "Users required to complete 40 sales within 8 hours once started Create Data.",
+                "Binding the same wallet address to multiple accounts is strictly prohibited. Detected violations will result in account freezing.",
             ],
         },
         {
-            title: "Violation",
+            title: "Account Security",
             points: [
-                "Legal measures will be taken in the event of malicious misappropriate of an account.",
+                "Safeguard your account and withdrawal passwords by not sharing them with others. The platform assumes no responsibility for damages caused by unauthorized access.",
             ],
         },
+        {
+            title: "Application Set",
+            points: [
+                "Application Sets are randomly assigned by the system, with each set containing 1 to 3 premium applications. The number of Application Sets per allocation ranges from 1 to 3. Once assigned, modifications, cancellations, or abandonment of an Application Set are not permitted.",
+            ],
+        },
+        {
+            title: "Inappropriate Account Usage",
+            points: [
+                "The platform reserves the right to take legal action against any inappropriate use of accounts.",
+            ],
+        },
+        {
+            title: "Deposit Confirmation",
+            points: [
+                "Confirm the deposit address with customer service before transferring funds to ensure accuracy.",
+            ],
+        },
+        {
+            title: "Wrong Deposit Address",
+            points: [
+                "The platform is not liable for deposits sent to incorrect addresses. Always verify the address before making a deposit.",
+            ],
+        },
+        {
+            title: "Minimum Balance Requirement",
+            points: [
+                "A minimum balance of $80 is required before initiating a enhancing process. enhancing with a balance below this threshold is not permitted.",
+            ],
+        },
+        {
+            title: "Optimization Completion",
+            points: [
+                "Optimization must be completed within one day of initiation. If you are unable to complete it within the timeframe, inform customer service immediately.",
+            ],
+        },
+        {
+            title: "Dear Freelancers,",
+            points: [
+                "Please ensure you thoroughly review and understand these updated Terms and Conditions. Your adherence is essential and greatly appreciated.",
+            ],
+        },
+        
     ];
 
     return (

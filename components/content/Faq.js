@@ -9,64 +9,37 @@ import Image from "next/image";
 
 const faqData = [
     {
-        title: "NOTICE",
-        content: `Kindly do not use the same personal bank card information to register repeatedly, 
-repeated registration will take action to specific account if found.
+        title: "IMPORTANT NOTICES",
+        content: `Members are strictly prohibited from registering multiple accounts and repeatedlyusing the same wallet address for enhance application. If such activity is detected,the account will be frozen by the system. For more information, please contact our customer service.
 
-Personal multi-account driving sales will lead to the suspension of the seller's store, 
-affect the seller's credibility and the invalidation of sales.
+All forms of malicious money laundering are strictly prohibited. If any such activity is found, the platform will freeze the associated account and take necessary legal action.`,
 
-The platform prohibits one card bound to multiple accounts, please do not use individual 
-multiple account, card bound to multiple accounts, will all be lead to funds freeze, 
-90 days account permanently blocked processing.
 
-The platform is designed to prevent people from maliciously laundering money or cashing out 
-a series of improper behavior.`,
     },
 
     {
         title: "DEPOSIT",
-        content: `Each deposit are required to redirect to the agency service to assist in remittance deposit.
-         Once remitting the funds according to the account provided by the platform's agency service, kindly provide a screenshot of the successful transfer to the account.
-          In sales to ensure that the deposit is made instant, please make sure that the name of the person you are transferring to and the amount you are transferring are the
-          same as the one being provided. If you encounter any unsolvable problems during the deposit process, please contact the deposit agency service in Ame. Due to a large amount of information,
-          please make sure to check the account card number of this platform carefully before deposit. The platform occasionally changes the account number. Any inquiries kindly refer to platform online agency service for consultation!`,
+        content: `For each deposit, you are required to contact our customer service for assistance with the remittance deposit process. After remitting the funds to the account provided by the platform's customer service, please provide a screenshot of the successful transfer. To ensure instant deposit processing, ensure that the wallet address match the details provided. If you encounter any issues during the deposit process, please contact our deposit customer service promptly. Note that the platform occasionally changes wallet address, so please carefully check the wallet address before making a deposit. For any inquiries, kindly seek assistance from our live customer service.`,
     },
 
     {
-        title: "CREATE DATA",
-        content: `Once deposited your account, you may Create Data, click
-"Create Data" to redirect to the relevant page and "START Create Data".
- Wait for the system to drive a sales, submit the
-sales once sales submission pops up to complete the sales.
-Complete 40 sales per day to perform a withdrawal`,
+        title: "Withdrawal",
+        content: `Before proceeding with a withdrawal, please ensure that you have bound your withdrawal address on the platform. To withdraw funds, go to the home page and click on the "Withdrawal" interface. Enter the desired withdrawal amount and your withdrawal password to initiate the withdrawal. Withdrawal processing time is within one hour, following the platform's operating hours.`,
     },
 
     {
-        title: "WITHDRAW",
-        content: `Before proceed to withdrawal, kindly bind your withdrawal information on the platform. Withdraw
-your funds on the home page "Withdrawal"
-interface. Click the "Withdraw" button after
-entering the amount you want to withdraw and
-your withdrawal password to withdraw. The
-specific arrival time is subject to the bank's arrival
-time. Withdrawal time is from 09:30 to 23:00 every
-day.`,
+        title: "Application Set",
+        content: `Each Application Set may consist of 1-3 premium applications. The allocation of Application Set is based on our decentralized system algorithm. In the case of a negative balance, please contact our customer service for assistance with the remittance deposit. As a reward for completing the Application Set, your account will receive 5%-8% Commission.`,
     },
 
     {
-        title: "PLATFORM AGENT MODE",
-        content: `Users can become platform agents by
-recommending new users, and they can get
-extra dynamic rewards. The reward is 20% of the
-daily commission for referrals`,
+        title: "Freelancers",
+        content: `Freelancers of this platform have the opportunity to earn additional dynamic commissions by referring new freelancers. The system will automatically grant you a 25% commission based on your downline's earnings.`,
     },
 
     {
-        title: "SALES DRIVING TIME",
-        content: `Users can become platform agents by recommending new users, and they can get extra
-dynamic rewards. The reward is 20% of the daily
-commission for referrals`,
+        title: "Operating Hours",
+        content: `The platform operates daily from 11:00 AM to 11:00 PM EST. Freelancers can enhance applications exclusively during these operating hours.`,
     },
 ];
 
@@ -87,34 +60,37 @@ const Faq = () => {
         }}>
             <Breadcrumb title={"FAQ"} link="/dashboard" isColor="#fff" />
 
-            <div className="faq-container">
-                {faqData.map((item, index) => (
-                    <div className="faq-card" key={index}>
-                        <div
-                            className="faq-header"
-                            onClick={() => toggleFaq(index)}
-                        >
-                            <h3>{item.title}</h3>
+           <div className="faq-container">
+    {faqData.map((item, index) => (
+        <div className="faq-card" key={index}>
+            <div
+                className="faq-header"
+                onClick={() => toggleFaq(index)}
+            >
+                <h3>{item.title}</h3>
 
-                            <span className="faq-icon">
-                                {activeIndex === index ? "−" : "+"}
-                            </span>
-                        </div>
-                        {activeIndex === index && (
-                            <div className="faq-content">
-                                <p>{item.content}</p>
-                            </div>
-                        )}
-                    </div>
-                ))}
+                <span className="faq-icon">
+                    {activeIndex === index ? "−" : "+"}
+                </span>
             </div>
+
+            {activeIndex === index && (
+                <div className="faq-content">
+                    <p style={{ whiteSpace: "pre-line" }}>
+                        {item.content}
+                    </p>
+                </div>
+            )}
+        </div>
+    ))}
+</div>
             <div className="faq-footer">
                 <Image
-                src={logo}
-                alt="logo"
-                width={100}
-                height={100}
-                unoptimized
+                    src={logo}
+                    alt="logo"
+                    width={100}
+                    height={100}
+                    unoptimized
                 />
 
                 <h4>The Company</h4>

@@ -7,9 +7,9 @@ import support from "@/public/new/support.svg"
 
 const Support = ({ authUser, isLink, authenticatedUser, allCommission, userCommission }) => {
 
-    const handleAddFundsClick = () => {
-        if (typeof window !== "undefined" && window.Tawk_API?.maximize) {
-            window.Tawk_API.maximize();
+  const handleAddFundsClick = () => {
+        if (window.LC_API && typeof window.LC_API.open_chat_window === 'function') {
+            window.LC_API.open_chat_window();
         } else {
             console.error("Live Chat widget not initialized or method not found.");
         }
@@ -60,7 +60,7 @@ const Support = ({ authUser, isLink, authenticatedUser, allCommission, userCommi
                     </div>
                     <div className="working-hrs">
                         <p>Service Hour</p>
-                        <h3>09:00 AM - 23:00 PM</h3>
+                        <h3>11:00 AM - 11:00 PM</h3>
                     </div>
                     <button className="btn global-primary-btn mt2" onClick={() => handleAddFundsClick()}>Contact Us</button>
                 </div>

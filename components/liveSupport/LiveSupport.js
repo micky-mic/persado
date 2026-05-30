@@ -1,30 +1,43 @@
 "use client";
 
-import { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-export default function LiveSupport() {
+const LiveChatScript = () => {
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    window.__lc = window.__lc || {};
+    window.__lc.license = 19750136;
 
-    // prevent duplicate loading
-    if (window.Tawk_API) return;
-
-    window.Tawk_API = window.Tawk_API || {};
-    window.Tawk_LoadStart = new Date();
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://embed.tawk.to/69da5437d8a4811c366f3bfa/1jludhukj";
-    script.charset = "UTF-8";
-    script.setAttribute("crossorigin", "*");
-
-    document.body.appendChild(script);
-
-    return () => {
-      // optional cleanup
-      document.body.removeChild(script);
+    const initLiveChat = () => {
+      const script = document.createElement('script');
+      script.async = true;
+      script.type = 'text/javascript';
+      script.src = 'https://cdn.livechatinc.com/tracking.js';
+      document.head.appendChild(script);
     };
+
+    if (!window.__lc.asyncInit) {
+      initLiveChat();
+      window.LiveChatWidget = window.LiveChatWidget || { _q: [] };
+    }
   }, []);
 
   return null;
-}
+};
+
+const LiveSupport = () => {
+  return (
+    <div className="live-support-wrapper">
+      <LiveChatScript />
+      <noscript>
+        <a href="https://www.livechat.com/chat-with/19750136/" rel="nofollow">
+          Chat with us
+        </a>, powered by{' '}
+        <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">
+          LiveChat
+        </a>
+      </noscript>
+    </div>
+  );
+};
+
+export default LiveSupport;
