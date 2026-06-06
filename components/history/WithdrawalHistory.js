@@ -125,7 +125,7 @@ const WithdrawalHistory = ({ withdrawal, authUser }) => {
                                         <div className='withdraw-wallet-parent'>
                                             <div className='withdraw-wallet-child'>
                                                 <p>Wallet Address</p>
-                                                <h2>ghjk2l13jh4g53hjk245jh6g4h3jk2k4j5h6gf43hj2k4j5htyvc</h2>
+                                                <h2>{data?.wallet_address}</h2>
                                             </div>
                                         </div>
                                         {/* <h5 style={{

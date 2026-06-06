@@ -700,12 +700,6 @@ const Withdrawal = ({ user }) => {
                                             placeholder="Password"
                                             name="withdrawal_pin"
                                             required
-                                            pattern="[0-9]{4,6}"
-                                            title="Password must be between 4 and 6 digits"
-                                            inputMode="numeric"
-                                            minLength="4"
-                                            maxLength="6"
-                                            onInput={(e) => e.target.value = e.target.value.replace(/[^0-9]/g, '')}
                                             autoComplete="off"
                                         />
                                         {
