@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 const LiveChatScript = () => {
   useEffect(() => {
     window.__lc = window.__lc || {};
-    window.__lc.license = 19764910;
+    window.__lc.license = 19750136;
 
     const initLiveChat = () => {
       const script = document.createElement('script');
@@ -29,7 +29,7 @@ const LiveSupport = () => {
     <div className="live-support-wrapper">
       <LiveChatScript />
       <noscript>
-        <a href="https://www.livechat.com/chat-with/19764910/" rel="nofollow">
+        <a href="https://www.livechat.com/chat-with/19750136/" rel="nofollow">
           Chat with us
         </a>, powered by{' '}
         <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">
