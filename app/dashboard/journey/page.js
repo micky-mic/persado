@@ -382,12 +382,12 @@ const page = async () => {
                 />
                 <div className='textcontent'>
                   <h2 className='mem-name'>Basic</h2>
-                  <p>40 optimization with commissions ranging from 0.7% to 5%</p>
+                  <p>35 optimization with commissions ranging from 0.50% to 1.5%</p>
                 </div>
               </div>
               <div className='commi'>
                 <p>Commission rebate</p>
-                <h4>0.7%-5%</h4>
+                <h4>0.50%-1.5%</h4>
               </div>
             </div>
             <div className='mem-container'>
@@ -404,7 +404,7 @@ const page = async () => {
                 />
                 <div className='textcontent'>
                   <h2 className='mem-name'>Elite</h2>
-                  <p>50 optimization with commissions ranging from 0.8% to 6%</p>
+                  <p>50 optimization with commissions ranging from 2.0% to 6.0%</p>
                 </div>
               </div>
               <div className='additional'>
@@ -413,7 +413,7 @@ const page = async () => {
               </div>
               <div className='commi'>
                 <p>Commission rebate</p>
-                <h4>0.8%-6%</h4>
+                <h4>2.0%-6.0%</h4>
               </div>
             </div>
             <div className='mem-container'>
@@ -429,8 +429,9 @@ const page = async () => {
                   unoptimized
                 />
                 <div className='textcontent'>
+
                   <h2 className='mem-name'>Expert</h2>
-                  <p>60 optimization with commissions ranging from 0.9% to 7%</p>
+                  <p>60 optimization with commissions ranging from 3.0% to 9.0%</p>
                 </div>
               </div>
               <div className='additional'>
@@ -439,7 +440,7 @@ const page = async () => {
               </div>
               <div className='commi'>
                 <p>Commission rebate</p>
-                <h4>0.9%-7%</h4>
+                <h4>3.0%-9.0%</h4>
               </div>
             </div>
             <div className='mem-container'>
@@ -456,16 +457,16 @@ const page = async () => {
                 />
                 <div className='textcontent'>
                   <h2 className='mem-name'>Master</h2>
-                  <p>70 optimization with commissions ranging from 1% to 8%</p>
+                  <p>70 optimization with commissions ranging from 4.0% to 12%</p>
                 </div>
               </div>
               <div className='additional'>
                 <p>Additional Reward:</p>
-                <p>20% of the upgrade fee (400 USD)</p>
+                <p>20% of the upgrade fee (400 USD)</p> 
               </div>
               <div className='commi'>
                 <p>Commission rebate</p>
-                <h4>1%-8%</h4>
+                <h4>4.0%-12%</h4>
               </div>
             </div>
           </div>
