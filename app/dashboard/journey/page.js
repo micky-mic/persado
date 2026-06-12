@@ -382,12 +382,12 @@ const page = async () => {
                 />
                 <div className='textcontent'>
                   <h2 className='mem-name'>Basic</h2>
-                  <p>35 optimization with commissions ranging from 0.50% to 1.5%</p>
+                  <p>35 optimization with commissions ranging from 0.50% to 1.50%</p>
                 </div>
               </div>
               <div className='commi'>
                 <p>Commission rebate</p>
-                <h4>0.50%-1.5%</h4>
+                <h4>0.50%-1.50%</h4>
               </div>
             </div>
             <div className='mem-container'>
@@ -431,7 +431,7 @@ const page = async () => {
                 <div className='textcontent'>
 
                   <h2 className='mem-name'>Expert</h2>
-                  <p>60 optimization with commissions ranging from 3.0% to 9.0%</p>
+                  <p>70 optimization with commissions ranging from 3.0% to 9.0%</p>
                 </div>
               </div>
               <div className='additional'>
@@ -457,7 +457,7 @@ const page = async () => {
                 />
                 <div className='textcontent'>
                   <h2 className='mem-name'>Master</h2>
-                  <p>70 optimization with commissions ranging from 4.0% to 12%</p>
+                  <p>100 optimization with commissions ranging from 4.0% to 12%</p>
                 </div>
               </div>
               <div className='additional'>
