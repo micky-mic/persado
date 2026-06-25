@@ -10,7 +10,7 @@ const Alert = ({ user }) => {
 
     useEffect(() => {
 
-        const targetDate = new Date('2025-08-07');
+        const targetDate = new Date('2026-05-09');
 
         const checkRegistrationDate = () => {
             if (!user?.createdAt) return;

@@ -13,7 +13,7 @@ import joinimg1 from "@/public/new/dashboard/joinimg1.png"
 import dynamic from "next/dynamic";
 import GlobalProgress from "@/components/global_progress/GlobalProgress";
 import { fetchPop } from "../actions/notice/data";
-
+import Alert from "@/components/alert/Alert";
 
 
 const Properties = dynamic(() => import("@/components/sliders/Properties"), {
@@ -61,7 +61,7 @@ const page = async () => {
 
     return (
         <>
-            {/* <Alert user={JSON.parse(JSON.stringify(authenticatedUser))}/> */}
+            <Alert user={JSON.parse(JSON.stringify(authenticatedUser))}/>
             <div className="dashboard-wrapper page_animation">
                 <div className="dashboard-page-wrapper" >
 
