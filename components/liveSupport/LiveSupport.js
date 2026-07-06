@@ -1,42 +1,20 @@
 "use client";
 
-import React, { useEffect } from 'react';
-
-const LiveChatScript = () => {
-  useEffect(() => {
-    window.__lc = window.__lc || {};
-    window.__lc.license = 19764910;
-
-    const initLiveChat = () => {
-      const script = document.createElement('script');
-      script.async = true;
-      script.type = 'text/javascript';
-      script.src = 'https://cdn.livechatinc.com/tracking.js';
-      document.head.appendChild(script);
-    };
-
-    if (!window.__lc.asyncInit) {
-      initLiveChat();
-      window.LiveChatWidget = window.LiveChatWidget || { _q: [] };
-    }
-  }, []);
-
-  return null;
-};
+import React from "react";
+import { FaTelegramPlane } from "react-icons/fa";
 
 const LiveSupport = () => {
   return (
-    <div className="live-support-wrapper">
-      <LiveChatScript />
-      <noscript>
-        <a href="https://www.livechat.com/chat-with/19764910/" rel="nofollow">
-          Chat with us
-        </a>, powered by{' '}
-        <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">
-          LiveChat
-        </a>
-      </noscript>
-    </div>
+    <a
+      href="https://t.me/NexosAI_Support"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="telegram-support"
+      aria-label="Telegram Support"
+    >
+      <FaTelegramPlane size={28} />
+      <span>Live Support</span>
+    </a>
   );
 };
 
