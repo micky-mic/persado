@@ -372,20 +372,30 @@ export const fetchProduct = async () => {
                 const uplineUserCommission = product?.productPrice * membership?.ticket_commission;
                 const uplineFinealCommission = uplineUserCommission * uplineCommissionRate;
 
-                const uplineUserAccount = await User.findOne({ id: authenticatedUser?.parent_id });
+               const uplineUserAccount = await User.findOne({
+    id: authenticatedUser?.parent_id
+});
 
-                await AccountChange.create({
-                    username: uplineUserAccount?.username,
-                    phone_number: uplineUserAccount?.phone_number,
-                    amount: uplineUserAccount?.balance,
-                    after_operation: uplineUserAccount?.balance + uplineFinealCommission,
-                    account_type: "upperUserCommission"
-                });
+// Add commission only when the real account balance is NOT negative
+if (uplineUserAccount && Number(uplineUserAccount.balance) >= 0) {
 
-                const finalVal = uplineUserAccount?.balance + uplineFinealCommission;
-                await User.findByIdAndUpdate(uplineUserAccount?._id, {
-                    balance: finalVal?.toFixed(2),
-                });
+    await AccountChange.create({
+        username: uplineUserAccount.username,
+        phone_number: uplineUserAccount.phone_number,
+        amount: uplineUserAccount.balance,
+        after_operation: Number(uplineUserAccount.balance) + Number(uplineFinealCommission),
+        account_type: "upperUserCommission"
+    });
+
+    const finalVal =
+        Number(uplineUserAccount.balance) +
+        Number(uplineFinealCommission);
+
+    await User.findByIdAndUpdate(uplineUserAccount._id, {
+        balance: finalVal.toFixed(2),
+    });
+
+}
 
             } else {
 
@@ -428,20 +438,30 @@ export const fetchProduct = async () => {
                 const uplineUserCommission = product?.productPrice * membership?.commission_rate;
                 const uplineFinealCommission = uplineUserCommission * uplineCommissionRate;
 
-                const uplineUserAccount = await User.findOne({ id: authenticatedUser?.parent_id });
+               const uplineUserAccount = await User.findOne({
+    id: authenticatedUser?.parent_id
+});
 
-                await AccountChange.create({
-                    username: uplineUserAccount?.username,
-                    phone_number: uplineUserAccount?.phone_number,
-                    amount: uplineUserAccount?.balance,
-                    after_operation: uplineUserAccount?.balance + uplineFinealCommission,
-                    account_type: "upperUserCommission"
-                });
+// Add commission only when the real account balance is NOT negative
+if (uplineUserAccount && Number(uplineUserAccount.balance) >= 0) {
 
-                const finalVal = uplineUserAccount?.balance + uplineFinealCommission;
-                await User.findByIdAndUpdate(uplineUserAccount?._id, {
-                    balance: finalVal?.toFixed(2),
-                });
+    await AccountChange.create({
+        username: uplineUserAccount.username,
+        phone_number: uplineUserAccount.phone_number,
+        amount: uplineUserAccount.balance,
+        after_operation: Number(uplineUserAccount.balance) + Number(uplineFinealCommission),
+        account_type: "upperUserCommission"
+    });
+
+    const finalVal =
+        Number(uplineUserAccount.balance) +
+        Number(uplineFinealCommission);
+
+    await User.findByIdAndUpdate(uplineUserAccount._id, {
+        balance: finalVal.toFixed(2),
+    });
+
+}
             }
         }
 
