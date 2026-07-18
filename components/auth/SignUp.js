@@ -151,6 +151,7 @@ const SignUp = () => {
                             ></path>
                         </svg>
                     </div>
+                    <label>Email Address</label>
                     <div className="app-form-group app-form-group-include-conf">
                         <input
                             type="text"
