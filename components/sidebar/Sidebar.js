@@ -7,7 +7,7 @@ import Link from 'next/link';
 import ConfirmModal from '../successModal/ConfirmModal';
 import Pop from '../notification/Pop';
 import logo from '@/public/new2/logo.png'
-import menubar from '@/public/new2/sidebar/menubar.png'
+import menubar from '@/public/new2/sidebar/cancel.svg'
 import sidelogo from '@/public/new2/sidelogo.png'
 import vip1 from '@/public/new/vip1.png'
 import vip2 from '@/public/new/vip2.png'
@@ -99,6 +99,7 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                                                     width={100}
                                                     unoptimized
                                                 />
+
                                             </button>
                                         </div>
 
