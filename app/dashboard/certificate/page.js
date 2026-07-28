@@ -1,5 +1,5 @@
 import Breadcrumb from '@/components/breadcrumb/Breadcrumb'
-import certificate from "@/public/new/certificate.png"
+import certificate from "@/public/new2/certificate.jpg"
 import React from 'react'
 import Image from 'next/image'
 
@@ -12,8 +12,8 @@ const page = () => {
                     <Breadcrumb
                         title="Certificate"
                         link="/dashboard"
-                        isColor="#fff"
-                        bg="#000"
+                        isColor="#000000"
+                        // bg="#000"
                     />
                     <div className='certtificate-img'>
                         <Image

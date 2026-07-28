@@ -2,11 +2,8 @@
 
 import React, { useEffect, useState } from 'react'
 import Breadcrumb from '../breadcrumb/Breadcrumb';
-import bgdesign from "@/public/new/bgdesign.svg"
-import logo from "@/public/new/logo.png"
-import Link from 'next/link';
-import Image from 'next/image';
-
+import bgdesign from "@/public/new2/lines.png"
+import Footer from "@/components/footer/Footer";
 
 
 const Tc = ({ data, authenticatedUser, allCommission, userCommission }) => {
@@ -109,7 +106,8 @@ const Tc = ({ data, authenticatedUser, allCommission, userCommission }) => {
                     <Breadcrumb
                         title={"TERMS & CONDITIONS"}
                         link="/dashboard"
-                        isColor="#FFF"
+                        isColor="#000000"
+                        // bg="#ffffff"
                     />
                     {/* Cards */}
                     <div className="tc-wrapper">
@@ -128,36 +126,11 @@ const Tc = ({ data, authenticatedUser, allCommission, userCommission }) => {
                         ))}
                     </div>
 
-                    <div className="faq-footer">
-                        <Image
-                            src={logo}
-                            alt="logo"
-                            width={100}
-                            height={100}
-                            unoptimized
-                        />
-
-                        <h4>The Company</h4>
-
-                        <ul>
-                            <Link href={"/dashboard/content/about"}>
-                                <li>About Us</li>
-                            </Link>
-                            <Link href={"/dashboard/content/faq"}>
-                                <li>Frequently Asked Questions</li>
-                            </Link>
-                            <Link href={"/dashboard/content/tc"}>
-                                <li>Terms & Conditions</li>
-                            </Link>
-                        </ul>
-
-                        <p>© 2026. All Rights Reserved</p>
-                    </div>
+                    
                 </div>
+                 <Footer/>
             </div>
-            {/* <section className="content-section">
-                <div dangerouslySetInnerHTML={{ __html: info?.description }}></div>
-            </section> */}
+           
         </>
     )
 }
