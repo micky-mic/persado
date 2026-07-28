@@ -7,9 +7,9 @@ import data_not_found from "@/public/not_found.png";
 import Link from "next/link";
 import moment from 'moment';
 import 'moment-timezone';
-import money1 from "@/public/new/money1.png"
-import money2 from "@/public/new/money2.png"
-import money3 from "@/public/new/money3.png"
+import money1 from "@/public/new2/money1.png"
+import money2 from "@/public/new2/money2.png"
+import money3 from "@/public/new2/money3.png"
 
 const History = ({ data, membership }) => {
 
@@ -47,8 +47,8 @@ const History = ({ data, membership }) => {
                     <Breadcrumb
                         link="/dashboard"
                         title="Optimize History"
-                        isColor="#FFF"
-                        bg="#000"
+                        isColor="#000"
+                        bg="#FFF"
                     />
                     <div className="history-filter">
                         <ul>
