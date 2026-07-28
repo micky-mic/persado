@@ -2,10 +2,9 @@
 
 import React, { useState } from "react";
 import Breadcrumb from "../breadcrumb/Breadcrumb";
-import bgdesign from "@/public/new/bgdesign.svg"
-import logo from "@/public/new/logo.png"
-import Link from "next/link";
-import Image from "next/image";
+import bgdesign from "@/public/new2/lines.png"
+import Footer from "@/components/footer/Footer";
+
 
 const faqData = [
     {
@@ -58,58 +57,35 @@ const Faq = () => {
             backgroundSize: "cover",
             height: "100vh",
         }}>
-            <Breadcrumb title={"FAQ"} link="/dashboard" isColor="#fff" />
+            <Breadcrumb title={"FAQ"} link="/dashboard" isColor="#000000" />
 
-           <div className="faq-container">
-    {faqData.map((item, index) => (
-        <div className="faq-card" key={index}>
-            <div
-                className="faq-header"
-                onClick={() => toggleFaq(index)}
-            >
-                <h3>{item.title}</h3>
+            <div className="faq-container">
+                {faqData.map((item, index) => (
+                    <div className="faq-card" key={index}>
+                        <div
+                            className="faq-header"
+                            onClick={() => toggleFaq(index)}
+                        >
+                            <h3>{item.title}</h3>
 
-                <span className="faq-icon">
-                    {activeIndex === index ? "−" : "+"}
-                </span>
+                            <span className="faq-icon">
+                                {activeIndex === index ? "−" : "+"}
+                            </span>
+                        </div>
+
+                        {activeIndex === index && (
+                            <div className="faq-content">
+                                <p style={{ whiteSpace: "pre-line" }}>
+                                    {item.content}
+                                </p>
+                            </div>
+                        )}
+                    </div>
+                ))}
             </div>
-
-            {activeIndex === index && (
-                <div className="faq-content">
-                    <p style={{ whiteSpace: "pre-line" }}>
-                        {item.content}
-                    </p>
-                </div>
-            )}
+            <Footer />
         </div>
-    ))}
-</div>
-            <div className="faq-footer">
-                <Image
-                    src={logo}
-                    alt="logo"
-                    width={100}
-                    height={100}
-                    unoptimized
-                />
 
-                <h4>The Company</h4>
-
-                <ul>
-                    <Link href={"/dashboard/content/about"}>
-                        <li>About Us</li>
-                    </Link>
-                    <Link href={"/dashboard/content/faq"}>
-                        <li>Frequently Asked Questions</li>
-                    </Link>
-                    <Link href={"/dashboard/content/tc"}>
-                        <li>Terms & Conditions</li>
-                    </Link>
-                </ul>
-
-                <p>© 2026. All Rights Reserved</p>
-            </div>
-        </div>
     );
 };
 

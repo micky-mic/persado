@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { useRouter } from "next/navigation";
 
-import success from "@/public/new/success.png";
+import success from "@/public/new2/success.png";
 
 const SignUpSuccessModal = ({ setIsModal }) => {
 
@@ -51,11 +51,11 @@ const SignUpSuccessModal = ({ setIsModal }) => {
                                 gradientUnits="userSpaceOnUse"
                             >
 
-                                <stop stopColor="#071013" />
+                                <stop stopColor="#f7f7f5" />
 
                                 <stop
                                     offset="1"
-                                    stopColor="#6E41FF"
+                                    stopColor="#f7f7f5"
                                 />
 
                             </linearGradient>

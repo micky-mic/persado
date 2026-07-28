@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 
-import fail from "@/public/new/fail.png";
+import fail from "@/public/new2/fail.png";
 
 const SignUpFailModal = ({ setIsModal }) => {
 
@@ -44,11 +44,11 @@ const SignUpFailModal = ({ setIsModal }) => {
                                 gradientUnits="userSpaceOnUse"
                             >
 
-                                <stop stopColor="#071013" />
+                                <stop stopColor="#f7f7f5" />
 
                                 <stop
                                     offset="1"
-                                    stopColor="#6E41FF"
+                                    stopColor="#f7f7f5"
                                 />
 
                             </linearGradient>

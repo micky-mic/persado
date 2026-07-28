@@ -50,8 +50,8 @@ const SuccessModal = ({
                                 y2="325"
                                 gradientUnits="userSpaceOnUse"
                             >
-                                <stop stopColor="#071013" />
-                                <stop offset="1" stopColor="#6E41FF" />
+                                <stop stopColor="#f7f7f5" />
+                                <stop offset="1" stopColor="#f7f7f5" />
                             </linearGradient>
                         </defs>
                     </svg>

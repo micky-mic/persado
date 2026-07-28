@@ -1,49 +1,47 @@
-import React from 'react'
-import Image from 'next/image'
-import Logo from "@/public/new/logo.png"
-import footerbg from "@/public/new/footerbg.png"
-import Link from 'next/link'
-
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Logo from "@/public/new2/logo1.png";
 
 const Footer = () => {
     return (
-        <>
-            <div className='footer-wrapper' style={{
-                backgroundImage: `url(${footerbg.src})`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-            }}>
-                <div className='related-logo'>
+        <footer className="footer-wrapper">
+            <div className="footer-container">
+
+                <div className="related-logo">
                     <Image
                         src={Logo}
-                        alt="white"
-                        height={100}
-                        width={100}
-                        unoptimized
+                        alt="Logo"
+                        width={180}
+                        priority
                     />
                 </div>
-                <div className='footer-parent'>
-                    <div className='footer-child'>
-                        <h1>The Company</h1>
-                        <Link href="/dashboard/content/about">
-                            <p>About Us</p>
-                        </Link>
-                        <Link href="/dashboard/content/faq">
-                            <p>Frequently Asked Question(s)</p>
-                        </Link>
-                        <Link href="/dashboard/content/tc">
-                            <p>Terms & Conditions</p>
-                        </Link>
 
-                    </div>
-                    <div className='footer-child'>
-                        <p>© 2026. All Rights Reserved</p>
-                    </div>
+                <p className="footer-tagline">
+                    The regulated-ready creative system
+                </p>
+
+                <div className="footer-links">
+                    <Link href="/dashboard/content/about">
+                        About Us
+                    </Link>
+
+                    <Link href="/dashboard/content/faq">
+                        Frequently Asked Question(s)
+                    </Link>
+
+                    <Link href="/dashboard/content/tc">
+                        Terms & Conditions
+                    </Link>
                 </div>
-            </div>
-        </>
-    )
-}
 
-export default Footer
+                <div className="footer-bottom">
+                    © 2026 Persado Inc. All rights reserved.
+                </div>
+
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;

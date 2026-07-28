@@ -1,5 +1,5 @@
 import Breadcrumb from '@/components/breadcrumb/Breadcrumb'
-import membership from "@/public/new/membership.png"
+import membership from "@/public/new2/membership.jpg"
 import React from 'react'
 import Image from 'next/image'
 
@@ -12,8 +12,8 @@ const page = () => {
                     <Breadcrumb
                         title="Membership"
                         link="/dashboard"
-                        isColor="#fff"
-                        bg="#000"
+                        isColor="#000000"
+                        // bg="#000"
                     />
                     <div className='certtificate-img'>
                         <Image
