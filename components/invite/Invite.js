@@ -55,9 +55,9 @@ const Invite = ({ user }) => {
                     <div className="working-hrs">
                         <p>Referral Code</p>
                         <h3 onClick={() => copyToClipboard(user?.invitation_code ?? "")}>
-                            <span className="bracket">[ </span>
+                            <span className="bracket">[</span>
                             {user?.invitation_code}
-                            <span className="bracket"> ]</span>
+                            <span className="bracket">]</span>
                         </h3>
                     </div>
                     <button className="btn global-primary-btn mt2" onClick={() => copyToClipboard(user?.invitation_code)}>Refer now</button>
