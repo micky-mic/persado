@@ -4,7 +4,7 @@ import "./styles/appLayout.scss";
 import "./styles/styles.scss";
 import "./styles/global.scss";
 import { Toaster } from "react-hot-toast";
-import LiveSupport from '@/components/liveSupport/LiveSupport';
+// import LiveSupport from '@/components/liveSupport/LiveSupport';
 import favicon from "@/public/favicon.png";
 import NextTopLoader from 'nextjs-toploader';
 
@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
           </div>
         </div>
         <NextTopLoader />
-        <LiveSupport />
+        {/* <LiveSupport /> */}
       </body>
     </html>
   );

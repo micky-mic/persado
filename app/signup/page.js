@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import GlobalProgress from "@/components/global_progress/GlobalProgress";
 import Image from "next/image";
-import authbg2 from "@/public/new/authbg2.png";
+import lines from "@/public/new2/lines.png";
 import Breadcrumb from "@/components/breadcrumb/Breadcrumb";
 
 const SignUp = dynamic(() => import("@/components/auth/SignUp"), {
@@ -16,7 +16,7 @@ const page = () => {
                 <div className="bg-video-wrapper">
                     <div className="authbg">
                         <Image
-                            src={authbg2}
+                            src={lines}
                             height={100}
                             width={100}
                             alt="logo"

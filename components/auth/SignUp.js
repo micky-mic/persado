@@ -8,14 +8,14 @@ import { useState } from "react";
 import SignUpSuccessModal from "../successModal/SignUpSuccessModal";
 import SignUpFailModal from "../successModal/SignUpFailModal";
 import Image from "next/image";
-import logo from '@/public/new/logo.png'
+import logo from "@/public/new2/logo.png";
 
 
 function Submit() {
     const { pending } = useFormStatus();
     return (
         <>
-            <button type="submit" disabled={pending} className="primary-btn">{pending ? <> Please wait <i className="fa fa-circle-notch rotating-spinner"></i></> : "SIGN UP"}</button>
+            <button type="submit" disabled={pending} className="primary-btn pbm">{pending ? <> Please wait <i className="fa fa-circle-notch rotating-spinner"></i></> : "SIGN UP"}</button>
         </>
     )
 }
@@ -84,6 +84,27 @@ const SignUp = () => {
                     <></>
             }
             <div className="app-global-form white-background">
+                <div className='corner topleft'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                        <path d="M1 15V1H16" stroke="#1A1A2E" stroke-width="2" />
+                    </svg>
+                </div>
+                <div className='corner topright'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                        <path d="M15 15V1H5.96046e-07" stroke="#1A1A2E" stroke-width="2" />
+                    </svg>
+                </div>
+                <div className='corner buttomleft'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                        <path d="M1 -5.96046e-08V14H16" stroke="#1A1A2E" stroke-width="2" />
+                    </svg>
+                </div>
+                <div className='corner buttomright'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                        <path d="M15 -5.96046e-08V14H5.96046e-07" stroke="#1A1A2E" stroke-width="2" />
+                    </svg>
+                </div>
+
                 <div className='welcome-msg'>
                     <Image
                         src={logo}
@@ -331,20 +352,24 @@ const SignUp = () => {
                         <Submit />
                     </div>
                     <div className="form-copyright">
-                        <div className="checkbox-container">
+                        <label className="checkbox-container">
 
                             <input
                                 type="checkbox"
                                 checked={isAgree}
-                                onChange={(e) => setIsAgree(e.target.checked)}
+                                onChange={() => setIsAgree(!isAgree)}
                             />
 
+                            <span className="checkmark" />
+
                             <p>
-                                By creating an account or by logging into an account,
-                                you accept our <Link href="/tc">Terms & Conditions.</Link>
+                                By creating an account or by logging into an account, you accept our{" "}
+                                <Link href="/tc">
+                                    Terms &amp; Conditions.
+                                </Link>
                             </p>
 
-                        </div>
+                        </label>
                     </div>
                     <div className="create-account">
                         <p>Already have an account?</p>
