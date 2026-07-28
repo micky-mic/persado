@@ -3,8 +3,8 @@
 import Breadcrumb from '../breadcrumb/Breadcrumb';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
-import bgdesign from "@/public/new/bgdesign.svg"
-import invite from "@/public/new/invite.svg"
+import bgdesign from "@/public/new2/lines.png"
+import invite from "@/public/new2/invite.svg"
 
 const Invite = ({ user }) => {
 
@@ -36,7 +36,7 @@ const Invite = ({ user }) => {
                 <Breadcrumb
                     title="Invite"
                     link="/dashboard"
-                    isColor="#ffffff"
+                    isColor="#000"
                 />
                 <div className="support-wrapper page_animation">
                     <div className="support-wrapper-image">
@@ -54,7 +54,11 @@ const Invite = ({ user }) => {
                     </div>
                     <div className="working-hrs">
                         <p>Referral Code</p>
-                        <h3 onClick={() => copyToClipboard(user?.invitation_code ?? "")}>{user?.invitation_code}</h3>
+                        <h3 onClick={() => copyToClipboard(user?.invitation_code ?? "")}>
+                            <span className="bracket">[ </span>
+                            {user?.invitation_code}
+                            <span className="bracket"> ]</span>
+                        </h3>
                     </div>
                     <button className="btn global-primary-btn mt2" onClick={() => copyToClipboard(user?.invitation_code)}>Refer now</button>
                 </div>

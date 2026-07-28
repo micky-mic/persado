@@ -6,8 +6,9 @@ import toast from 'react-hot-toast';
 import Link from 'next/link';
 import ConfirmModal from '../successModal/ConfirmModal';
 import Pop from '../notification/Pop';
-import logo from '@/public/new/logo.png'
-import sidelogo from '@/public/new/sidelogo.png'
+import logo from '@/public/new2/logo.png'
+import menubar from '@/public/new2/sidebar/menubar.png'
+import sidelogo from '@/public/new2/sidebar/sidelogo.png'
 import vip1 from '@/public/new/vip1.png'
 import vip2 from '@/public/new/vip2.png'
 import vip3 from '@/public/new/vip3.png'
@@ -91,7 +92,13 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                                             />
 
                                             <button onClick={() => setIsNav(false)} className="mobile-menu__close">
-                                                ✕
+                                                <Image
+                                                    src={menubar}
+                                                    alt="logo"
+                                                    height={100}
+                                                    width={100}
+                                                    unoptimized
+                                                />
                                             </button>
                                         </div>
 
@@ -190,14 +197,15 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                                                 <Link href="/dashboard/support" className="menu-item">
                                                     Live Support
                                                 </Link>
-                                                <Link href="/dashboard/profile" className="menu-item">
-                                                    Profile
-                                                </Link>
-                                                  <Link href="/dashboard/event" className="menu-item">
-                                                    Event
-                                                </Link>
 
                                                 <div className="mobile-menu__line"></div>
+
+
+                                                {/* <Link href="/dashboard/event" className="menu-item">
+                                                    Event
+                                                </Link> */}
+
+
 
                                                 <Link href="/dashboard/withdrawal/linkwallet" className="menu-item">
                                                     Funding Credentials
@@ -210,7 +218,9 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                                                 <Link href="/dashboard/recharge" className="menu-item">
                                                     Deposit
                                                 </Link>
-
+                                                <Link href="/dashboard/profile" className="menu-item">
+                                                    Profile
+                                                </Link>
                                                 <Link href="/dashboard/content/about" className="menu-item">
                                                     About Us
                                                 </Link>
@@ -233,7 +243,7 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                                                 <Link href="/dashboard/certificate" className="menu-item">
                                                     Certificate
                                                 </Link>
-                                                 <Link href="/dashboard/membership" className="menu-item">
+                                                <Link href="/dashboard/membership" className="menu-item">
                                                     Membership
                                                 </Link>
 
