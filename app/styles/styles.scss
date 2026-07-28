@@ -3480,11 +3480,11 @@ form {
     .withdrawal-details {
         margin-top: 3rem;
         padding: 2rem 2rem;
-        background: linear-gradient(180deg, #071013 0.06%, #6E41FF 182.04%);
+        // background: linear-gradient(180deg, #071013 0.06%, #6E41FF 182.04%);
         border-radius: 1.5rem;
 
         h3 {
-            color: #FFF;
+            color: #010916;
             padding: 0.5rem 1.5rem 0.5rem 0rem;
             font-size: 2.2rem;
             font-weight: 500;
@@ -3504,7 +3504,7 @@ form {
                     width: 100%;
 
                     p {
-                        color: #FFF;
+                        color: #1A1A2E;
                         font-weight: 300;
                         white-space: nowrap;
                         margin-right: 3rem;
@@ -3514,13 +3514,13 @@ form {
 
                     input {
                         width: 100%;
-                        color: #5F5F7A;
+                        color: #888888;
                         font-size: 1.3rem;
 
                         outline: none;
-                        border: none;
+                        border: 1px solid #00000014;
 
-                        background: #fff;
+                        background: #ffff;
 
                         padding: 1rem 1rem;
 
@@ -5537,18 +5537,42 @@ form {
 }
 
 .withcard {
-    padding-top: 2rem;
     position: relative;
-
-    img {
+    img{
+        width: 100%;
         height: auto;
-        width: 10rem;
-        position: absolute;
-        bottom: 2%;
-        right: 0;
-        border-radius: 1.4rem;
     }
+    .wallet-card-parent {
+        .wallet-card-child {
+            position: absolute;
+            top: 58%;
+            left: 22%;
+            transform: translate(-50%,-50%);
+            padding: 1rem 0rem;
+            h3{
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #FFFFFF;
+            }
+
+            h1{
+                font-size: 2.8rem;
+                color: #FFFFFF;
+                font-weight: 700;
+            }
+            p{
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: #2563EB;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+
 }
+
+
 
 
 // .balance-card-img {
