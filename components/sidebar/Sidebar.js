@@ -225,9 +225,6 @@ const Sidebar = ({ session, authenticatedUser, userCommission, allCommission, po
                                                 <Link href="/dashboard/recharge" className="menu-item">
                                                     Deposit
                                                 </Link>
-                                                <Link href="/dashboard/profile" className="menu-item">
-                                                    Profile
-                                                </Link>
                                                 <Link href="/dashboard/content/about" className="menu-item">
                                                     About Us
                                                 </Link>

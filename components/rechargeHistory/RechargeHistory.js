@@ -4,19 +4,27 @@ import data_not_found from "@/public/not_found.png";
 import Image from 'next/image';
 import moment from 'moment';
 import 'moment-timezone';
+import bgdesign from "@/public/new2/lines.png"
 
 const RechargeHistory = ({ history, authUser, userCommission }) => {
 
     return (
         <>
             <div className='background-color' style={{ minHeight: "100vh", paddingBottom: "100px" }}>
-                <section className="withdrawal-hostory-section recharge-history-section">
+                <section className="withdrawal-hostory-section recharge-history-section"
+                    style={{
+                        backgroundImage: `url(${bgdesign.src})`,
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        height: "100vh",
+                    }}>
                     <Breadcrumb
                         authUser={authUser}
                         title="Deposit History"
                         link="/dashboard/recharge"
-                        isColor="#FFF"
-                        bg="#000"
+                        isColor="#000"
+
                         userCommission={userCommission}
                     />
                     <div className="all-recharges">

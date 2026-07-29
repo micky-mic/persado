@@ -8,7 +8,8 @@ import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { uploadProfile } from '@/app/actions/profile/action';
 import Loader from '../loader/Loader';
-import prologo from "@/public/new/prologo.png"
+import prologo from "@/public/new2/profile-logo.png"
+import bgdesign from "@/public/new2/lines.png"
 
 const Profile = ({ user }) => {
 
@@ -96,7 +97,7 @@ const Profile = ({ user }) => {
                 <section
                     className="profile-section"
                     style={{
-                        backgroundImage: "url('/new/profilebg.png')",
+                        backgroundImage: `url(${bgdesign.src})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         backgroundRepeat: "no-repeat",
@@ -105,27 +106,22 @@ const Profile = ({ user }) => {
                     <Breadcrumb
                         title="Profile"
                         link="/dashboard"
-                        isColor="#fff"
+                        isColor="#000"
                     />
                     <div className='profile-inner-wrapper'>
-
-
-
-
                         <div className="profile-wrapper">
 
                             {/* Top Profile */}
                             <div className="profile-top-content">
 
                                 <div className="profile-image-box">
-                                    <img
+                                    {/* <img
                                         className="profile-ring"
                                         src="/new/profilebgimg.png"
                                         alt="ring"
-                                    />
+                                    /> */}
 
                                     {/* replace here */}
-                                    <form>
                                         <form>
                                             {file === null ? (
                                                 <Image
@@ -164,7 +160,7 @@ const Profile = ({ user }) => {
                                                 hidden
                                             />
                                         </form>
-                                    </form>
+                                 
                                 </div>
 
                                 <div className="profile-user-info">
@@ -190,12 +186,15 @@ const Profile = ({ user }) => {
 
                                     {/* Balance */}
                                     <div className="profile-card">
-
+                                        <span className="corner top-left"></span>
+                                        <span className="corner top-right"></span>
+                                        <span className="corner bottom-left"></span>
+                                        <span className="corner bottom-right"></span>
                                         <div className="profile-card-content">
 
                                             <img
                                                 className="profile-card-icon"
-                                                src="/new/money.png"
+                                                src="/new2/money.png"
                                                 alt="balance"
                                             />
 
@@ -217,12 +216,16 @@ const Profile = ({ user }) => {
 
                                     {/* Referral */}
                                     <div className="profile-card">
+                                        <span className="corner top-left"></span>
+                                        <span className="corner top-right"></span>
+                                        <span className="corner bottom-left"></span>
+                                        <span className="corner bottom-right"></span>
 
                                         <div className="profile-card-content">
 
                                             <img
                                                 className="profile-card-icon"
-                                                src="/new/inviteicon.png"
+                                                src="/new2/inviteicon.png"
                                                 alt="referral"
                                             />
 
@@ -246,7 +249,10 @@ const Profile = ({ user }) => {
 
                                 {/* Credit Score */}
                                 <div className="credit-score-card">
-
+                                    <span className="corner top-left"></span>
+                                    <span className="corner top-right"></span>
+                                    <span className="corner bottom-left"></span>
+                                    <span className="corner bottom-right"></span>
                                     <div className="credit-score-title">
                                         Credit Score
                                     </div>

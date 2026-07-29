@@ -10,6 +10,7 @@ import dollar from "@/public/new/dollar.png"
 import bgdesign from "@/public/new2/lines.png"
 import wallet from "@/public/new2/wallet.svg"
 import twallet from "@/public/new2/twallet.png"
+import money from "@/public/new2/money.png"
 import Image from 'next/image';
 import WithdrawalSuccessModal from '../successModal/WithdrawalSuccessModal';
 import WithdrawalFailModal from '../successModal/WithdrawalFailModal';
@@ -139,8 +140,12 @@ const Withdrawal = ({ user }) => {
                             ?
                             <>
                                 <div className="link-wallet-wrapper">
+                                    <span className="corner top-left"></span>
+                                    <span className="corner top-right"></span>
+                                    <span className="corner bottom-left"></span>
+                                    <span className="corner bottom-right"></span>
                                     <div className="link-wallet">
-                                        <svg
+                                        {/* <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             xmlnsXlink="http://www.w3.org/1999/xlink"
                                             fill="none"
@@ -171,7 +176,15 @@ const Withdrawal = ({ user }) => {
                                                     preserveAspectRatio="none"
                                                 ></image>
                                             </defs>
-                                        </svg>
+                                        </svg> */}
+                                        <Image
+                                            src={money}
+                                            width={100}
+                                            hei={100}
+                                            alt="icon"
+                                            unoptimized
+                                        />
+                                        <p>Would you like to enter your funding <br /> credentials now?</p>
                                     </div>
                                     <div className="amount-submit-btn">
                                         <Link href="/dashboard/withdrawal/linkwallet">

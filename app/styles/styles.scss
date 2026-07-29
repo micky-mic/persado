@@ -1364,6 +1364,7 @@ form {
     background: #1A1A2E;
     border-radius: 0.8rem;
     width: 100%;
+    margin-bottom: 2rem;
 
 
 
@@ -3331,7 +3332,7 @@ form {
             border-radius: 50px;
             border: none;
             outline: none;
-            background: linear-gradient(90deg, #6d3df5, #7f52ff); // purple gradient
+            background: #1A1A2E;
             color: #ffffff;
             font-size: 2rem;
             font-weight: 600;
@@ -3838,8 +3839,50 @@ form {
 .link-wallet-wrapper {
     margin-top: 3rem;
     padding: 2rem;
-    background: #F8FAFC;
-    border-radius: 1rem;
+    background: #FAFAF8;
+    position: relative;
+    border-radius: 4px;
+    overflow: visible;
+
+
+    .corner {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        pointer-events: none;
+    }
+
+    /* Top Left */
+    .corner.top-left {
+        top: 10px;
+        left: 10px;
+        border-top: 4px solid #22263d;
+        border-left: 4px solid #22263d;
+    }
+
+    /* Top Right */
+    .corner.top-right {
+        top: 10px;
+        right: 10px;
+        border-top: 4px solid #22263d;
+        border-right: 4px solid #22263d;
+    }
+
+    /* Bottom Left */
+    .corner.bottom-left {
+        bottom: 10px;
+        left: 10px;
+        border-bottom: 4px solid #22263d;
+        border-left: 4px solid #22263d;
+    }
+
+    /* Bottom Right */
+    .corner.bottom-right {
+        bottom: 10px;
+        right: 10px;
+        border-bottom: 4px solid #22263d;
+        border-right: 4px solid #22263d;
+    }
 
     h1 {
         color: $primaryColor;
@@ -3849,10 +3892,17 @@ form {
 
     .link-wallet {
         margin-top: 3rem;
-        display: flex;
+        // display: flex;
+        text-align: center;
         justify-content: center;
         align-items: center;
         gap: 3rem;
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #010916;
+        }
 
         .link-wallet-info {
             h3 {
@@ -4303,7 +4353,7 @@ form {
         .profile-user-name {
             width: 100%;
 
-            color: #f9f7ff;
+            color: #010916;
             text-align: center;
 
             font-size: 2.25rem;
@@ -4319,10 +4369,8 @@ form {
             justify-content: center;
             align-items: center;
 
-            background: linear-gradient(180deg,
-                    rgba(255, 255, 255, 0.05) 0%,
-                    rgba(255, 255, 255, 0) 100%);
-            box-shadow: 0 -2px 10px 0 rgba(233, 223, 255, 0.30), 0 -2px 40px 0 rgba(187, 155, 255, 0.15), 0 0.5px 0 0 rgba(255, 255, 255, 0.50) inset;
+            background: #D92B2B;
+            // box-shadow: 0 -2px 10px 0 rgba(233, 223, 255, 0.30), 0 -2px 40px 0 rgba(187, 155, 255, 0.15), 0 0.5px 0 0 rgba(255, 255, 255, 0.50) inset;
 
             .profile-badge-text {
                 color: #fff;
@@ -4352,12 +4400,55 @@ form {
 
         .profile-card {
             padding: 1.5rem 0.9375rem;
-            border-radius: 0.75rem;
+            // border-radius: 0.75rem;
+            border: 1px solid #8B69140D;
+            background: #FAFAF8;
+            position: relative;
+            border-radius: 4px;
+            overflow: visible;
 
-            background: linear-gradient(92deg,
-                    #9747ff 0%,
-                    #6e41ff 100%);
+            .corner {
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                pointer-events: none;
+            }
+
+            /* Top Left */
+            .corner.top-left {
+                top: 10px;
+                left: 10px;
+                border-top: 3px solid #22263d;
+                border-left: 3px solid #22263d;
+            }
+
+            /* Top Right */
+            .corner.top-right {
+                top: 10px;
+                right: 10px;
+                border-top: 3px solid #22263d;
+                border-right: 3px solid #22263d;
+            }
+
+            /* Bottom Left */
+            .corner.bottom-left {
+                bottom: 10px;
+                left: 10px;
+                border-bottom: 3px solid #22263d;
+                border-left: 3px solid #22263d;
+            }
+
+            /* Bottom Right */
+            .corner.bottom-right {
+                bottom: 10px;
+                right: 10px;
+                border-bottom: 3px solid #22263d;
+                border-right: 3px solid #22263d;
+            }
+
+
         }
+
 
         .profile-card-content {
             display: flex;
@@ -4372,18 +4463,16 @@ form {
         }
 
         .profile-card-label {
-            color: #f8fafc;
+            color: #555555;
             text-align: center;
-
             font-size: 0.9375rem;
             font-family: "Poppins", sans-serif;
             font-weight: 300;
         }
 
         .profile-card-value {
-            color: #fff;
+            color: #1A1A2E;
             text-align: center;
-
             font-size: 1.3125rem;
             font-family: "Poppins", sans-serif;
             font-weight: 700;
@@ -4394,20 +4483,59 @@ form {
 ========================= */
 
         .credit-score-card {
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
             gap: 0.9375rem;
+            background: #FAFAF8;
+            border: 1px solid #8B69140D;
+            position: relative;
+            border-radius: 4px;
+            overflow: visible;
 
-            background: linear-gradient(92deg,
-                    #9747ff 0%,
-                    #6e41ff 100%);
+            .corner {
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                pointer-events: none;
+            }
+
+            /* Top Left */
+            .corner.top-left {
+                top: 10px;
+                left: 10px;
+                border-top: 3px solid #22263d;
+                border-left: 3px solid #22263d;
+            }
+
+            /* Top Right */
+            .corner.top-right {
+                top: 10px;
+                right: 10px;
+                border-top: 3px solid #22263d;
+                border-right: 3px solid #22263d;
+            }
+
+            /* Bottom Left */
+            .corner.bottom-left {
+                bottom: 10px;
+                left: 10px;
+                border-bottom: 3px solid #22263d;
+                border-left: 3px solid #22263d;
+            }
+
+            /* Bottom Right */
+            .corner.bottom-right {
+                bottom: 10px;
+                right: 10px;
+                border-bottom: 3px solid #22263d;
+                border-right: 3px solid #22263d;
+            }
+
         }
 
         .credit-score-title {
-            color: #fff;
+            color: #676F83;
 
             font-size: 1.3125rem;
             font-family: "Poppins", sans-serif;
@@ -4424,10 +4552,13 @@ form {
             height: 1.460625rem; // 23.37px
             border-radius: 0.1875rem;
 
-            background: rgba(255, 255, 255, 0.2);
+            background: #8B691433;
+
 
             &.active {
-                background: #fff;
+                background: #8B691499;
+                box-shadow: 0px -1px 4px 0px #FFFFFF40;
+
             }
         }
 
@@ -5192,7 +5323,7 @@ form {
                 .exchange-history {
                     height: 4rem;
                     width: 4rem;
-                    background: #8556FF;
+                    background: #1A1A2E;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -5237,7 +5368,7 @@ form {
                     font-weight: 700;
                     text-transform: uppercase;
                     border-radius: 4px;
-                    background: var(--rad, radial-gradient(50% 50% at 50% 50%, #6B3EFF 0%, #8556FF 100%));
+                    background: #1A1A2E;
                 }
             }
         }
