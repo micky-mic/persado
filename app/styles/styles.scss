@@ -3372,58 +3372,107 @@ form {
     }
 }
 
-.transaction-amount {
-    padding: 2rem 0;
+
+.withdrawal-actions {
+    margin-bottom: 2rem;
     position: relative;
+    background: #fff;
+    padding: 30px 22px;
+    border-radius: 4px;
 
-    h3 {
-        color: #1A1A2E;
-        font-size: 1.3rem;
-        font-weight: 500;
+    .corner {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        pointer-events: none;
     }
 
-    p {
-        color: #1A1A2E;
-        font-weight: 300;
-        white-space: nowrap;
-        margin-right: 3rem;
-        font-size: 1.2rem;
-        padding-bottom: 0.5rem;
+    .top-left {
+        top: 10px;
+        left: 10px;
+        border-top: 4px solid #2b2f45;
+        border-left: 4px solid #2b2f45;
     }
 
-    input {
-        width: 100%;
-        color: #5F5F7A;
-        font-size: 1.3rem;
+    .top-right {
+        top: 10px;
+        right: 10px;
+        border-top: 4px solid #2b2f45;
+        border-right: 4px solid #2b2f45;
+    }
+
+    .bottom-left {
+        bottom: 10px;
+        left: 10px;
+        border-bottom: 4px solid #2b2f45;
+        border-left: 4px solid #2b2f45;
+    }
+
+    .bottom-right {
+        bottom: 10px;
+        right: 10px;
+        border-bottom: 4px solid #2b2f45;
+        border-right: 4px solid #2b2f45;
+    }
+
+
+    .transaction-amount {
+        padding: 2rem 0;
         position: relative;
 
-        outline: none;
-        border: 1px solid #00000014;
+        .image {
+            align-items: center;
+            text-align: center;
+        }
 
-        background: #fff;
+        h3 {
+            color: #1A1A2E;
+            font-size: 1.3rem;
+            font-weight: 500;
+            text-align: center;
+        }
 
-        padding: 1rem 1rem;
+        p {
+            color: #1A1A2E;
+            font-weight: 500;
+            white-space: nowrap;
+            margin-right: 3rem;
+            font-size: 1.2rem;
+            padding-bottom: 0.5rem;
+        }
 
-        border-radius: 0.5rem;
-    }
+        input {
+            width: 100%;
+            color: #888888;
+            font-size: 1.3rem;
+            position: relative;
+            outline: none;
+            border: 1px solid #00000014;
+            background: #fff;
+            padding: 1rem 1rem;
+            border-radius: 0.5rem;
+        }
 
-    svg {
-        position: absolute;
-        height: 1.6rem;
-        width: 1.6rem;
-        cursor: pointer;
-    }
+        svg {
+            position: absolute;
+            height: 1.6rem;
+            width: 1.6rem;
+            cursor: pointer;
+        }
 
-    .input-primary-svg {
-        top: 55%;
-        left: 1rem;
-    }
+        .input-primary-svg {
+            top: 55%;
+            left: 1rem;
+        }
 
-    .input-secondary-svg {
-        top: 55%;
-        right: 1rem;
+        .input-secondary-svg {
+            top: 55%;
+            right: 1rem;
+        }
     }
 }
+
+
 
 .transaction-pages {
     .journey-info-wrapper {
@@ -3434,21 +3483,102 @@ form {
 
 
     .withdrawal-details {
-        margin-top: 3rem;
+        // margin-top: 3rem;
         padding: 2rem 2rem;
+        background: #FAFAF8;
+        border-width: 1px, 1px, 1px, 1px;
+        // border-style: solid;
         // background: linear-gradient(180deg, #071013 0.06%, #6E41FF 182.04%);
-        border-radius: 1.5rem;
+        // border-radius: 1.5rem;
+        box-shadow: 0px 1px 4px 0px #8B69141A;
+        position: relative;
+        padding: 35px 40px;
+        border-radius: 4px;
+
+        .corner {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+        }
+
+        .top-left {
+            top: 12px;
+            left: 12px;
+            border-top: 4px solid #2d3147;
+            border-left: 4px solid #2d3147;
+        }
+
+        .top-right {
+            top: 12px;
+            right: 12px;
+            border-top: 4px solid #2d3147;
+            border-right: 4px solid #2d3147;
+        }
+
+        .bottom-left {
+            bottom: 12px;
+            left: 12px;
+            border-bottom: 4px solid #2d3147;
+            border-left: 4px solid #2d3147;
+        }
+
+        .bottom-right {
+            bottom: 12px;
+            right: 12px;
+            border-bottom: 4px solid #2d3147;
+            border-right: 4px solid #2d3147;
+        }
 
         h3 {
             color: #010916;
             padding: 0.5rem 1.5rem 0.5rem 0rem;
             font-size: 2.2rem;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .withdrawal-details-wrapper {
-            margin-top: 2rem;
+            // margin-top: 2rem;
             margin-bottom: 3rem;
+            background: linear-gradient(179.58deg, rgba(255, 255, 255, 0.7) 0.36%, rgba(250, 250, 248, 0.7) 197.91%);
+            position: relative;
+            background: #fff;
+            padding: 30px 22px;
+            border-radius: 4px;
+
+            .corner {
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                pointer-events: none;
+            }
+
+            .top-left {
+                top: 10px;
+                left: 10px;
+                border-top: 4px solid #2b2f45;
+                border-left: 4px solid #2b2f45;
+            }
+
+            .top-right {
+                top: 10px;
+                right: 10px;
+                border-top: 4px solid #2b2f45;
+                border-right: 4px solid #2b2f45;
+            }
+
+            .bottom-left {
+                bottom: 10px;
+                left: 10px;
+                border-bottom: 4px solid #2b2f45;
+                border-left: 4px solid #2b2f45;
+            }
+
+            .bottom-right {
+                bottom: 10px;
+                right: 10px;
+                border-bottom: 4px solid #2b2f45;
+                border-right: 4px solid #2b2f45;
+            }
 
             .withdrawal-details-parent {
                 display: flex;
@@ -3461,7 +3591,7 @@ form {
 
                     p {
                         color: #1A1A2E;
-                        font-weight: 300;
+                        font-weight: 600;
                         white-space: nowrap;
                         margin-right: 3rem;
                         font-size: 1.2rem;
@@ -3490,7 +3620,8 @@ form {
                         margin-top: 1rem;
 
                         .box {
-                            background: #fff;
+                            background: #FFFFFF;
+                            border: 1px solid #00000014;
                             padding: 1rem 1rem;
                             border-radius: 0.5rem;
                             color: #5F5F7A;
@@ -3500,7 +3631,7 @@ form {
                         }
 
                         .boxactive {
-                            background: radial-gradient(50% 50% at 50% 50%, #6B3EFF 0%, #8556FF 100%);
+                            background: #1A1A2E;
                             color: #fff;
                             border: 2px solid #fff;
                         }
@@ -3523,7 +3654,8 @@ form {
                         gap: 1rem;
                         flex-wrap: wrap;
 
-                        background: #fff;
+                        background: #FFFFFF;
+                        border: 1px solid #00000014;
 
                         padding: 1rem;
 
@@ -3544,7 +3676,7 @@ form {
                             transition: 0.3s ease;
 
                             &.active {
-                                color: #6B3EFF;
+                                color: #1A1A2E;
                                 font-weight: 600;
                             }
 
@@ -3575,7 +3707,7 @@ form {
 
                                     border-radius: 50%;
 
-                                    background: #6B3EFF;
+                                    background: #1A1A2E;
 
                                     transform: translate(-50%, -50%) scale(0);
 
@@ -3584,7 +3716,7 @@ form {
                             }
 
                             input:checked+.custom-radio {
-                                border-color: #6B3EFF;
+                                border-color: #1A1A2E;
 
                                 &::after {
                                     transform: translate(-50%, -50%) scale(1);
@@ -3595,6 +3727,7 @@ form {
                 }
             }
         }
+
     }
 
     .quick-choice {
@@ -3613,11 +3746,11 @@ form {
             flex: 1;
             height: 0.1rem;
 
-            background: rgba(248, 250, 252, 0.3);
+            background: #676F83;
         }
 
         p {
-            color: #F8FAFC;
+            color: #676F83;
 
             font-size: 1.5rem;
             text-align: center;
@@ -3634,16 +3767,17 @@ form {
             gap: 1rem;
 
             .amount-option-childs {
-                border: 2px solid #fff;
+                border: 1px solid #DBE4EB;
                 border-radius: 0.8rem;
-                background: #ffffff;
+                background: #FFFFFF;
+                font-weight: 500;
                 padding: 0.2rem 0rem;
                 text-align: center;
                 color: #819FB8;
                 cursor: pointer;
 
                 &:hover {
-                    background: radial-gradient(50% 50% at 50% 50%, #6B3EFF 0%, #8556FF 100%);
+                    background: #101828;
                     border: none;
                     border: 2px solid #fff;
 
@@ -3651,7 +3785,18 @@ form {
                         color: white !important;
                         font-weight: 500 !important;
                     }
+
+                    &:active {
+                        background: #101828;
+                        border: 2px solid #fff;
+
+                        h3 {
+                            color: #fff;
+                            font-weight: 500;
+                        }
+                    }
                 }
+
 
                 h3 {
                     font-size: 1.3rem;
@@ -3985,20 +4130,21 @@ form {
 
                     .complete {
                         border-radius: 4px;
-                        background: var(--rad, radial-gradient(50% 50% at 50% 50%, #6B3EFF 0%, #8556FF 100%));
+                        background: #1A1A2E;
                         color: #FFF;
                     }
 
                     .freeze {
                         border-radius: 4px;
-                        background: var(--Tab-downline, #DBE4EB);
-                        color: #262B30;
+                        background: #DBE4EB;
+                        ;
+                        color: #1A1A2E;
                     }
 
                     .pending {
                         border-radius: 4px;
-                        background: var(--Font, #FFF);
-                        color: #6B3EFF;
+                        background: #C0242406;
+                        color: #C02424;
                     }
                 }
             }

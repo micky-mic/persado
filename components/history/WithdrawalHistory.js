@@ -37,10 +37,10 @@ const WithdrawalHistory = ({ withdrawal, authUser }) => {
             <div className='background-color' style={{ minHeight: "100vh", paddingBottom: "100px" }}>
                 <Breadcrumb
                     authUser={authUser}
-                    title="Withdraw History"
+                    title="Transaction History"
                     link="/dashboard/withdrawal"
-                    isColor="#FFF"
-                    bg="#000"
+                    isColor="#000"
+                    bg="#fff"
                 />
                 <div className="history-filter">
                     <ul>
