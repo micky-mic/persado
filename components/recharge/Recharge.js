@@ -4,7 +4,6 @@ import Breadcrumb from '../breadcrumb/Breadcrumb';
 import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image';
-import dollar from "@/public/new/dollar.png"
 import wallet from "@/public/new2/wallet.svg"
 import bgdesign from "@/public/new2/lines.png"
 

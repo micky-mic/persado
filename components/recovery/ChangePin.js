@@ -7,8 +7,6 @@ import { useRouter } from "next/navigation";
 import Breadcrumb from "../breadcrumb/Breadcrumb";
 import Link from 'next/link';
 import Image from "next/image";
-import securityImage from "@/public/new2/security.png";
-import bgdesign from "@/public/new2/lines.png"
 
 function Submit() {
     const { pending } = useFormStatus();

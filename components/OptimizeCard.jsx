@@ -3,175 +3,322 @@
 import { useState } from "react";
 
 export default function OptimizeCard({ onComplete }) {
+
     const [startOptimize, setStartOptimize] = useState(false);
     const [completed, setCompleted] = useState(false);
 
+    // Which progress video is currently playing
+    const [activeStep, setActiveStep] = useState(-1);
+
+    // Completed text under each progress
+    const [progressStatus, setProgressStatus] = useState([
+        "",
+        "",
+        "",
+        ""
+    ]);
+
+
     const steps = [
-        {
-            title: "Input Matrix Analysis",
-            status: "Verified",
-        },
-        {
-            title: "Commission Logic Mapping",
-            status: "Stabilized",
-        },
-        {
-            title: "Neural Sync Interface",
-            status: "Established",
-        },
-        {
-            title: "System Integrity Check",
-            status: "Confirmed",
-        },
+        "Input Matrix Analysis",
+        "Commission Logic Mapping",
+        "Neural Sync Interface",
+        "System Integrity Check",
     ];
 
-    // Total animation time = 2 seconds
-    const totalDuration = 2;
-    const stepDuration = totalDuration / steps.length;
+
+    const statusText = [
+        "Verified",
+        "Stabilized",
+        "Established",
+        "Confirmed",
+    ];
+
+
 
     const handleOptimize = () => {
-        if (!startOptimize) {
-            setStartOptimize(true);
 
-            setTimeout(() => {
-                setCompleted(true);
+        if (startOptimize) return;
 
-                if (onComplete) {
-                    onComplete(true);
-                }
-            }, totalDuration * 1000);
-        }
+
+        setStartOptimize(true);
+
+        // Start first progress video
+        setActiveStep(0);
+
     };
 
+
+
+    const handleVideoEnd = (index) => {
+
+
+        // Add completed status
+        setProgressStatus((prev) => {
+
+            const updated = [...prev];
+
+            updated[index] = statusText[index];
+
+            return updated;
+
+        });
+
+
+
+        // Start next progress video
+        if (index < steps.length - 1) {
+
+            setActiveStep(index + 1);
+
+        } else {
+
+            // All completed
+            setCompleted(true);
+
+            if (onComplete) {
+
+                onComplete(true);
+
+            }
+
+        }
+
+    };
+
+
+
     return (
+
         <div className="optimize-card">
+
+
             <div className="top-section">
+
+
                 <div className="title-row">
+
+
                     <div className="icon">
+
                         <video
-                            src="/new/optimizevid.mp4"
+                            src="/new2/optimizevid.mp4"
                             autoPlay
                             muted
                             loop
                             playsInline
                         />
+
                     </div>
 
-                    <p>Optimize Assistant Panel</p>
+
+                    <h2>
+                        Optimize Assistant Panel
+                    </h2>
+
+
                 </div>
 
-                <div
-                    className={`optimize-btn ${
-                        completed ? "optimized-btn" : ""
-                    } ${startOptimize ? "disabled" : ""}`}
+
+
+                <button
+                    className={`primary-btn ${startOptimize ? "disabled" : ""
+                        }`}
                     onClick={handleOptimize}
                 >
-                    <p>
-                        {completed
+
+                    {
+                        completed
                             ? "Verified, Ready to Submit"
                             : startOptimize
-                            ? "Optimizing..."
-                            : "Start Optimize"}
-                    </p>
-                </div>
+                                ? "Optimizing..."
+                                : "Start Optimize"
+                    }
+
+                </button>
+
+
             </div>
 
-            <div className="bottom-section">
+
+
+
+
+            <div className="content-section2">
+
+
                 <div className="ai-core">
-                    <div className="core-wrapper">
-                        <p className="title">
-                            {completed
+
+
+                    <h3>
+
+                        {
+                            completed
                                 ? "AI CORE // SYNCHRONIZED"
                                 : startOptimize
-                                ? "AI CORE // SYNCHRONIZING"
-                                : "AI CORE // INITIALIZING"}
-                        </p>
+                                    ? "AI CORE // SYNCHRONIZING"
+                                    : "AI CORE // INITIALIZING"
+                        }
 
-                        <p className="desc">
-                            {completed ? (
-                                <>
-                                    All protocols executed successfully.
-                                </>
-                            ) : (
-                                <>
-                                    Establishing secure link…
-                                    <br />
-                                    Engaging optimization protocols…
-                                </>
-                            )}
-                        </p>
-                    </div>
+                    </h3>
+
+
+
+                    <p>
+                        Establishing secure link…
+                        <br />
+                        Engaging optimization protocols…
+                    </p>
+
+
                 </div>
+
+
+
+
 
                 <div className="steps">
-                    {steps.map((item, index) => (
-                        <div
-                            className="step-row"
-                            key={index}
-                        >
-                            <p className="step-title">
-                                <span>[{`0${index + 1}`}]</span>
 
-                                <br />
 
-                                {item.title}
-                            </p>
+                    {
+                        steps.map((step, index) => (
 
-                            <div className="progress-container">
-                                <div className="progress">
-                                    <div
-                                        className={`progress-fill ${
-                                            startOptimize ? "active" : ""
-                                        }`}
-                                        style={{
-                                            animationDelay: `${
-                                                index * stepDuration
-                                            }s`,
-                                        }}
-                                    ></div>
+
+                            <div
+                                className="step-row"
+                                key={index}
+                            >
+
+
+                                <div className="step-name">
+
+
+                                    <span>
+                                        [{`0${index + 1}`}]
+                                    </span>
+
+
+                                    <p>
+                                        {step}
+                                    </p>
+
+
                                 </div>
 
-                                <p
-                                    className={`status ${
-                                        startOptimize ? "show" : ""
-                                    }`}
-                                    style={{
-                                        animationDelay: `${
-                                            (index + 1) * stepDuration
-                                        }s`,
-                                    }}
-                                >
-                                    {item.status}
-                                </p>
+
+
+
+
+                                <div className="progress-box">
+
+
+                                    <div className="progress">
+
+                                        {
+                                            !completed && activeStep === index && (
+
+                                                <video
+                                                    key={index}
+                                                    className="progressVideo"
+                                                    src="/new2/progress.mp4"
+                                                    autoPlay
+                                                    muted
+                                                    playsInline
+                                                    onEnded={() => handleVideoEnd(index)}
+                                                />
+
+                                            )
+                                        }
+
+                                    </div>
+
+
+
+
+                                    {
+                                        progressStatus[index] && (
+
+                                            <p className="progress-status">
+
+                                                {progressStatus[index]}
+
+                                            </p>
+
+                                        )
+                                    }
+
+
+
+                                </div>
+
+
+
                             </div>
-                        </div>
-                    ))}
+
+
+                        ))
+                    }
+
+
+
                 </div>
+
+
+
+
 
                 <div className="status-section">
-                    <p>
-                        Status:
-                        <span>
-                            {completed
-                                ? " Fully Operational"
-                                : startOptimize
-                                ? " Processing..."
-                                : " Waiting"}
-                        </span>
-                    </p>
+
 
                     <p>
-                        AI State:
+
+                        Status:
+
                         <span>
-                            {completed
-                                ? " Ready for Execution"
-                                : startOptimize
-                                ? " Active"
-                                : " Idle"}
+
+                            {
+                                completed
+                                    ? " Completed"
+                                    : startOptimize
+                                        ? " Processing..."
+                                        : " Waiting"
+                            }
+
                         </span>
+
                     </p>
+
+
+
+                    <p>
+
+                        AI State:
+
+                        <span>
+
+                            {
+                                completed
+                                    ? " Ready"
+                                    : startOptimize
+                                        ? " Active"
+                                        : " Idle"
+                            }
+
+                        </span>
+
+                    </p>
+
+
                 </div>
+
+
+
             </div>
+
+
+
         </div>
+
     );
+
 }

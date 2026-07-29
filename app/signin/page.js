@@ -1,5 +1,4 @@
 import Image from "next/image";
-import authbg1 from "@/public/new/authbg1.png";
 import dynamic from "next/dynamic";
 import GlobalProgress from "@/components/global_progress/GlobalProgress";
 import Breadcrumb from "@/components/breadcrumb/Breadcrumb";

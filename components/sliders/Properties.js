@@ -5,11 +5,6 @@ import React from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import sponser1 from "@/public/new/dashboard/sponser1.png"
-import sponser2 from "@/public/new/dashboard/sponser2.png"
-import sponser3 from "@/public/new/dashboard/sponser3.png"
-import sponser4 from "@/public/new/dashboard/sponser4.png"
-import sponser5 from "@/public/new/dashboard/sponser5.png"
 
 const Properties = () => {
 

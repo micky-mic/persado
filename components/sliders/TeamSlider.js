@@ -8,11 +8,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-import img1 from "@/public/new/dashboard/slider1.png";
-import img2 from "@/public/new/dashboard/slider2.png";
-import img3 from "@/public/new/dashboard/slider3.png";
-import img4 from "@/public/new/dashboard/slider4.png";
-
 const teamMembers = [
   {
     image: img1,

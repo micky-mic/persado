@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { withdrawal } from '@/app/actions/user/action';
 import toast from 'react-hot-toast';
 import { useFormStatus } from "react-dom";
-import dollar from "@/public/new/dollar.png"
 import bgdesign from "@/public/new2/lines.png"
 import wallet from "@/public/new2/wallet.svg"
 import twallet from "@/public/new2/twallet.png"
