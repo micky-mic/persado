@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { auth } from '@/app/auth';
 import money from "@/public/new/money.png"
 import check from "@/public/new/check.png"
-import vip1 from "@/public/new/vip1.png"
-import vip2 from "@/public/new/vip2.png"
-import vip3 from "@/public/new/vip3.png"
-import vip4 from "@/public/new/vip4.png"
+import vip1 from "@/public/new2/vip1.png"
+import vip2 from "@/public/new2/vip2.png"
+import vip3 from "@/public/new2/vip3.png"
+import vip4 from "@/public/new2/vip4.png"
 import SecurityCheck from '@/components/checkSecurityCode/CheckSecurityCode';
 
 import dynamic from "next/dynamic";
